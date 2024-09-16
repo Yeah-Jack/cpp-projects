@@ -2,6 +2,7 @@
 .vscode/
 *.pro
 *.pro.user
+build-*/
 
 # Prerequisites
 *.d
