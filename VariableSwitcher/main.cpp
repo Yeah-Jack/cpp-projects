@@ -12,8 +12,8 @@ int main() {
   zahl1 = zahl2;
   zahl2 = temp;
 
-  std::cout << "Neue Zahl 1: " << zahl1 << std::endl;
-  std::cout << "Neue Zahl 2: " << zahl2 << std::endl;
+  std::cout << "Neue Zahl 1: " << zahl1 << std::endl
+            << "Neue Zahl 2: " << zahl2 << std::endl;
 
   return 0;
 }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
   const double sales = 95000;
   const double state_tax = 0.04;
@@ -11,10 +9,10 @@ int main() {
   double after_county_tax = sales * county_tax;
   double total_tax = after_state_tax + after_county_tax;
 
-  cout << "Sales: $" << sales << endl
-       << "After State Tax: $" << after_state_tax << endl
-       << "After County Tax: $" << after_county_tax << endl
-       << "Total Tax: $" << total_tax << endl;
+  std::cout << "Sales: $" << sales << std::endl
+            << "After State Tax: $" << after_state_tax << std::endl
+            << "After County Tax: $" << after_county_tax << std::endl
+            << "Total Tax: $" << total_tax << std::endl;
 
   return 0;
 }
