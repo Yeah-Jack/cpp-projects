@@ -1,6 +1,9 @@
 #include <iostream>
+#include <Windows.h>
 
 int main() {
+	SetConsoleOutputCP(CP_UTF8);
+	
   double Sparleistung, Prämie;
   short Kinder;
   bool Verheiratet;
@@ -29,7 +32,7 @@ int main() {
 
   Prämie += Kinder * 0.02 * Sparleistung;
 
-  std::cout << "Deine Prämie ist: " << Prämie << " Euro" << std::endl;
+  std::cout << "Deine Prämie ist: " << Prämie << "€" << std::endl;
 
   return 0;
 }
