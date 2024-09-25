@@ -5,23 +5,22 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   double Sparleistung, Prämie;
-  short Kinder;
-  bool Verheiratet;
+  short Kinder, Verheiratet;
 
   std::cout << "Wie viel Euro möchten Sie monatlich sparen? ";
   std::cin >> Sparleistung;
 
   if (Sparleistung > 800) {
     Sparleistung = 800;
-    std::cout << "Der Maximalsparbetrag beträgt 800 Euro und wurde deshalb "
-                 "auch auf 800 Euro geändert."
+    std::cout << "Der Maximalsparbetrag beträgt 800€ und wurde deshalb auf "
+                 "800€ runtergesetzt."
               << std::endl;
   }
 
   std::cout << "Sind Sie verheiratet? (1 = Ja, 0 = Nein)" << std::endl;
   std::cin >> Verheiratet;
 
-  if (Verheiratet) {
+  if (Verheiratet == 1) {
     Prämie = Sparleistung * 0.07;
   } else {
     Prämie = Sparleistung * 0.14;

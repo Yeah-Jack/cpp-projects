@@ -36,3 +36,7 @@ build-*/
 *.exe
 *.out
 *.app
+
+# Debug files
+*.pdb
+*.ilk
