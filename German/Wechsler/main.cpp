@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main() {
-  int zahl1, zahl2, temp;
+  int zahl1;
+  int zahl2;
+  int temp;
 
   std::cout << "Gebe Zahl 1 ein: " << std::endl;
   std::cin >> zahl1;

@@ -4,8 +4,10 @@
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  double Sparleistung, Prämie;
-  short Kinder, Verheiratet;
+  double Sparleistung;
+  double Prämie;
+  short Kinder;
+  short Verheiratet;
 
   std::cout << "Wie viel Euro möchten Sie monatlich sparen? ";
   std::cin >> Sparleistung;

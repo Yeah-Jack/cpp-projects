@@ -7,7 +7,10 @@ int main() {
   const double milchPreis = 1.09;
   const double steuer = 0.07;
 
-  int bananeAnzahl, apfelAnzahl, brotAnzahl, milchAnzahl;
+  int bananeAnzahl;
+  int apfelAnzahl;
+  int brotAnzahl;
+  int milchAnzahl;
 
   std::cout << "Wie viele Bananen möchten Sie kaufen? ";
   std::cin >> bananeAnzahl;
