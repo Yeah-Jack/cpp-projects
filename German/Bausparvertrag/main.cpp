@@ -1,9 +1,9 @@
-#include <iostream>
 #include <Windows.h>
+#include <iostream>
 
 int main() {
-	SetConsoleOutputCP(CP_UTF8);
-	
+  SetConsoleOutputCP(CP_UTF8);
+
   double Sparleistung, Prämie;
   short Kinder;
   bool Verheiratet;
