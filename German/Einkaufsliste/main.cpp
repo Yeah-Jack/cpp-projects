@@ -1,6 +1,8 @@
+#include <Windows.h>
 #include <iostream>
 
 int main() {
+  SetConsoleOutputCP(CP_UTF8);
   const double bananePreis = 3.99;
   const double apfelPreis = 2.99;
   const double brotPreis = 0.49;

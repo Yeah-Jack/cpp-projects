@@ -1,6 +1,8 @@
+#include <Windows.h>
 #include <iostream>
 
 int main() {
+  SetConsoleOutputCP(CP_UTF8);
   const double sales = 95000;
   const double state_tax = 0.04;
   const double county_tax = 0.02;

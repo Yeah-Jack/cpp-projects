@@ -1,6 +1,8 @@
+#include <Windows.h>
 #include <iostream>
 
 int main() {
+  SetConsoleOutputCP(CP_UTF8);
   int rows;
   int columns;
   std::string text;

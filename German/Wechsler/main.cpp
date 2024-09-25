@@ -1,6 +1,8 @@
+#include <Windows.h>
 #include <iostream>
 
 int main() {
+  SetConsoleOutputCP(CP_UTF8);
   int zahl1;
   int zahl2;
   int temp;
