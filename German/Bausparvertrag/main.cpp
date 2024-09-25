@@ -21,7 +21,7 @@ int main() {
   std::cout << "Sind Sie verheiratet? (1 = Ja, 0 = Nein)" << std::endl;
   std::cin >> Verheiratet;
 
-  if (Verheiratet == true) {
+  if (Verheiratet) {
     Prämie = Sparleistung * 0.07;
   } else {
     Prämie = Sparleistung * 0.14;
