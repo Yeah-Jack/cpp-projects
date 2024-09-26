@@ -3,6 +3,7 @@
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
+
   std::cout << "Test 1: " << (2 + 3 == 5 ? "Bestanden" : "Fehlgeschlagen")
             << std::endl;
   std::cout << "Test 2: " << (6 + 4 == 10 ? "Bestanden" : "Fehlgeschlagen")

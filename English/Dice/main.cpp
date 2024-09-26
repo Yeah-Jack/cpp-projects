@@ -1,10 +1,10 @@
 #include <Windows.h>
-#include <cstdlib>
 #include <ctime>
 #include <iostream>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
+
   const short minValue = 1;
   const short maxValue = 6;
 

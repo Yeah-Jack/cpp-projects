@@ -3,6 +3,7 @@
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
+
   double zahl1;
   double zahl2;
   double summe;
