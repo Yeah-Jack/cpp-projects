@@ -9,6 +9,8 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   char player;
+  char computerChoice;
+  int computer = rand() % 3 + 1;
 
   do {
     std::cout << "Rock-Paper-Scissors Game!" << std::endl
@@ -23,9 +25,6 @@ int main() {
   showChoice(player);
 
   srand(static_cast<unsigned int>(time(0)));
-
-  int computer = rand() % 3 + 1;
-  char computerChoice;
 
   switch (computer) {
   case 1:
