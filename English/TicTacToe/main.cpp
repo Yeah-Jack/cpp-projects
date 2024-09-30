@@ -40,6 +40,7 @@ int main() {
 
   return 0;
 }
+
 void drawBoard(char *spaces) {
   std::cout << '\n';
   std::cout << "     |     |     " << '\n';
@@ -56,6 +57,7 @@ void drawBoard(char *spaces) {
   std::cout << "     |     |     " << '\n';
   std::cout << '\n';
 }
+
 void playerMove(char *spaces, char player) {
   int number;
   do {
@@ -66,8 +68,9 @@ void playerMove(char *spaces, char player) {
       spaces[number] = player;
       break;
     }
-  } while (!number > 0 || !number < 8);
+  } while (!(number > 0 && number < 8));
 }
+
 void computerMove(char *spaces, char computer) {
   int number;
   srand(time(0));
@@ -80,6 +83,7 @@ void computerMove(char *spaces, char computer) {
     }
   }
 }
+
 bool checkWinner(char *spaces, char player, char computer) {
 
   if ((spaces[0] != ' ') && (spaces[0] == spaces[1]) &&
@@ -120,6 +124,7 @@ bool checkWinner(char *spaces, char player, char computer) {
 
   return true;
 }
+
 bool checkTie(char *spaces) {
 
   for (int i = 0; i < 9; i++) {
