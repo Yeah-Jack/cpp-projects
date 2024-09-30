@@ -66,7 +66,8 @@ void playerMove(char *spaces, char player) {
       spaces[number] = player;
       break;
     }
-  } while (static_cast<int>(number) == 0 > 0 || static_cast<int>(number) == 0 < 8);
+  } while (static_cast<int>(number) == 0 > 0 ||
+           static_cast<int>(number) == 0 < 8);
 }
 void computerMove(char *spaces, char computer) {
   int number;
