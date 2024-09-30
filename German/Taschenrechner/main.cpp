@@ -7,22 +7,20 @@ int main() {
   double zahl1;
   double zahl2;
   double summe;
-  short option;
+  short grundrechenart;
+  short wiederholung;
 
-  std::cout << "Gebe Zahl 1 ein: " << std::endl;
+  do {
+    std::cout << "Gebe Zahl 1 ein: ";
   std::cin >> zahl1;
-  std::cout << "Gebe Zahl 2 ein: " << std::endl;
+  std::cout << "Gebe Zahl 2 ein: ";
   std::cin >> zahl2;
 
-  std::cout << "Waehle eine Option aus:" << std::endl;
-  std::cout << "1) Plus" << std::endl;
-  std::cout << "2) Minus" << std::endl;
-  std::cout << "3) Multiplikation" << std::endl;
-  std::cout << "4) Division" << std::endl;
+  std::cout << "Wähle eine Option aus." << std::endl << "1) Plus" << std::endl << "2) Minus" << std::endl<< "3) Multiplikation" << std::endl << "4) Division" << std::endl;
 
-  std::cin >> option;
+  std::cin >> grundrechenart;
 
-  switch (option) {
+  switch (grundrechenart) {
   case 1:
     summe = zahl1 + zahl2;
     std::cout << " Ergebnis: " << summe << std::endl;
@@ -42,6 +40,11 @@ int main() {
   default:
     std::cout << "Wähle eine Option aus";
   }
+
+  std::cout << "Möchtest du eine weitere Rechnung durchführen?" << std::endl <<           "1) Ja" << std::endl << 
+               "2) Nein" << std::endl;
+  std::cin >> wiederholung;
+  } while (wiederholung == 1);
 
   return 0;
 }
