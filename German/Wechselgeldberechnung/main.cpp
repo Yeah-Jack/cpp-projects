@@ -17,14 +17,14 @@ int main() {
   double gegebenerBetrag;
   double rueckgeld;
 
-	int anzahlEinCent;
-	int anzahlZweiCent;
-	int anzahlFuenfCent;
-	int anzahlZehnCent;
-	int anzahlZwanzigCent;
-	int anzahlFuenfzigCent;
-	int anzahlEinEuro;
-	int anzahlZweiEuro;
+  int anzahlEinCent;
+  int anzahlZweiCent;
+  int anzahlFuenfCent;
+  int anzahlZehnCent;
+  int anzahlZwanzigCent;
+  int anzahlFuenfzigCent;
+  int anzahlEinEuro;
+  int anzahlZweiEuro;
 
   std::cout << "Gebe den zu zahlenden Betrag in € ein: ";
   std::cin >> zuZahlenderBetrag;
@@ -67,6 +67,6 @@ int main() {
   anzahlEinCent = rueckgeld / einCent;
   rueckgeld -= anzahlEinCent * einCent;
   std::cout << "Anzahl 1c Münzen: " << anzahlEinCent << std::endl;
-	
+
   return 0;
 }
