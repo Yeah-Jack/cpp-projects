@@ -1,16 +1,15 @@
 #include <Windows.h>
-#include <ctime>
 #include <iostream>
+#include <random>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  const short minValue = 1;
-  const short maxValue = 6;
+  std::random_device rd;
+  std::uniform_int_distribution<short> dist(1, 6);
 
-  srand(time(0));
-  short first = (rand() % (maxValue - minValue + 1)) + minValue;
-  short second = (rand() % (maxValue - minValue + 1)) + minValue;
+  short first = dist(rd);
+  short second = dist(rd);
 
   std::cout << "First dice: " << first << std::endl
             << "Second dice: " << second << std::endl;

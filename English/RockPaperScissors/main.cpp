@@ -1,6 +1,6 @@
 #include <Windows.h>
-#include <ctime>
 #include <iostream>
+#include <random>
 
 void showChoice(char choice);
 void chooseWinner(char player, char computer);
@@ -10,7 +10,6 @@ int main() {
 
   char player;
   char computerChoice;
-  int computer = rand() % 3 + 1;
 
   do {
     std::cout << "Rock-Paper-Scissors Game!" << std::endl
@@ -24,7 +23,10 @@ int main() {
   std::cout << "Your Choice: ";
   showChoice(player);
 
-  srand(static_cast<unsigned int>(time(0)));
+  std::random_device rd;
+  std::uniform_int_distribution<int> dist(1, 3);
+
+  int computer = dist(rd);
 
   switch (computer) {
   case 1:

@@ -1,5 +1,5 @@
-#include <ctime>
 #include <iostream>
+#include <random>
 
 void drawBoard(char *spaces);
 void playerMove(char *spaces, char player);
@@ -73,10 +73,11 @@ void playerMove(char *spaces, char player) {
 
 void computerMove(char *spaces, char computer) {
   int number;
-  srand(time(0));
+  std::random_device rd;
+  std::uniform_int_distribution<int> dist(1, 9);
 
   while (true) {
-    number = rand() % 9;
+    number = dist(rd);
     if (spaces[number] == ' ') {
       spaces[number] = computer;
       break;
