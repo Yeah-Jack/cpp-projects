@@ -1,5 +1,7 @@
-#include <Windows.h>
 #include <iostream>
+#include <string>
+
+const int MAX_FAMILY_MEMBERS = 5;
 
 struct Person {
   std::string name;
@@ -8,26 +10,46 @@ struct Person {
   double weight;
 };
 
+struct Family {
+  Person members[MAX_FAMILY_MEMBERS];
+  int familySize;
+};
+
 void printPerson(const Person &person);
-void updatePerson(Person &person, int newAge, double newHeight,
-                  double newWeight);
+void addFamilyMember(Family &family, const Person &newMember);
+void printFamily(const Family &family);
+void updateFamilyMember(Family &family, int index, int newAge, double newHeight,
+                        double newWeight);
 
 int main() {
-  SetConsoleOutputCP(CP_UTF8);
+  Family myFamily = {{}, 0};
 
-  Person person1 = {"Spongebob Squarepants", 11, 1.22, 65.25};
-  Person person2 = {"Patrick Star", 12, 1.33, 75.25};
+  Person person1 = {"John Doe", 40, 1.80, 80.0};
+  Person person2 = {"Jane Doe", 38, 1.65, 60.0};
+  Person person3 = {"Jimmy Doe", 10, 1.40, 35.0};
 
-  std::cout << "Initial information:" << std::endl;
-  printPerson(person1);
-  printPerson(person2);
+  addFamilyMember(myFamily, person1);
+  addFamilyMember(myFamily, person2);
+  addFamilyMember(myFamily, person3);
 
-  updatePerson(person1, 12, 1.25, 67.5);
-  updatePerson(person2, 13, 1.35, 77.0);
+  std::cout << std::endl << "Initial family information:" << std::endl;
+  printFamily(myFamily);
 
-  std::cout << "\nUpdated information:" << std::endl;
-  printPerson(person1);
-  printPerson(person2);
+  updateFamilyMember(myFamily, 2, 11, 1.45, 38.0);
+
+  std::cout << std::endl << "Updated family information:" << std::endl;
+  printFamily(myFamily);
+
+  Person person4 = {"Jenny Doe", 8, 1.30, 30.0};
+  Person person5 = {"Jack Doe", 5, 1.10, 20.0};
+  Person person6 = {"Jill Doe", 3, 0.90, 15.0};
+
+  addFamilyMember(myFamily, person4);
+  addFamilyMember(myFamily, person5);
+  addFamilyMember(myFamily, person6);
+
+  std::cout << std::endl << "Final family information:" << std::endl;
+  printFamily(myFamily);
 
   return 0;
 }
@@ -40,9 +62,33 @@ void printPerson(const Person &person) {
   std::cout << std::endl;
 }
 
-void updatePerson(Person &person, int newAge, double newHeight,
-                  double newWeight) {
-  person.age = newAge;
-  person.height = newHeight;
-  person.weight = newWeight;
+void addFamilyMember(Family &family, const Person &newMember) {
+  if (family.familySize < MAX_FAMILY_MEMBERS) {
+    family.members[family.familySize] = newMember;
+    family.familySize++;
+    std::cout << "Added " << newMember.name << " to the family." << std::endl;
+  } else {
+    std::cout << "Family is full. Cannot add more members." << std::endl;
+  }
+}
+
+void printFamily(const Family &family) {
+  std::cout << "Family Members:" << std::endl;
+  for (int i = 0; i < family.familySize; i++) {
+    std::cout << "Member " << i + 1 << ":" << std::endl;
+    printPerson(family.members[i]);
+  }
+}
+
+void updateFamilyMember(Family &family, int index, int newAge, double newHeight,
+                        double newWeight) {
+  if (index >= 0 && index < family.familySize) {
+    family.members[index].age = newAge;
+    family.members[index].height = newHeight;
+    family.members[index].weight = newWeight;
+    std::cout << "Updated information for " << family.members[index].name
+              << std::endl;
+  } else {
+    std::cout << "Invalid family member index." << std::endl;
+  }
 }
