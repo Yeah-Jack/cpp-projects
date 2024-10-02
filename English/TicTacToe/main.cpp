@@ -4,8 +4,8 @@
 void drawBoard(char *spaces);
 void playerMove(char *spaces, char player);
 void computerMove(char *spaces, char computer);
-bool checkWinner(char *spaces, char player, char computer);
-bool checkTie(char *spaces);
+bool checkWinner(const char *spaces, char player, char computer);
+bool checkTie(const char *spaces);
 
 int main() {
   char spaces[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
@@ -84,7 +84,7 @@ void computerMove(char *spaces, char computer) {
   }
 }
 
-bool checkWinner(char *spaces, char player, char computer) {
+bool checkWinner(const char *spaces, char player, char computer) {
 
   if ((spaces[0] != ' ') && (spaces[0] == spaces[1]) &&
       (spaces[1] == spaces[2])) {
@@ -125,7 +125,7 @@ bool checkWinner(char *spaces, char player, char computer) {
   return true;
 }
 
-bool checkTie(char *spaces) {
+bool checkTie(const char *spaces) {
 
   for (int i = 0; i < 9; i++) {
     if (spaces[i] == ' ') {
