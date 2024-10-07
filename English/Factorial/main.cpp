@@ -2,7 +2,7 @@
 #include <iostream>
 
 long factorialIterative(long num);
-//long factorialRecursive(long num);
+// long factorialRecursive(long num);
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
@@ -12,10 +12,10 @@ int main() {
   std::cout << "Enter a number: ";
   std::cin >> num;
 
-   std::cout << "Factorial of your number is: " << factorialIterative(num) << 
-   '\n';
-  //std::cout << "Factorial of your number is: " << factorialRecursive(num) 
-  //          << '\n';;
+  std::cout << "Factorial of your number is: " << factorialIterative(num)
+            << '\n';
+  // std::cout << "Factorial of your number is: " << factorialRecursive(num)
+  //           << '\n';;
 
   return 0;
 }
