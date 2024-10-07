@@ -1,39 +1,39 @@
 #include <Windows.h>
 #include <iostream>
 
-// int factorialIterative(int num);
-int factorialRecursive(int num);
+long factorialIterative(long num);
+//long factorialRecursive(long num);
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  int num;
+  long num;
 
   std::cout << "Enter a number: ";
   std::cin >> num;
 
-  // std::cout << "Factorial of your number is: " << factorialIterative(num) <<
-  // std::endl;
-  std::cout << "Factorial of your number is: " << factorialRecursive(num)
-            << std::endl;
+   std::cout << "Factorial of your number is: " << factorialIterative(num) << 
+   '\n';
+  //std::cout << "Factorial of your number is: " << factorialRecursive(num) 
+  //          << '\n';;
 
   return 0;
 }
 
-/* int factorialIterative(int num) {
-  int result = 1;
+long factorialIterative(long num) {
+  long result = 1;
 
   for (int i = 1; i <= num; i++) {
     result *= i;
   }
 
   return result;
-} */
+}
 
-int factorialRecursive(int num) {
+/* long factorialRecursive(long num) {
   if (num > 1) {
     return num * factorialRecursive(num - 1);
   } else {
     return 1;
   }
-}
+} */

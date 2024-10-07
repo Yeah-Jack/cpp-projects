@@ -5,14 +5,14 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   double coffeeTemperature = 85.0;
-  const double kRoomTemperature = 20.0;
-  const double kChangeRate = 0.10;
-  const double kTolerance = 2.0;
+  const double ROOMTEMPATURE = 20.0;
+  const double CHANGERATE = 0.10;
+  const double TOLERANCE = 2.0;
   int minutes = 0;
 
-  while ((coffeeTemperature - kRoomTemperature) > kTolerance) {
+  while ((coffeeTemperature - ROOMTEMPATURE) > TOLERANCE) {
     coffeeTemperature =
-        kRoomTemperature * kChangeRate + coffeeTemperature * (1 - kChangeRate);
+        ROOMTEMPATURE * CHANGERATE + coffeeTemperature * (1 - CHANGERATE);
     minutes++;
     std::cout << "Minute " << minutes << ": " << "Coffee temperature is "
               << coffeeTemperature << "°C." << std::endl;
