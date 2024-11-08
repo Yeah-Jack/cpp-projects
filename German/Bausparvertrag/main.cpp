@@ -1,3 +1,10 @@
+// Entwerfen und erstellen Sie ein Programm, das die Bausparprämie berechnet.
+// Bei einer Sparleistung von max. 800€ pro Jahr erhält ein Lediger eine Prämie
+// von 14% der Sparleistung. Verheiratete erhalten je die Hälfte. Für jedes
+// Kinder wird eine Prämie von 2% (Punkten) zusätzlich gewährt. Erstellen Sie
+// ein Programm, das die Höhe der Prämie berechnet. Es soll die Sparleistung,
+// den Familienstand und die Anzahl der Kinder berücksichtigen.
+
 #include <Windows.h>
 #include <iostream>
 

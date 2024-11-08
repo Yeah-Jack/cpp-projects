@@ -1,3 +1,11 @@
+// Entwerfen und erstellen Sie in Programm für eine einfache Einkaufliste. Der
+// Benutzer soll die Anzahl von vier verschiedenen Artikeln eingeben. Das
+// Programm soll anschließend die Rechnung erstellen (Summe aller Positionen).
+// Die Preise legen Sie im Programm fest, Sie können optional auch Bezeichnungen
+// für die Artikel angeben. Die Preise sollen als Fließkommazahl abgegeben
+// werden, die Anzahl als Ganzzahl. Geben Sie die Summe mit und ohne
+// Mehrwertsteuer aus. Verwenden Sie für alle Artikel den vollen Steuersatz.
+
 #include <Windows.h>
 #include <iostream>
 

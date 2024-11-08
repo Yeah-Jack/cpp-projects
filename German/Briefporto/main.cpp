@@ -1,3 +1,7 @@
+// Entwerfen und erstellen Sie ein Programm, dass das Porto für Briefe (laut
+// Tabelle der deutschen Post) angibt. Der Versand soll innerhab Deutschland
+// erfolgen (nicht international).
+
 #include <Windows.h>
 #include <iostream>
 
@@ -34,16 +38,16 @@ int main() {
   double breiteUser;
   double hoeheUser;
 
-  std::cout << "Wie schwer ist dein Brief in Gramm?" << std::endl;
+  std::cout << "Wie schwer ist dein Brief in Gramm? ";
   std::cin >> gewichtUser;
 
-  std::cout << "Wie lang ist dein Brief in cm?" << std::endl;
+  std::cout << "Wie lang ist dein Brief in cm? ";
   std::cin >> laengeUser;
 
-  std::cout << "Wie breit ist dein Brief in cm?" << std::endl;
+  std::cout << "Wie breit ist dein Brief in cm? ";
   std::cin >> breiteUser;
 
-  std::cout << "Wie hoch ist dein Brief in cm?" << std::endl;
+  std::cout << "Wie hoch ist dein Brief in cm? ";
   std::cin >> hoeheUser;
 
   if (gewichtUser <= gewichtStandardbrief &&

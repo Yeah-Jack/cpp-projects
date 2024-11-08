@@ -1,37 +1,41 @@
+// In der gymnasialen Oberstufe (vereinfachtes Modell) gilt: Wer maximal ein
+// Hauptfach unter 5 Punkte (Note 4) hat, kann das ausgleichen. Entweder mit
+// einem Hauptfach mit min. 10 Punkte (Note 2) oder zwei Hauptfächern mit min. 7
+// Punkten (Note 3). Eine Note unter 5 Punkte im Schwerpunkthauptfach kann man
+// nicht ausgleichen. Entwerfen und erstellen Sie ein Programm, das die Noten
+// abfragt und anschließend eine Prüfung vornimmt, ob man zugelassen wird und
+// Ihnen das ausgibt.
+
 #include <Windows.h>
 #include <iostream>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  int punkteHauptfach;
-  int punkteHauptfachAusgleich1;
-  int punkteHauptfachAusgleich2;
+  short punkteHauptfach;
+  short punkteHauptfachAusgleich1;
+  short punkteHauptfachAusgleich2;
 
-  std::cout << "Wie viele Punkte hast du in deinem Hauptfach?" << std::endl;
+  std::cout << "Wie viele Punkte hast du in deinem Hauptfach?\n";
   std::cin >> punkteHauptfach;
 
   if (punkteHauptfach >= 5) {
-    std::cout << "Du musst dein Hauptfach nicht ausgleichen." << std::endl;
+    std::cout << "Du musst dein Hauptfach nicht ausgleichen.\n";
   } else {
-    std::cout << "Du musst dein Hauptfach ausgleichen." << std::endl
+    std::cout << "Du musst dein Hauptfach ausgleichen.\n"
               << "Wie viele Punkte hast du in deinem ersten Hauptfach zum "
-                 "ausgleichen?"
-              << std::endl;
+                 "Ausgleichen?\n";
     std::cin >> punkteHauptfachAusgleich1;
     if (punkteHauptfachAusgleich1 >= 10) {
-      std::cout << "Du kannst dein Hauptfach erfolgreich ausgleichen."
-                << std::endl;
+      std::cout << "Du kannst dein Hauptfach ausgleichen.\n";
     } else {
       std::cout << "Wie viele Punkte hast du in deinem zweiten Hauptfach zum "
-                   "ausgleichen?"
-                << std::endl;
+                   "Ausgleichen?\n";
       std::cin >> punkteHauptfachAusgleich2;
       if (punkteHauptfachAusgleich1 >= 7 && punkteHauptfachAusgleich2 >= 7) {
-        std::cout << "Du kannst dein Hauptfach erfolgreich ausgleichen."
-                  << std::endl;
+        std::cout << "Du kannst dein Hauptfach ausgleichen.\n";
       } else {
-        std::cout << "Du kannst dein Hauptfach nicht ausgleichen." << std::endl;
+        std::cout << "Du kannst dein Hauptfach nicht ausgleichen.\n";
       }
     }
   }

@@ -1,3 +1,8 @@
+// Entwerfen und erstellen Sie ein Programm für einen einfachen Taschenrechner.
+// Der Rechner soll zwei Zahlen abfragen. Anschließend soll er abfragen, was
+// berechnet werden soll. Das Programm soll die gewünschte Rechnung ausführen
+// und das Ergebnis ausgeben.
+
 #include <Windows.h>
 #include <iostream>
 
