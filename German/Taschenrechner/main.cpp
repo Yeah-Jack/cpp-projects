@@ -1,7 +1,9 @@
 // Entwerfen und erstellen Sie ein Programm für einen einfachen Taschenrechner.
 // Der Rechner soll zwei Zahlen abfragen. Anschließend soll er abfragen, was
 // berechnet werden soll. Das Programm soll die gewünschte Rechnung ausführen
-// und das Ergebnis ausgeben.
+// und das Ergebnis ausgeben. Nach der Berechnung soll der Benutzer gefragt
+// werden, ob er noch eine Rechnung machen will, wenn ja soll das Programm
+// erneut beginnen. Verwenden Sie eine Schleife (while oder do – while).
 
 #include <Windows.h>
 #include <iostream>

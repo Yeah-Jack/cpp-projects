@@ -1,3 +1,8 @@
+// Entwerfen und erstellen Sie ein Programm, das die Anzahl der
+// Wechselgeldmünzen berechnet. Der Benutzer gibt den zu zahlenden Betrag und
+// den gegebenen Betrag an, das Programm berechnet das Rückgeld und die Anzahl
+// der Münzen. Es soll möglichst wenige Münzen ausgeben.
+
 #include <Windows.h>
 #include <iostream>
 
