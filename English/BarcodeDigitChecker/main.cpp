@@ -1,3 +1,7 @@
+// Create a program that calculates the check digit for an EAN barcode (EAN 8 or
+// EAN 13).
+// TODO: Add EAN 13
+
 #include <Windows.h>
 #include <iostream>
 #include <vector>
