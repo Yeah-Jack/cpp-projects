@@ -1,25 +1,37 @@
 #include <Windows.h>
 #include <iostream>
+#include <vector>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  short digit1, digit2, digit3, digit4, digit5, digit6, digit7, digit8;
+  std::vector<int> digits;
 
-  std::cout << "Enter your number, seperated by space or enter: ";
-  std::cin >> digit1 >> digit2 >> digit3 >> digit4 >> digit5 >> digit6 >>
-      digit7;
+  std::cout << "Enter 7 digits: ";
 
-  digit8 = (digit1 + digit3 + digit5 + digit7) * 3 + digit2 + digit4 + digit6;
-  digit8 %= 10;
-  digit8 = 10 - digit8;
-  if (digit8 == 10) {
-    digit8 = 0;
+  for (int i = 0; i < 7; i++) {
+    int temp;
+    std::cin >> temp;
+    digits.push_back(temp);
   }
 
-  std::cout << "Your check digit is: " << digit8 << '\n';
-  std::cout << "Your whole code is: " << digit1 << digit2 << digit3 << digit4
-            << digit5 << digit6 << digit7 << digit8 << '\n';
+  int temp;
+
+  temp = (digits[0] + digits[2] + digits[4] + digits[6]) * 3 + digits[1] +
+         digits[3] + digits[5];
+  temp %= 10;
+  temp = 10 - temp;
+  if (temp == 10) {
+    temp = 0;
+  }
+
+  digits.push_back(temp);
+
+  std::cout << "Your check digit is: " << digits[7] << "\nYour whole code is: ";
+  for (int digit : digits) {
+    std::cout << digit;
+  }
+  std::cout << '\n';
 
   return 0;
 }
