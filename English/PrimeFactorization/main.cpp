@@ -1,4 +1,4 @@
-// Design and create a program that calculates all prime factors of a number.
+// Create a program that calculates all prime factors of a number.
 // Prime factors are divisors of the number that are also prime numbers.
 
 #include <Windows.h>

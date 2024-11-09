@@ -1,4 +1,4 @@
-// Design and create a program that calculates all divisors of a number.
+// Create a program that calculates all divisors of a number.
 
 #include <Windows.h>
 #include <iostream>
