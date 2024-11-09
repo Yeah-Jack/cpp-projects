@@ -13,50 +13,49 @@ int main() {
 
   double zahl1;
   double zahl2;
-  double summe;
+  double ergebnis;
   short grundrechenart;
-  short wiederholung;
+  char wiederholung;
 
   do {
-    std::cout << "Gebe Zahl 1 ein: ";
+    std::cout << "Gebe deine erste Zahl ein: ";
     std::cin >> zahl1;
-    std::cout << "Gebe Zahl 2 ein: ";
+    std::cout << "Gebe deine zweite Zahl ein: ";
     std::cin >> zahl2;
 
-    std::cout << "Wähle eine Option aus." << std::endl
-              << "1) Plus" << std::endl
-              << "2) Minus" << std::endl
-              << "3) Multiplikation" << std::endl
-              << "4) Division" << std::endl;
+    do {
+      std::cout << "Wähle eine Option aus:\n"
+                   "1) Plus\n"
+                   "2) Minus\n"
+                   "3) Multiplikation\n"
+                   "4) Division\n";
+      std::cin >> grundrechenart;
 
-    std::cin >> grundrechenart;
+      switch (grundrechenart) {
+      case 1:
+        ergebnis = zahl1 + zahl2;
+        std::cout << "Ergebnis: " << ergebnis << '\n';
+        break;
+      case 2:
+        ergebnis = zahl1 - zahl2;
+        std::cout << "Ergebnis: " << ergebnis << '\n';
+        break;
+      case 3:
+        ergebnis = zahl1 * zahl2;
+        std::cout << "Ergebnis: " << ergebnis << '\n';
+        break;
+      case 4:
+        ergebnis = zahl1 / zahl2;
+        std::cout << "Ergebnis: " << ergebnis << '\n';
+        break;
+      default:
+        break;
+      }
+    } while (grundrechenart < 1 || grundrechenart > 4);
 
-    switch (grundrechenart) {
-    case 1:
-      summe = zahl1 + zahl2;
-      std::cout << " Ergebnis: " << summe << std::endl;
-      break;
-    case 2:
-      summe = zahl1 - zahl2;
-      std::cout << " Ergebnis: " << summe << std::endl;
-      break;
-    case 3:
-      summe = zahl1 * zahl2;
-      std::cout << " Ergebnis: " << summe << std::endl;
-      break;
-    case 4:
-      summe = zahl1 / zahl2;
-      std::cout << "Ergebnis: " << summe << std::endl;
-      break;
-    default:
-      std::cout << "Wähle eine Option aus";
-    }
-
-    std::cout << "Möchtest du eine weitere Rechnung durchführen?" << std::endl
-              << "1) Ja" << std::endl
-              << "2) Nein" << std::endl;
+    std::cout << "Möchtest du eine weitere Rechnung durchführen? (J/N)\n";
     std::cin >> wiederholung;
-  } while (wiederholung == 1);
+  } while (wiederholung == 'J' || wiederholung == 'j');
 
   return 0;
 }
