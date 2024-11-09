@@ -5,7 +5,6 @@
 #include <cmath>
 #include <iostream>
 
-
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
