@@ -7,16 +7,16 @@
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  int num1;
-  int num2;
+  int number1;
+  int number2;
   int result = 0;
 
   std::cout << "Enter the first number: ";
-  std::cin >> num1;
+  std::cin >> number1;
   std::cout << "Enter the second number: ";
-  std::cin >> num2;
+  std::cin >> number2;
 
-  for (int i = num1; i <= num2; i++) {
+  for (int i = number1; i <= number2; i++) {
     result += i;
   }
 
