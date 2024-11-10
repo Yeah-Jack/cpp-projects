@@ -9,6 +9,7 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   short month;
+  int year;
 
   do {
     std::cout << "Enter a month number (1-12): ";
@@ -17,7 +18,13 @@ int main() {
     if (month < 1 || month > 12) {
       std::cout << "Invalid month. Please enter a number between 1 and 12.\n";
     } else if (month == 2) {
-      std::cout << "The month has 28 or 29 days.\n";
+      std::cout << "Enter a year: ";
+      std::cin >> year;
+      if (year % 4 == 0) {
+        std::cout << "The month has 29 days.\n";
+      } else {
+        std::cout << "The month has 28 days.\n";
+      }
     } else if (month == 4 || month == 6 || month == 9 || month == 11) {
       std::cout << "The month has 30 days.\n";
     } else {
