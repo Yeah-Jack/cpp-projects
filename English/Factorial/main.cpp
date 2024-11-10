@@ -1,4 +1,4 @@
-// Design and create a program that calculates the factorial.
+// Create a program that calculates the factorial.
 // Example: 5! (5 factorial) = 1 * 2 * 3 * 4 * 5 = 120.
 
 #include <iostream>

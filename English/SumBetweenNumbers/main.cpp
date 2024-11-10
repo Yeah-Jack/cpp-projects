@@ -1,6 +1,5 @@
-// Design and create a program that enters two numbers and then calculates the
-// sum of all numbers that lie between the limits. The input should be in
-// ascending order.
+// Create a program that enters two numbers and then calculates the sum of all
+// numbers that lie between the limits. The input should be in ascending order.
 
 #include <iostream>
 #include <windows.h>

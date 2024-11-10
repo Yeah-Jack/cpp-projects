@@ -1,9 +1,8 @@
-// Design and create a program that calculates a vertical throw, a horizontal
-// throw, or a combination of both (oblique throw) according to the user's
-// selection and outputs the result. The user should select the type of
-// calculation (vertical, horizontal, or both (oblique throw)). Only the desired
-// calculation is then performed. The input and output should only be present
-// once in the program.
+// Create a program that calculates a vertical throw, a horizontal throw, or a
+// combination of both (oblique throw) according to the user's selection and
+// outputs the result. The user should select the type of calculation (vertical,
+// horizontal, or both (oblique throw)). Only the desired calculation is then
+// performed. The input and output should only be present once in the program.
 
 #include <iostream>
 #include <windows.h>
