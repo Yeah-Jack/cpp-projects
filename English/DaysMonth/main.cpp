@@ -11,31 +11,19 @@ int main() {
   short month;
 
   do {
-    std::cout << "Enter in a month number (1 - 12): ";
+    std::cout << "Enter a month number (1-12): ";
     std::cin >> month;
 
-    switch (month) {
-    case 1:
-    case 3:
-    case 5:
-    case 7:
-    case 8:
-    case 10:
-    case 12:
-      std::cout << "The month has 31 days.\n";
-      break;
-    case 4:
-    case 6:
-    case 9:
-    case 11:
-      std::cout << "The month has 30 days.\n";
-      break;
-    case 2:
+    if (month < 1 || month > 12) {
+      std::cout << "Invalid month. Please enter a number between 1 and 12.\n";
+    } else if (month == 2) {
       std::cout << "The month has 28 or 29 days.\n";
-      break;
-    default:
-      break;
+    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+      std::cout << "The month has 30 days.\n";
+    } else {
+      std::cout << "The month has 31 days.\n";
     }
+
   } while (month < 1 || month > 12);
 
   return 0;
