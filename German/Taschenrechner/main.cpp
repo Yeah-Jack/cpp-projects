@@ -25,10 +25,10 @@ int main() {
 
     do {
       std::cout << "Wähle eine Option aus:\n"
-                   "1) Plus\n"
-                   "2) Minus\n"
-                   "3) Multiplikation\n"
-                   "4) Division\n";
+                << "1) Plus\n"
+                << "2) Minus\n"
+                << "3) Multiplikation\n"
+                << "4) Division\n";
       std::cin >> grundrechenart;
 
       switch (grundrechenart) {
