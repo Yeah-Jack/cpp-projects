@@ -31,34 +31,23 @@ int main() {
       break;
     }
   }
-  std::cout << "Thanks for playing!" << std::endl;
+  std::cout << "Thanks for playing!\n";
   return 0;
 }
 
 void drawBoard(const std::array<char, 9> &spaces) {
-  std::cout << std::endl;
-  std::cout << "     |     |     " << std::endl;
-  ;
-  std::cout << "  " << spaces[0] << "  |  " << spaces[1] << "  |  " << spaces[2]
-            << "  " << std::endl;
-  ;
-  std::cout << "_____|_____|_____" << std::endl;
-  ;
-  std::cout << "     |     |     " << std::endl;
-  ;
-  std::cout << "  " << spaces[3] << "  |  " << spaces[4] << "  |  " << spaces[5]
-            << "  " << std::endl;
-  ;
-  std::cout << "_____|_____|_____" << std::endl;
-  ;
-  std::cout << "     |     |     " << std::endl;
-  ;
-  std::cout << "  " << spaces[6] << "  |  " << spaces[7] << "  |  " << spaces[8]
-            << "  " << std::endl;
-  ;
-  std::cout << "     |     |     " << std::endl;
-  ;
-  std::cout << std::endl;
+  std::cout << "\n     |     |     \n"
+            << "  " << spaces[0] << "  |  " << spaces[1] << "  |  " << spaces[2]
+            << "  \n"
+            << "_____|_____|_____\n"
+            << "     |     |     \n"
+            << "  " << spaces[3] << "  |  " << spaces[4] << "  |  " << spaces[5]
+            << "  \n"
+            << "_____|_____|_____\n"
+            << "     |     |     \n"
+            << "  " << spaces[6] << "  |  " << spaces[7] << "  |  " << spaces[8]
+            << "  \n"
+            << "     |     |     \n\n";
 }
 
 void playerMove(std::array<char, 9> &spaces, char player) {
@@ -105,9 +94,9 @@ bool checkWinner(const std::array<char, 9> &spaces, char player,
     if (spaces[combo[0]] != ' ' && spaces[combo[0]] == spaces[combo[1]] &&
         spaces[combo[1]] == spaces[combo[2]]) {
       if (spaces[combo[0]] == player) {
-        std::cout << "YOU WIN!" << std::endl;
+        std::cout << "YOU WIN!\n";
       } else {
-        std::cout << "YOU LOSE!" << std::endl;
+        std::cout << "YOU LOSE!\n";
       }
       return true;
     }
@@ -121,6 +110,6 @@ bool checkTie(const std::array<char, 9> &spaces) {
       return false;
     }
   }
-  std::cout << "IT'S A TIE!" << std::endl;
+  std::cout << "IT'S A TIE!\n";
   return true;
 }

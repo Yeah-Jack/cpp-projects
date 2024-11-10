@@ -12,11 +12,11 @@ int main() {
   char computerChoice;
 
   do {
-    std::cout << "Rock-Paper-Scissors Game!" << std::endl
-              << "Choose one of the following" << std::endl
-              << "'r' for rock" << std::endl
-              << "'p' for paper" << std::endl
-              << "'s' for scissors" << std::endl;
+    std::cout << "Rock-Paper-Scissors Game!\n"
+              << "Choose one of the following\n"
+              << "'r' for rock\n"
+              << "'p' for paper\n"
+              << "'s' for scissors\n";
     std::cin >> player;
   } while (player != 'r' && player != 'p' && player != 's');
 
@@ -51,28 +51,28 @@ int main() {
 void showChoice(char choice) {
   switch (choice) {
   case 'r':
-    std::cout << "Rock" << std::endl;
+    std::cout << "Rock\n";
     break;
   case 'p':
-    std::cout << "Paper" << std::endl;
+    std::cout << "Paper\n";
     break;
   case 's':
-    std::cout << "Scissors" << std::endl;
+    std::cout << "Scissors\n";
     break;
   default:
-    std::cout << "Invalid choice" << std::endl;
+    std::cout << "Invalid choice\n";
     break;
   }
 }
 
 void chooseWinner(char player, char computer) {
   if (player == computer) {
-    std::cout << "It's a tie!" << std::endl;
+    std::cout << "It's a tie!\n";
   } else if ((player == 'r' && computer == 's') ||
              (player == 'p' && computer == 'r') ||
              (player == 's' && computer == 'p')) {
-    std::cout << "You win!" << std::endl;
+    std::cout << "You win!\n";
   } else {
-    std::cout << "You lose!" << std::endl;
+    std::cout << "You lose!\n";
   }
 }

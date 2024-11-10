@@ -8,7 +8,7 @@
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  int number;
+  long number;
 
   std::cout << "Enter a number: ";
   std::cin >> number;
