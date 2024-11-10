@@ -3,9 +3,9 @@
 // he wants to calculate, then the necessary the necessary lengths should be
 // queried.
 
-#include <Windows.h>
 #include <cmath>
 #include <iostream>
+#include <windows.h>
 
 short displayMenu(short &choice);
 double calculateCube(double &length, double &volume, double &surfaceArea);

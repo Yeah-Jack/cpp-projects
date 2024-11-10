@@ -6,8 +6,8 @@
 // time has the coffee reached approximately (tolerance 2 °C) the room
 // temperature?
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

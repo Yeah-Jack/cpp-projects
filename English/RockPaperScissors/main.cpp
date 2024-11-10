@@ -1,6 +1,6 @@
-#include <Windows.h>
 #include <iostream>
 #include <random>
+#include <windows.h>
 
 void showChoice(char choice);
 void chooseWinner(char player, char computer);

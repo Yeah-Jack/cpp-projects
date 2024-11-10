@@ -6,8 +6,8 @@
 // abfragt und anschließend eine Prüfung vornimmt, ob man zugelassen wird und
 // Ihnen das ausgibt.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

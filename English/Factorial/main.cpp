@@ -1,8 +1,8 @@
 // Design and create a program that calculates the factorial.
 // Example: 5! (5 factorial) = 1 * 2 * 3 * 4 * 5 = 120.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 long factorialIterative(long num);
 // long factorialRecursive(long num);

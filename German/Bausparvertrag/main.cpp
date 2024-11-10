@@ -5,8 +5,8 @@
 // ein Programm, das die Höhe der Prämie berechnet. Es soll die Sparleistung,
 // den Familienstand und die Anzahl der Kinder berücksichtigen.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

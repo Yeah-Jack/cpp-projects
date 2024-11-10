@@ -3,8 +3,8 @@
 // je 10 Cent. Entwerfen und entwickeln Sie ein Programm, das die Gebühren nach
 // Eingabe der Buchungsanzahl berechnet.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

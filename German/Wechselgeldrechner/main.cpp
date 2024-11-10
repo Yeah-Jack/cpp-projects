@@ -3,8 +3,8 @@
 // den gegebenen Betrag an, das Programm berechnet das Rückgeld und die Anzahl
 // der Münzen. Es soll möglichst wenige Münzen ausgeben.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

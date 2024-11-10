@@ -2,8 +2,8 @@
 // sum of all numbers that lie between the limits. The input should be in
 // ascending order.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

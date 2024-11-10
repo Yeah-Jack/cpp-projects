@@ -6,8 +6,8 @@
 // werden, die Anzahl als Ganzzahl. Geben Sie die Summe mit und ohne
 // Mehrwertsteuer aus. Verwenden Sie für alle Artikel den vollen Steuersatz.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

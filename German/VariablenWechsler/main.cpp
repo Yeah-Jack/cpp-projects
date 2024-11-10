@@ -2,8 +2,8 @@
 // Buchstaben) einließt. Das Programm soll die Inhalte der internen Variablen
 // vertauschen und dann die Werte ausgeben.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

@@ -1,8 +1,8 @@
 // Erstellen Sie ein Programm, dass Notenpunkte in Schulnoten übersetzt.
 
-#include <Windows.h>
 #include <iostream>
 #include <vector>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

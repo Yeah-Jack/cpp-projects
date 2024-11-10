@@ -1,9 +1,9 @@
 // Create a program that calculates all prime factors of a number.
 // Prime factors are divisors of the number that are also prime numbers.
 
-#include <Windows.h>
 #include <cmath>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

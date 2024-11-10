@@ -5,8 +5,8 @@
 // werden, ob er noch eine Rechnung machen will, wenn ja soll das Programm
 // erneut beginnen. Verwenden Sie eine Schleife (while oder do – while).
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

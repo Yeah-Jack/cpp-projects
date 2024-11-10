@@ -5,8 +5,8 @@
 // calculation is then performed. The input and output should only be present
 // once in the program.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

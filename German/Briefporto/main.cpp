@@ -2,8 +2,8 @@
 // Tabelle der deutschen Post) angibt. Der Versand soll innerhab Deutschland
 // erfolgen (nicht international).
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);

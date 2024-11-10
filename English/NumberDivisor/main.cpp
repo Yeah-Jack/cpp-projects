@@ -1,7 +1,7 @@
 // Create a program that calculates all divisors of a number.
 
-#include <Windows.h>
 #include <iostream>
+#include <windows.h>
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
