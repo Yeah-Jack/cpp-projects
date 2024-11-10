@@ -12,10 +12,11 @@
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  double coffeeTemperature = 85.0;
   const double ROOMTEMPATURE = 20.0;
   const double CHANGERATE = 0.10;
   const double TOLERANCE = 2.0;
+
+  double coffeeTemperature = 85.0;
   int minutes = 0;
 
   while ((coffeeTemperature - ROOMTEMPATURE) > TOLERANCE) {
@@ -27,8 +28,8 @@ int main() {
   }
 
   std::cout
-      << "The coffee temperature is approximately the room temperature after "
-      << minutes << " minutes.\n";
+      << "The coffee temperature is approximately the room temperature at "
+      << coffeeTemperature << "°C after " << minutes << " minutes.\n";
 
   return 0;
 }
