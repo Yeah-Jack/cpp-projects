@@ -11,8 +11,8 @@ int main() {
   short first = dist(rd);
   short second = dist(rd);
 
-  std::cout << "First dice: " << first << std::endl
-            << "Second dice: " << second << std::endl;
+  std::cout << "First dice: " << first << '\n'
+            << "Second dice: " << second << '\n';
 
   return 0;
 }

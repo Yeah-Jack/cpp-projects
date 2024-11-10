@@ -23,41 +23,40 @@ int main() {
   double Luftdruck;
 
   std::cout
-      << "Gebe die Windrichtung ein (1=Norden, 2=Osten, 3=Süden, 4=Westen)"
-      << std::endl;
+      << "Gebe die Windrichtung ein (1=Norden, 2=Osten, 3=Süden, 4=Westen): ";
   std::cin >> Windrichtung;
 
-  std::cout << "Gebe den Luftdruck in hPa ein:" << std::endl;
+  std::cout << "Gebe den Luftdruck in hPa ein: ";
   std::cin >> Luftdruck;
 
   if (Luftdruck <= 1010) {
     switch (Windrichtung) {
     case 1:
-      std::cout << "Das Wetter im Norden ist veränderlich." << std::endl;
+      std::cout << "Das Wetter im Norden ist veränderlich.\n";
       break;
     case 2:
-      std::cout << "Das Wetter im Osten ist veränderlich." << std::endl;
+      std::cout << "Das Wetter im Osten ist veränderlich.\n";
       break;
     case 3:
-      std::cout << "Das Wetter im Süden ist veränderlich." << std::endl;
+      std::cout << "Das Wetter im Süden ist veränderlich.\n";
       break;
     case 4:
-      std::cout << "Das Wetter im Westen ist regnerisch." << std::endl;
+      std::cout << "Das Wetter im Westen ist regnerisch.\n";
       break;
     }
   } else if (Luftdruck > 1010) {
     switch (Windrichtung) {
     case 1:
-      std::cout << "Das Wetter im Norden ist gut." << std::endl;
+      std::cout << "Das Wetter im Norden ist gut.\n";
       break;
     case 2:
-      std::cout << "Das Wetter im Osten ist gut." << std::endl;
+      std::cout << "Das Wetter im Osten ist gut.\n";
       break;
     case 3:
-      std::cout << "Das Wetter im Süden ist gut." << std::endl;
+      std::cout << "Das Wetter im Süden ist gut.\n";
       break;
     case 4:
-      std::cout << "Das Wetter im Westen ist veränderlich." << std::endl;
+      std::cout << "Das Wetter im Westen ist veränderlich.\n";
       break;
     }
   }

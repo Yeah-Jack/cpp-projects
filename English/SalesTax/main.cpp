@@ -12,10 +12,10 @@ int main() {
   double after_county_tax = sales * county_tax;
   double total_tax = after_state_tax + after_county_tax;
 
-  std::cout << "Sales: $" << sales << std::endl
-            << "After State Tax: $" << after_state_tax << std::endl
-            << "After County Tax: $" << after_county_tax << std::endl
-            << "Total Tax: $" << total_tax << std::endl;
+  std::cout << "Sales: $" << sales << '\n'
+            << "After State Tax: $" << after_state_tax << '\n'
+            << "After County Tax: $" << after_county_tax << '\n'
+            << "Total Tax: $" << total_tax << '\n';
 
   return 0;
 }

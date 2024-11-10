@@ -39,39 +39,39 @@ int main() {
 
   rueckgeld = gegebenerBetrag - zuZahlenderBetrag;
 
-  std::cout << "Das Rückgeld beträgt: " << rueckgeld << "€." << std::endl;
+  std::cout << "Das Rückgeld beträgt: " << rueckgeld << "€.\n";
 
   anzahlZweiEuro = rueckgeld / zweiEuro;
   rueckgeld -= anzahlZweiEuro * zweiEuro;
-  std::cout << "Anzahl 2€ Münzen: " << anzahlZweiEuro << std::endl;
+  std::cout << "Anzahl 2€ Münzen: " << anzahlZweiEuro << '\n';
 
   anzahlEinEuro = rueckgeld / einEuro;
   rueckgeld -= anzahlEinEuro * einEuro;
-  std::cout << "Anzahl 1€ Münzen: " << anzahlEinEuro << std::endl;
+  std::cout << "Anzahl 1€ Münzen: " << anzahlEinEuro << '\n';
 
   anzahlFuenfzigCent = rueckgeld / fuenfzigCent;
   rueckgeld -= anzahlFuenfzigCent * fuenfzigCent;
-  std::cout << "Anzahl 50c Münzen: " << anzahlFuenfzigCent << std::endl;
+  std::cout << "Anzahl 50c Münzen: " << anzahlFuenfzigCent << '\n';
 
   anzahlZwanzigCent = rueckgeld / zwanzigCent;
   rueckgeld -= anzahlZwanzigCent * zwanzigCent;
-  std::cout << "Anzahl 20c Münzen: " << anzahlZwanzigCent << std::endl;
+  std::cout << "Anzahl 20c Münzen: " << anzahlZwanzigCent << '\n';
 
   anzahlZehnCent = rueckgeld / zehnCent;
   rueckgeld -= anzahlZehnCent * zehnCent;
-  std::cout << "Anzahl 10c Münzen: " << anzahlZehnCent << std::endl;
+  std::cout << "Anzahl 10c Münzen: " << anzahlZehnCent << '\n';
 
   anzahlFuenfCent = rueckgeld / fuenfCent;
   rueckgeld -= anzahlFuenfCent * fuenfCent;
-  std::cout << "Anzahl 5c Münzen: " << anzahlFuenfCent << std::endl;
+  std::cout << "Anzahl 5c Münzen: " << anzahlFuenfCent << '\n';
 
   anzahlZweiCent = rueckgeld / zweiCent;
   rueckgeld -= anzahlZweiCent * zweiCent;
-  std::cout << "Anzahl 2c Münzen: " << anzahlZweiCent << std::endl;
+  std::cout << "Anzahl 2c Münzen: " << anzahlZweiCent << '\n';
 
   anzahlEinCent = rueckgeld / einCent;
   rueckgeld -= anzahlEinCent * einCent;
-  std::cout << "Anzahl 1c Münzen: " << anzahlEinCent << std::endl;
+  std::cout << "Anzahl 1c Münzen: " << anzahlEinCent << '\n';
 
   return 0;
 }

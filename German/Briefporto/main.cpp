@@ -54,24 +54,24 @@ int main() {
       laengeUser <= laengeStandardbrief && breiteUser <= breiteStandardbrief &&
       hoeheUser <= hoeheStandardbrief) {
     std::cout << "Dein Brief ist ein Standardbrief und kostet "
-              << preisStandardbrief << "€." << std::endl;
+              << preisStandardbrief << "€.\n";
   } else if (gewichtUser <= gewichtKompaktbrief &&
              laengeUser <= laengeKompaktbrief &&
              breiteUser <= breiteKompaktbrief &&
              hoeheUser <= hoeheKompaktbrief) {
     std::cout << "Dein Brief ist ein Kompaktbrief und kostet "
-              << preisKompaktbrief << "€." << std::endl;
+              << preisKompaktbrief << "€.\n";
   } else if (gewichtUser <= gewichtGrossbrief &&
              laengeUser <= laengeGrossbrief && breiteUser <= breiteGrossbrief &&
              hoeheUser <= hoeheGrossbrief) {
     std::cout << "Dein Brief ist ein Großbrief und kostet " << preisGrossbrief
-              << "€." << std::endl;
+              << "€.\n";
   } else if (gewichtUser <= gewichtMaxibrief && laengeUser <= laengeMaxibrief &&
              breiteUser <= breiteMaxibrief && hoeheUser <= hoeheMaxibrief) {
     std::cout << "Dein Brief ist ein Maxibrief und kostet " << preisMaxibrief
-              << "€." << std::endl;
+              << "€.\n";
   } else {
-    std::cout << "Dein Brief ist zu groß oder zu schwer." << std::endl;
+    std::cout << "Dein Brief ist zu groß oder zu schwer.\n";
   }
 
   return 0;

@@ -23,7 +23,7 @@ int main() {
     for (int j = 0; j < columns; j++) {
       std::cout << text;
     }
-    std::cout << std::endl;
+    std::cout << '\n';
   }
 
   return 0;

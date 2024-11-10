@@ -22,11 +22,10 @@ int main() {
   if (Sparleistung > 800) {
     Sparleistung = 800;
     std::cout << "Der Maximalsparbetrag beträgt 800€ und wurde deshalb auf "
-                 "800€ runtergesetzt."
-              << std::endl;
+                 "800€ runtergesetzt.\n";
   }
 
-  std::cout << "Sind Sie verheiratet? (1 = Ja, 0 = Nein)" << std::endl;
+  std::cout << "Sind Sie verheiratet? (1 = Ja, 0 = Nein)\n";
   std::cin >> Verheiratet;
 
   if (Verheiratet == 1) {
@@ -35,12 +34,12 @@ int main() {
     Prämie = Sparleistung * 0.14;
   }
 
-  std::cout << "Wie viele Kinder haben Sie?" << std::endl;
+  std::cout << "Wie viele Kinder haben Sie?\n";
   std::cin >> Kinder;
 
   Prämie += Kinder * 0.02 * Sparleistung;
 
-  std::cout << "Deine Prämie ist: " << Prämie << "€" << std::endl;
+  std::cout << "Deine Prämie ist: " << Prämie << "€\n";
 
   return 0;
 }
