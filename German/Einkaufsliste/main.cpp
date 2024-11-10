@@ -18,10 +18,10 @@ int main() {
   const double milchPreis = 1.09;
   const double steuer = 0.07;
 
-  int bananeAnzahl;
-  int apfelAnzahl;
-  int brotAnzahl;
-  int milchAnzahl;
+  short bananeAnzahl;
+  short apfelAnzahl;
+  short brotAnzahl;
+  short milchAnzahl;
 
   std::cout << "Wie viele Bananen möchten Sie kaufen? ";
   std::cin >> bananeAnzahl;
@@ -29,7 +29,7 @@ int main() {
   std::cin >> apfelAnzahl;
   std::cout << "Wie viele Brote möchten Sie kaufen? ";
   std::cin >> brotAnzahl;
-  std::cout << "Wie viele Milch möchten Sie kaufen? ";
+  std::cout << "Wie viel Milch möchten Sie kaufen? ";
   std::cin >> milchAnzahl;
 
   double gesamtKosten = (bananeAnzahl * bananePreis) +
@@ -38,10 +38,10 @@ int main() {
 
   double steuerBetrag = gesamtKosten * steuer;
 
-  std::cout << "Die Gesamtkosten mit Steuer betragen: "
-            << (gesamtKosten + steuerBetrag) << " Euro" << std::endl
-            << "Die Gesamtkosten ohne Steuer betragen: " << gesamtKosten
-            << " Euro" << std::endl;
+  std::cout << "Die Gesamtkosten ohne Steuer betragen: " << gesamtKosten
+            << "€\n"
+            << "Die Gesamtkosten mit Steuer betragen: "
+            << (gesamtKosten + steuerBetrag) << "€\n";
 
   return 0;
 }
