@@ -97,7 +97,7 @@ double calculateCuboid(double &length, double &width, double &height,
   std::cin >> height;
 
   volume = length * width * height;
-  surfaceArea = 2 * (length * width + length * height + width * height);
+  surfaceArea = 2 * length * width + length * height + width * height;
 
   return 0;
 }
@@ -113,8 +113,8 @@ double calculatePyramid(double &length, double &width, double &height,
 
   volume = length * width * height / 3;
   surfaceArea = length * width +
-                length * sqrt((width / 2) * (width / 2) + height * height) +
-                width * sqrt((length / 2) * (length / 2) + height * height);
+                length * sqrt(width / 2 * width / 2 + height * height) +
+                width * sqrt(length / 2 * length / 2 + height * height);
 
   return 0;
 }
@@ -137,7 +137,7 @@ double calculateSphere(double &radius, double &volume, double &surfaceArea,
   std::cout << "Enter the radius of the sphere: ";
   std::cin >> radius;
 
-  volume = (4.0 / 3.0) * PI * radius * radius * radius;
+  volume = 4.0 / 3.0 * PI * radius * radius * radius;
   surfaceArea = 4 * PI * radius * radius;
 
   return 0;
