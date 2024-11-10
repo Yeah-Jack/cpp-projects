@@ -1,6 +1,7 @@
 #include <array>
 #include <iostream>
 #include <string>
+#include <windows.h>
 
 const int MAX_FAMILY_MEMBERS = 5;
 
@@ -23,6 +24,8 @@ void updateFamilyMember(Family &family, int index, int newAge, double newHeight,
                         double newWeight);
 
 int main() {
+  SetConsoleOutputCP(CP_UTF8);
+
   Family myFamily = {std::array<Person, MAX_FAMILY_MEMBERS>{}, 0};
 
   Person person1 = {"John Doe", 40, 1.80, 80.0};
