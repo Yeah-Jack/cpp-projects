@@ -1,4 +1,4 @@
-// Entwerfen und erstellen Sie ein Programm, dass das Porto für Briefe (laut
+// Erstellen Sie ein Programm, dass das Porto für Briefe (laut
 // Tabelle der deutschen Post) angibt. Der Versand soll innerhab Deutschland
 // erfolgen (nicht international).
 

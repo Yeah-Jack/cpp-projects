@@ -1,4 +1,4 @@
-// Entwerfen und erstellen Sie in Programm für eine einfache Einkaufliste. Der
+// Erstellen Sie in Programm für eine einfache Einkaufliste. Der
 // Benutzer soll die Anzahl von vier verschiedenen Artikeln eingeben. Das
 // Programm soll anschließend die Rechnung erstellen (Summe aller Positionen).
 // Die Preise legen Sie im Programm fest, Sie können optional auch Bezeichnungen

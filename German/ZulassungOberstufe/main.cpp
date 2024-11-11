@@ -2,7 +2,7 @@
 // Hauptfach unter 5 Punkte (Note 4) hat, kann das ausgleichen. Entweder mit
 // einem Hauptfach mit min. 10 Punkte (Note 2) oder zwei Hauptfächern mit min. 7
 // Punkten (Note 3). Eine Note unter 5 Punkte im Schwerpunkthauptfach kann man
-// nicht ausgleichen. Entwerfen und erstellen Sie ein Programm, das die Noten
+// nicht ausgleichen. Erstellen Sie ein Programm, das die Noten
 // abfragt und anschließend eine Prüfung vornimmt, ob man zugelassen wird und
 // Ihnen das ausgibt.
 

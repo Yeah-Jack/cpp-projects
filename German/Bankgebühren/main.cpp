@@ -1,6 +1,6 @@
 // Die Sparbank hat ein neues Gebührenmodell erstellt: Die ersten 10 Buchungen
 // im Monat sind kostenfrei, Buchung 11 bis 20 kosten je 15 Cent, alle weiteren
-// je 10 Cent. Entwerfen und entwickeln Sie ein Programm, das die Gebühren nach
+// je 10 Cent. Erstellen Sie ein Programm, das die Gebühren nach
 // Eingabe der Buchungsanzahl berechnet.
 
 #include <iostream>

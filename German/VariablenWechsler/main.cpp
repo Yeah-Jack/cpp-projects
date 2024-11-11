@@ -1,4 +1,4 @@
-// Entwerfen und erstellen Sie ein Programm, das zwei Werte (z.B. Zahlen oder
+// Erstellen Sie ein Programm, das zwei Werte (z.B. Zahlen oder
 // Buchstaben) einließt. Das Programm soll die Inhalte der internen Variablen
 // vertauschen und dann die Werte ausgeben.
 

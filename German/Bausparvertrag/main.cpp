@@ -1,4 +1,4 @@
-// Entwerfen und erstellen Sie ein Programm, das die Bausparprämie berechnet.
+// Erstellen Sie ein Programm, das die Bausparprämie berechnet.
 // Bei einer Sparleistung von max. 800€ pro Jahr erhält ein Lediger eine Prämie
 // von 14% der Sparleistung. Verheiratete erhalten je die Hälfte. Für jedes
 // Kinder wird eine Prämie von 2% (Punkten) zusätzlich gewährt. Erstellen Sie

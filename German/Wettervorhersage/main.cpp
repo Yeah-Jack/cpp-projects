@@ -1,7 +1,7 @@
 // Bei der Wettervorhersage betrachten wir ein einfaches Modell für Rhein­Main.
 // Bei westlichem Wind kommt häufiger Regen, bei Ostwind seltener. Wenn der
 // Luftdruck hoch ist, ist das Wetter meist besser, als bei niedrigem Luftdruck.
-// Entwerfen und erstellen sie ein Programm, das die Windrichtung und den
+// Erstellen sie ein Programm, das die Windrichtung und den
 // Luftdruck abfragt und daraus eine Prognose erstellt. Für die Windrichtungen
 // verwenden Sie folgenden Schlüssel: 1 = West, 2 = Nord, 3 = Ost, 4 = Süd. Den
 // Luftdruck soll der Benutzer in hPa (ohne Einheitsangabe) eingeben.
