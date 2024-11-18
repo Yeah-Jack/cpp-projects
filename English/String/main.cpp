@@ -5,11 +5,15 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   std::string str;
+  char search;
 
-  std::cout << "Gebe einen Text ein: ";
+  std::cout << "Enter a text: ";
   std::getline(std::cin, str);
 
-  std::cout << "Dein Text ist: " << str << '\n';
+  std::cout << "Enter a character to search: ";
+  std::cin >> search;
+  
+  std::cout << "Your text ist " << str << " and the character " << search << " is at character " << str.find(search)+1 << ".\n";
 
   return 0;
 }
