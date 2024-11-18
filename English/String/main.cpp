@@ -12,8 +12,9 @@ int main() {
 
   std::cout << "Enter a character to search: ";
   std::cin >> search;
-  
-  std::cout << "Your text ist " << str << " and the character " << search << " is at character " << str.find(search)+1 << ".\n";
+
+  std::cout << "Your text ist " << str << " and the character " << search
+            << " is at character " << str.find(search) + 1 << ".\n";
 
   return 0;
 }
