@@ -8,7 +8,7 @@ int main() {
 
   std::cout << "Gebe einen Text ein: ";
   std::getline(std::cin, str);
-  
+
   std::cout << "Dein Text ist: " << str << '\n';
 
   return 0;
