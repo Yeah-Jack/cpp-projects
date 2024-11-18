@@ -7,9 +7,9 @@ int main() {
   std::string str;
 
   std::cout << "Gebe einen Text ein: ";
-  std::cin >> str;
-
-  std::cout << "Dein Text ist: " << str << std::endl;
+  std::getline(std::cin, str);
+  
+  std::cout << "Dein Text ist: " << str << '\n';
 
   return 0;
 }
