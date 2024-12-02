@@ -16,7 +16,7 @@ git clone https://github.com/Yeah-Jack/cpp-projects.git
 cd cpp-projects/
 ```
 
-To execute a project, navigate to the project directory and compile the source code using the following commands:
+To execute a project, navigate to a project directory and compile the source code using the following commands:
 
 ```bash
 cd project-directory
