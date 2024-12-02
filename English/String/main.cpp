@@ -5,6 +5,7 @@ int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   std::string str;
+  size_t position;
   char search;
 
   std::cout << "Enter a text: ";
@@ -13,8 +14,16 @@ int main() {
   std::cout << "Enter a character to search: ";
   std::cin >> search;
 
-  std::cout << "Your text ist " << str << " and the character " << search
-            << " is at character " << str.find(search) + 1 << ".\n";
+  position = str.find(search);
+
+  std::cout << "Your text is " << str << " and the character " << search
+            << " is positioned at character: ";
+
+  while (position != std::string::npos) {
+    std::cout << position + 1 << ' ';
+    position = str.find(search, position + 1);
+  }
+  std::cout << '\n';
 
   return 0;
 }
