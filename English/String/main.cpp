@@ -1,3 +1,5 @@
+// Create a program that reads in a string. A character is then to be read in for searching. Display the position of the character you are looking for. If the character appears several times, all digits (separated by spaces) should be output.
+
 #include <iostream>
 #include <windows.h>
 
