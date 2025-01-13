@@ -4,6 +4,7 @@
 int menu(int &auswahl);
 void berechnung(int &auswahl, double &widerstand1, double &widerstand2,
                 double &widerstand3, double &ergebnis);
+void ausgabe(double &ergebnis);
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
@@ -43,7 +44,7 @@ void berechnung(int &auswahl, double &widerstand1, double &widerstand2,
     std::cout << "Bitte Wert für Widerstand 2 eingeben: ";
     std::cin >> widerstand2;
     ergebnis = widerstand1 + widerstand2;
-    std::cout << "Ergebnis der Reihenschaltung: " << ergebnis << "\n\n";
+    ausgabe(ergebnis);
     break;
   case 2:
     std::cout << "Bitte Wert für Widerstand 1 eingeben: ";
@@ -51,7 +52,7 @@ void berechnung(int &auswahl, double &widerstand1, double &widerstand2,
     std::cout << "Bitte Wert für Widerstand 2 eingeben: ";
     std::cin >> widerstand2;
     ergebnis = (widerstand1 * widerstand2) / (widerstand1 + widerstand2);
-    std::cout << "Ergebnis: " << ergebnis << "\n\n";
+    ausgabe(ergebnis);
     break;
   case 3:
     std::cout << "Bitte Wert für Widerstand 1 eingeben: ";
@@ -62,10 +63,14 @@ void berechnung(int &auswahl, double &widerstand1, double &widerstand2,
     std::cin >> widerstand3;
     ergebnis = widerstand1 + widerstand2;
     ergebnis = ergebnis + widerstand3;
-    std::cout << "Ergebnis der Reihenschaltung: " << ergebnis << "\n\n";
+    ausgabe(ergebnis);
     break;
   default:
     std::cout << "Fehler\n";
     break;
   }
+}
+
+void ausgabe(double &ergebnis) {
+  std::cout << "Ergebnis: " << ergebnis << "\n\n";
 }
