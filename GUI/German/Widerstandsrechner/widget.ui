@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <widget class="QDoubleSpinBox" name="widerstand1">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>160</y>
+     <width>62</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <double>10000.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="widerstand2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>200</y>
+     <width>62</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <double>10000.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="widerstand3">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>240</y>
+     <width>62</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <double>10000.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QLabel" name="widerstand1Label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>160</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Widerstand 1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="widerstand2Label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>200</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Widerstand 2</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="btnReihe2R">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>310</y>
+     <width>110</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reihenschaltung
+2 Widerstände</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="btnParallel2R">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>310</y>
+     <width>110</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Parallelschaltung
+2 Widerstände</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="btnReihe3R">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>310</y>
+     <width>110</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reihenschaltung
+3 Widerstände</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="berechnen">
+   <property name="geometry">
+    <rect>
+     <x>355</x>
+     <y>380</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Berechnen</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="ergebnis">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>420</y>
+     <width>64</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="widerstand3Label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>240</y>
+     <width>81</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Widerstand 3</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
