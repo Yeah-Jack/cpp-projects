@@ -21,7 +21,6 @@ void Widget::on_calculate_clicked() {
 
   double totalCost = (bananaCount * bananaPrice) + (appleCount * applePrice) +
                      (breadCount * breadPrice) + (milkCount * milkPrice);
-
   ui->totalCost->setValue(totalCost);
 
   double taxAmount = totalCost * tax;
