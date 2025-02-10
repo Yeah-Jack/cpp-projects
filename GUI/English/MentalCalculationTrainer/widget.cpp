@@ -10,22 +10,22 @@ Widget::~Widget() { delete ui; }
 void Widget::on_calculate_clicked() {
   switch (ui->calculationType->currentIndex()) {
   case 0:
-      ui->result->display(ui->number1->value() + ui->number2->value());
-      break;
+    ui->result->display(ui->number1->value() + ui->number2->value());
+    break;
   case 1:
-      ui->result->display(ui->number1->value() - ui->number2->value());
-      break;
+    ui->result->display(ui->number1->value() - ui->number2->value());
+    break;
   case 2:
-      ui->result->display(ui->number1->value() * ui->number2->value());
-      break;
+    ui->result->display(ui->number1->value() * ui->number2->value());
+    break;
   case 3:
-      ui->result->display(ui->number1->value() / ui->number2->value());
-      break;
+    ui->result->display(ui->number1->value() / ui->number2->value());
+    break;
   }
 
   if (ui->userResult->value() == ui->result->value()) {
-      ui->user->setText("You're right");
+    ui->user->setText("You're right");
   } else {
-      ui->user->setText("You're wrong");
+    ui->user->setText("You're wrong");
   }
 }
