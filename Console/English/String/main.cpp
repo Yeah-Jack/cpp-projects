@@ -12,15 +12,17 @@
 
 void searchString();
 void insertString();
+void deleteString();
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   short choice;
   std::cout << "1) Search a character in a string\n";
   std::cout << "2) Insert a string in a string\n";
+  std::cout << "3) Delete a string\n";
   std::cout << "Enter your choice: ";
   std::cin >> choice;
-  std::cin.ignore(); // Clear the newline character from the input buffer
+  std::cin.ignore();
 
   switch (choice) {
   case 1:
@@ -28,6 +30,9 @@ int main() {
     break;
   case 2:
     insertString();
+    break;
+  case 3:
+    deleteString();
     break;
   }
 
@@ -68,11 +73,37 @@ void insertString() {
   std::cout << "Enter the second text: ";
   std::getline(std::cin, text2);
 
-  std::cout << "The second text has to be appended at character "
-            << text1.size()
-            << "\nAt which character do you want to insert the second text? ";
+  std::cout << "The second text has " << text1.size()
+            << " characters.\nAt which character do you want to insert the "
+               "second text? ";
   std::cin >> position;
+
+  if (position > text1.size()) {
+    std::cout << "Position is out of range. Inserting at the end instead.\n";
+    position = text1.size();
+  }
+
   text = text1;
   text.insert(position, text2);
   std::cout << "The new text is: " << text << '\n';
+}
+
+void deleteString() {
+  std::string text;
+  size_t position;
+
+  std::cout << "Enter the text: ";
+  std::getline(std::cin, text);
+
+  std::cout
+      << "The text has " << text.size()
+      << " characters.\nAt which character do you want to delete a character? ";
+  std::cin >> position;
+
+  if (position > 0 && position <= text.size()) {
+    text.erase(position - 1, 1);
+    std::cout << "The new text is: " << text << '\n';
+  } else {
+    std::cout << "Invalid position. No changes made.\n";
+  }
 }
