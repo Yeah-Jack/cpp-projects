@@ -9,24 +9,24 @@
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  std::string str;
+  std::string text;
   size_t position;
   char search;
 
   std::cout << "Enter a text: ";
-  std::getline(std::cin, str);
+  std::getline(std::cin, text);
 
   std::cout << "Enter a character to search: ";
   std::cin >> search;
 
-  position = str.find(search);
+  position = text.find(search);
 
-  std::cout << "Your text is " << str << " and the character " << search
+  std::cout << "Your text is \"" << text << "\" and the character " << search
             << " is positioned at character: ";
 
   while (position != std::string::npos) {
     std::cout << position + 1 << ' ';
-    position = str.find(search, position + 1);
+    position = text.find(search, position + 1);
   }
   std::cout << '\n';
 
