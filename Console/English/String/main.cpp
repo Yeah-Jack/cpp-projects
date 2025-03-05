@@ -7,6 +7,11 @@
 // read in. Finally, the position at which the text is to be inserted is to be
 // read in. text is to be inserted.
 
+// Create a program that reads in a string. The program should then read the
+// position at which the character is to be deleted. Extend the
+// program so that not only one character can be deleted. No more characters may
+// be deleted than are available.
+
 #include <iostream>
 #include <windows.h>
 
@@ -91,6 +96,7 @@ void insertString() {
 void deleteString() {
   std::string text;
   size_t position;
+  size_t characters;
 
   std::cout << "Enter the text: ";
   std::getline(std::cin, text);
@@ -99,9 +105,11 @@ void deleteString() {
       << "The text has " << text.size()
       << " characters.\nAt which character do you want to delete a character? ";
   std::cin >> position;
+  std::cout << "How many characters do you want to delete? ";
+  std::cin >> characters;
 
   if (position > 0 && position <= text.size()) {
-    text.erase(position - 1, 1);
+    text.erase(position - 1, characters);
     std::cout << "The new text is: " << text << '\n';
   } else {
     std::cout << "Invalid position. No changes made.\n";
