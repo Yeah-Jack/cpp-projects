@@ -3,7 +3,7 @@
 #include <string>
 #include <windows.h>
 
-const int MAX_FAMILY_MEMBERS = 5;
+const int maxFamilyMembers = 5;
 
 struct Person {
   std::string name;
@@ -13,7 +13,7 @@ struct Person {
 };
 
 struct Family {
-  std::array<Person, MAX_FAMILY_MEMBERS> members;
+  std::array<Person, maxFamilyMembers> members;
   int familySize;
 };
 
@@ -26,7 +26,7 @@ void updateFamilyMember(Family &family, int index, int newAge, double newHeight,
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
-  Family myFamily = {std::array<Person, MAX_FAMILY_MEMBERS>{}, 0};
+  Family myFamily = {std::array<Person, maxFamilyMembers>{}, 0};
 
   Person person1 = {"John Doe", 40, 1.80, 80.0};
   Person person2 = {"Jane Doe", 38, 1.65, 60.0};
@@ -65,7 +65,7 @@ void printPerson(const Person &person) {
 }
 
 void addFamilyMember(Family &family, const Person &newMember) {
-  if (family.familySize < MAX_FAMILY_MEMBERS) {
+  if (family.familySize < maxFamilyMembers) {
     family.members[family.familySize] = newMember;
     family.familySize++;
     std::cout << "Added " << newMember.name << " to the family.\n";
