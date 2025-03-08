@@ -4,6 +4,9 @@
 
 void PrintStudentData(int students[5][3]);
 double AverageGrades(int students[5][3]);
+int IncreaseAge(int (&students)[5][3], int &studentSelection, bool &success);
+void FilterGrades(int (&students)[5][3]);
+
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
@@ -11,12 +14,10 @@ int main() {
   std::uniform_int_distribution<short> age(18, 29);
   std::uniform_int_distribution<short> grade(0, 100);
 
-  // Declare a 2D array to store student data. The first column will store
-  // student IDs, the second column will store their ages, and the third will
-  // store their grades.
+  // The first column stores student IDs, the second column stores their ages,
+  // and the third stores their grades.
   int students[5][3];
 
-  // Initialize the array with some sample data.
   students[0][0] = 1;
   students[0][1] = age(random);
   students[0][2] = grade(random);
@@ -40,7 +41,24 @@ int main() {
   PrintStudentData(students);
 
   double average = AverageGrades(students);
-  std::cout << "Average grade: " << average << '\n';
+  std::cout << "\nAverage grade: " << average << '\n';
+
+  int studentSelection;
+  bool success;
+
+  std::cout << "Of which student do you want to increase the age? (1 - 5): ";
+  std::cin >> studentSelection;
+
+  success = IncreaseAge(students, studentSelection, success);
+  if (success && studentSelection >= 1 && studentSelection <= 5) {
+    std::cout << "The age of student " << studentSelection
+              << " has been increased to " << students[studentSelection - 1][1]
+              << ".\n\n";
+  } else {
+    std::cout << "Invalid student selection.\n\n";
+  }
+
+  FilterGrades(students);
 
   return 0;
 }
@@ -61,4 +79,35 @@ double AverageGrades(int students[5][3]) {
   average /= 5;
 
   return average;
+}
+
+int IncreaseAge(int (&students)[5][3], int &studentSelection, bool &success) {
+  if (studentSelection >= 1 && studentSelection <= 5) {
+    students[studentSelection - 1][1]++;
+    success = true;
+  }
+
+  return students[studentSelection - 1][1];
+}
+
+void FilterGrades(int (&students)[5][3]) {
+  int matchCount = 0;
+  for (int i = 0; i < 5; i++) {
+    if (students[i][2] >= 70) {
+      matchCount++;
+    }
+  }
+
+  if (matchCount != 0) {
+    std::cout
+        << "Students with grades better than 70:\nStudent ID\tAge\tGrade\n";
+    for (int i = 0; i < 5; i++) {
+      if (students[i][2] >= 70) {
+        std::cout << students[i][0] << "\t\t" << students[i][1] << '\t'
+                  << students[i][2] << '\n';
+      }
+    }
+  } else {
+    std::cout << "No students have a better or equal grade to 70.\n";
+  }
 }
