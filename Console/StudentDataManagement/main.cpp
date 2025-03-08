@@ -49,7 +49,7 @@ int main() {
   std::cout << "Of which student do you want to increase the age? (1 - 5): ";
   std::cin >> studentSelection;
 
-  success = IncreaseAge(students, studentSelection, success);
+  success = (IncreaseAge(students, studentSelection, success) != 0);
   if (success && studentSelection >= 1 && studentSelection <= 5) {
     std::cout << "The age of student " << studentSelection
               << " has been increased to " << students[studentSelection - 1][1]
