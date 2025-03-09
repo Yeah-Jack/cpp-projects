@@ -2,10 +2,10 @@
 #include <random>
 #include <windows.h>
 
-void PrintStudentData(int students[5][3]);
-double AverageGrades(int students[5][3]);
-int IncreaseAge(int (&students)[5][3], int &studentSelection, bool &success);
-void FilterGrades(int (&students)[5][3]);
+void printStudentData(int students[5][3]);
+double averageGrades(int students[5][3]);
+int increaseAge(int (&students)[5][3], int &studentSelection, bool &success);
+void filterGrades(int (&students)[5][3]);
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
@@ -38,9 +38,9 @@ int main() {
   students[4][1] = age(random);
   students[4][2] = grade(random);
 
-  PrintStudentData(students);
+  printStudentData(students);
 
-  double average = AverageGrades(students);
+  double average = averageGrades(students);
   std::cout << "\nAverage grade: " << average << '\n';
 
   int studentSelection;
@@ -49,7 +49,7 @@ int main() {
   std::cout << "Of which student do you want to increase the age? (1 - 5): ";
   std::cin >> studentSelection;
 
-  success = (IncreaseAge(students, studentSelection, success) != 0);
+  success = (increaseAge(students, studentSelection, success) != 0);
   if (success && studentSelection >= 1 && studentSelection <= 5) {
     std::cout << "The age of student " << studentSelection
               << " has been increased to " << students[studentSelection - 1][1]
@@ -58,12 +58,12 @@ int main() {
     std::cout << "Invalid student selection.\n\n";
   }
 
-  FilterGrades(students);
+  filterGrades(students);
 
   return 0;
 }
 
-void PrintStudentData(int students[5][3]) {
+void printStudentData(int students[5][3]) {
   std::cout << "Student ID\tAge\tGrade\n";
   for (int i = 0; i < 5; i++) {
     std::cout << students[i][0] << "\t\t" << students[i][1] << '\t'
@@ -71,7 +71,7 @@ void PrintStudentData(int students[5][3]) {
   }
 }
 
-double AverageGrades(int students[5][3]) {
+double averageGrades(int students[5][3]) {
   double average = 0.0;
   for (int i = 0; i < 5; i++) {
     average += students[i][2];
@@ -81,7 +81,7 @@ double AverageGrades(int students[5][3]) {
   return average;
 }
 
-int IncreaseAge(int (&students)[5][3], int &studentSelection, bool &success) {
+int increaseAge(int (&students)[5][3], int &studentSelection, bool &success) {
   if (studentSelection >= 1 && studentSelection <= 5) {
     students[studentSelection - 1][1]++;
     success = true;
@@ -90,7 +90,7 @@ int IncreaseAge(int (&students)[5][3], int &studentSelection, bool &success) {
   return students[studentSelection - 1][1];
 }
 
-void FilterGrades(int (&students)[5][3]) {
+void filterGrades(int (&students)[5][3]) {
   int matchCount = 0;
   for (int i = 0; i < 5; i++) {
     if (students[i][2] >= 70) {
