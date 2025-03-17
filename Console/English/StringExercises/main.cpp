@@ -5,12 +5,18 @@
 
 // Create a program that reads in a string. Subsequently, a second text is to be
 // read in. Finally, the position at which the text is to be inserted is to be
-// read in. text is to be inserted.
+// read in.
 
 // Create a program that reads in a string. The program should then read the
 // position at which the character is to be deleted. Extend the
 // program so that not only one character can be deleted. No more characters may
 // be deleted than are available.
+
+// Create a program that reads in a string. Subsequently, a second text is to be
+// read in. Finally, the position at which the text is to be replace is to be
+// read in. The program should then read the number of characters that are to be
+// replaced. No more characters may be replaced than are available. The program
+// should then output the new string.
 
 #include <iostream>
 #include <windows.h>
@@ -18,6 +24,8 @@
 void searchString();
 void insertString();
 void deleteString();
+void replaceString();
+
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
@@ -25,6 +33,7 @@ int main() {
   std::cout << "1) Search a character in a string\n";
   std::cout << "2) Insert a string in a string\n";
   std::cout << "3) Delete a string\n";
+  std::cout << "4) Replace a string\n";
   std::cout << "Enter your choice: ";
   std::cin >> choice;
   std::cin.ignore();
@@ -38,6 +47,9 @@ int main() {
     break;
   case 3:
     deleteString();
+    break;
+  case 4:
+    replaceString();
     break;
   }
 
@@ -114,4 +126,32 @@ void deleteString() {
   } else {
     std::cout << "Invalid position. No changes made.\n";
   }
+}
+
+void replaceString() {
+  std::string text;
+  std::string replace;
+  size_t position;
+  size_t characters;
+
+  std::cout << "Enter the text: ";
+  std::getline(std::cin, text);
+
+  std::cout << "Enter the text to replace: ";
+  std::getline(std::cin, replace);
+
+  std::cout << "The text has " << text.size()
+            << " characters.\nAt which character do you want to replace text? ";
+  std::cin >> position;
+
+  if (position > text.size()) {
+    std::cout << "Position is out of range. Replacing at the end instead.\n";
+    position = text.size();
+  }
+
+  std::cout << "How many characters do you want to replace? ";
+  std::cin >> characters;
+
+  text.replace(position, characters, replace);
+  std::cout << "The new text is: " << text << '\n';
 }
