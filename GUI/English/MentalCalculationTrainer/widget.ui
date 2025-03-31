@@ -157,11 +157,6 @@
      <height>23</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <bold>true</bold>
-    </font>
-   </property>
   </widget>
   <widget class="QLabel" name="tasksCounterLabel">
    <property name="geometry">
