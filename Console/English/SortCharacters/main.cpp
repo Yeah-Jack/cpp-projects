@@ -5,29 +5,24 @@
 #include <windows.h>
 
 void sort(char characters[], int size);
+void printArray(char characters[], int size);
 int main() {
   SetConsoleOutputCP(CP_UTF8);
 
   char characters[6] = {'d', 'b', 'C', 'a'};
+  printArray(characters, 4);
 
   std::cout << "Enter 2 more characters: ";
   for (int i = 4; i < 6; i++) {
     std::cin >> characters[i];
   }
 
-  std::cout << "Current array: ";
-  for (char character : characters) {
-    std::cout << character << ' ';
-  }
-
   int size = sizeof(characters) / sizeof(characters[0]);
+  printArray(characters, size);
   sort(characters, size);
 
-  std::cout << "\nSorted array: ";
-  for (char character : characters) {
-    std::cout << character << ' ';
-  }
-  std::cout << '\n';
+  std::cout << "Sorted array: ";
+  printArray(characters, size);
 
   return 0;
 }
@@ -43,4 +38,12 @@ void sort(char characters[], int size) {
       }
     }
   }
+}
+
+void printArray(char characters[], int size) {
+  std::cout << "Current array: ";
+  for (int i = 0; i < size; i++) {
+    std::cout << characters[i] << ' ';
+  }
+  std::cout << '\n';
 }
