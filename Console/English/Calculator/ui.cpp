@@ -73,8 +73,13 @@ int ui::getIntInput() {
  * @param choice Die auszuführende Operation
  */
 void ui::calculate(int choice) {
-  double a, b, result;
-  int intA, intB, intResult;
+  double a;
+  double b;
+  double result;
+
+  int intA;
+  int intB;
+  int intResult;
 
   switch (choice) {
   case 1:
