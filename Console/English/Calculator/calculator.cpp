@@ -125,6 +125,6 @@ bool calculator::binaryNand() {
   dataStorage->clearError();
   int a = dataStorage->getIntOperandA();
   int b = dataStorage->getIntOperandB();
-  dataStorage->setIntResult(!(a & b));
+  dataStorage->setIntResult(static_cast<int>((a & b)) == 0);
   return true;
 }
