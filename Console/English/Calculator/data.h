@@ -35,7 +35,7 @@ private:
   int intOperandB = 0;
   int intResult = 0;
   bool error = false;
-  std::string errorMessage = "";
+  std::string errorMessage;
 };
 
 #endif // DATA_H
