@@ -1,75 +1,130 @@
 #include "calculator.h"
 #include <iostream>
 
-/**
- * @brief calculator::add Addiert zwei Zahlen
- * @param a Erster Summand
- * @param b Zweiter Summand
- * @return Summe von a und b
- */
-double calculator::add(double a, double b) { return a + b; }
+calculator::calculator(data *data) { dataStorage = data; }
 
 /**
- * @brief Subtrahiert zwei Zahlen
- * @param a Minuend
- * @param b Subtrahend
- * @return Differenz von a und b
+ * @brief Addiert die in dataStorage gespeicherten Operanden.
+ * @return true bei Erfolg, false bei Fehler.
  */
-double calculator::sub(double a, double b) { return a - b; }
+bool calculator::add() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
+  double b = dataStorage->getOperandB();
+  dataStorage->setResult(a + b);
+  return true;
+}
 
 /**
- * @brief Multipliziert zwei Zahlen
- * @param a Erster Faktor
- * @param b Zweite Faktor
- * @return Produkt von a und b
+ * @brief Subtrahiert die in dataStorage gespeicherten Operanden.
+ * @return true bei Erfolg, false bei Fehler.
  */
-double calculator::mul(double a, double b) { return a * b; }
+bool calculator::sub() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
+  double b = dataStorage->getOperandB();
+  dataStorage->setResult(a - b);
+  return true;
+}
 
 /**
- * @brief Dividiert zwei Zahlen
- * @param a Dividend
- * @param b Divisor
- * @return Quotient von a und b
+ * @brief Multipliziert die in dataStorage gespeicherten Operanden.
+ * @return true bei Erfolg, false bei Fehler.
  */
-double calculator::div(double a, double b) {
+bool calculator::mul() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
+  double b = dataStorage->getOperandB();
+  dataStorage->setResult(a * b);
+  return true;
+}
+
+/**
+ * @brief Dividiert die in dataStorage gespeicherten Operanden.
+ * @return true bei Erfolg, false bei Fehler (Division durch Null).
+ */
+bool calculator::div() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
+  double b = dataStorage->getOperandB();
+
   if (b == 0) {
-    std::cout << "Fehler: Division durch Null.\n";
+    dataStorage->setErrorMessage("Fehler: Division durch Null.");
+    dataStorage->setError(true);
+    return false;
   }
-  return a / b;
+
+  dataStorage->setResult(a / b);
+  return true;
 }
 
 /**
- * @brief Potenziert Basis mit einem Exponenten
- * @param a Basiszahl
- * @param b Exponent
- * @return Potenz
+ * @brief Potenziert Basis mit Exponent aus dataStorage.
+ * @return true bei Erfolg, false bei Fehler.
  */
-double calculator::pow(double a, double b) { return std::pow(a, b); }
+bool calculator::pow() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
+  double b = dataStorage->getOperandB();
+
+  if (a == 0 && b == 0) {
+    dataStorage->setErrorMessage("Fehler: 0^0 ist undefiniert.");
+    dataStorage->setError(true);
+    return false;
+  }
+
+  dataStorage->setResult(std::pow(a, b));
+  return true;
+}
 
 /**
- * @brief Zieht die Quadratwurzel
- * @param a Zahl
- * @return Quadratwurzel
+ * @brief Zieht die Quadratwurzel der Zahl in OperandA aus dataStorage.
+ * @return true bei Erfolg, false bei Fehler (negative Zahl).
  */
-double calculator::sqrt(double a) {
+bool calculator::sqrt() {
+  dataStorage->clearError();
+  double a = dataStorage->getOperandA();
   if (a < 0) {
-    std::cout << "Fehler: Wurzel aus negativer Zahl.\n";
+    dataStorage->setErrorMessage("Fehler: Wurzel aus negativer Zahl.");
+    dataStorage->setError(true);
+    return false;
   }
-  return std::sqrt(a);
+  dataStorage->setResult(std::sqrt(a));
+  return true;
 }
 
 /**
- * @brief Bitweise UND-Operation von zwei Ganzzahlen
- * @param a Erste Ganzzahl
- * @param b Zweite Ganzzahl
- * @return Ergebnis von a & b
+ * @brief Binäre AND-Operation der Ganzzahlen aus dataStorage.
+ * @return true bei Erfolg, false bei Fehler.
  */
-int calculator::bitwiseAnd(int a, int b) { return a & b; }
+bool calculator::binaryAnd() {
+  dataStorage->clearError();
+  int a = dataStorage->getIntOperandA();
+  int b = dataStorage->getIntOperandB();
+  dataStorage->setIntResult(a & b);
+  return true;
+}
 
 /**
- * @brief Bitweise ODER-Operation von zwei Ganzzahlen
- * @param a Erste Ganzzahl
- * @param b Zweite Ganzzahl
- * @return Ergebnis von a | b
+ * @brief Binäre OR-Operation der Ganzzahlen aus dataStorage.
+ * @return true bei Erfolg, false bei Fehler.
  */
-int calculator::bitwiseOr(int a, int b) { return a | b; }
+bool calculator::binaryOr() {
+  dataStorage->clearError();
+  int a = dataStorage->getIntOperandA();
+  int b = dataStorage->getIntOperandB();
+  dataStorage->setIntResult(a | b);
+  return true;
+}
+
+/**
+ * @brief Binäre NAND-Operation der Ganzzahlen aus dataStorage.
+ * @return true bei Erfolg, false bei Fehler.
+ */
+bool calculator::binaryNand() {
+  dataStorage->clearError();
+  int a = dataStorage->getIntOperandA();
+  int b = dataStorage->getIntOperandB();
+  dataStorage->setIntResult(!(a & b));
+  return true;
+}

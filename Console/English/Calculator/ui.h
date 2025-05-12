@@ -2,15 +2,16 @@
 #define UI_H
 
 #include "calculator.h"
+#include "data.h"
 
 class ui {
 public:
-  // ui();
+  ui();
   void main();
 
 private:
+  data myData;
   calculator myCalculator;
-  void showMenu();
   int getChoice();
   double getDoubleInput();
   int getIntInput();
