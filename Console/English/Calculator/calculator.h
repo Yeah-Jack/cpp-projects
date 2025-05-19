@@ -3,6 +3,7 @@
 
 #include "data.h"
 #include <cmath>
+#include <string>
 
 class calculator {
 private:
@@ -19,6 +20,7 @@ public:
   bool binaryAnd();
   bool binaryOr();
   bool binaryNand();
+  bool calculateFormula(const std::string &formula);
 };
 
 #endif // CALCULATOR_H

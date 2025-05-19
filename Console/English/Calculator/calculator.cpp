@@ -1,5 +1,8 @@
 #include "calculator.h"
 #include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 
 calculator::calculator(data *data) { dataStorage = data; }
 
@@ -126,5 +129,59 @@ bool calculator::binaryNand() {
   int a = dataStorage->getIntOperandA();
   int b = dataStorage->getIntOperandB();
   dataStorage->setIntResult(!(a & b));
+  return true;
+}
+
+/**
+ * @brief Liest eine Formel ein und berechnet sie
+ * @param formula Die Formel als string
+ * @return true bei Erfolg, false bei Fehler.
+ */
+bool calculator::calculateFormula(const std::string &formula) {
+  dataStorage->clearError();
+  std::istringstream iss(formula);
+  std::vector<std::string> tokens;
+  std::string token;
+  while (iss >> token) {
+    tokens.push_back(token);
+  }
+
+  if (tokens.size() < 3 || (tokens.size() % 2 == 0)) {
+    dataStorage->setErrorMessage("Ungültige Formel. Gebe eine Formel mit "
+                                 "Zahlen und Operatoren abwechselnd ein.");
+    dataStorage->setError(true);
+    return false;
+  }
+
+  double initialValue;
+  initialValue = std::stod(tokens[0]);
+  dataStorage->setResult(initialValue);
+
+  for (size_t i = 1; i < tokens.size(); i += 2) {
+    std::string op = tokens[i];
+    double nextNum;
+    nextNum = std::stod(tokens[i + 1]);
+    dataStorage->setOperandA(dataStorage->getResult());
+    dataStorage->setOperandB(nextNum);
+
+    bool success = false;
+    if (op == "+") {
+      success = add();
+    } else if (op == "-") {
+      success = sub();
+    } else if (op == "*") {
+      success = mul();
+    } else if (op == "/") {
+      success = div();
+    } else {
+      dataStorage->setErrorMessage("Unbekannter Operator: " + op);
+      dataStorage->setError(true);
+      return false;
+    }
+
+    if (!success) {
+      return false;
+    }
+  }
   return true;
 }
