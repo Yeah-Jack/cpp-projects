@@ -6,5 +6,3 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) {
 }
 
 Widget::~Widget() { delete ui; }
-
-void Widget::on_number5_clicked() {}
