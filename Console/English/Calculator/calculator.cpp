@@ -1,10 +1,9 @@
 #include "calculator.h"
 #include <iostream>
 #include <sstream>
-#include <string>
 #include <vector>
 
-calculator::calculator(data *data) { dataStorage = data; }
+calculator::calculator(data *newData) { dataStorage = newData; }
 
 /**
  * @brief Addiert die in dataStorage gespeicherten Operanden.
@@ -147,8 +146,9 @@ bool calculator::calculateFormula(const std::string &formula) {
   }
 
   if (formulaFormated.size() < 3 || (formulaFormated.size() % 2 == 0)) {
-    dataStorage->setErrorMessage("Ungültige Formel. Gebe eine Formel mit "
-                                 "Zahlen und Operatoren abwechselnd ein.");
+    dataStorage->setErrorMessage(
+        "Ungültige Formel. Gebe eine Formel mit Leerzeichen, Zahlen und "
+        "Operatoren abwechselnd ein.");
     dataStorage->setError(true);
     return false;
   }

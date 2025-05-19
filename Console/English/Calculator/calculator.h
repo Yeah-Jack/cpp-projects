@@ -3,7 +3,6 @@
 
 #include "data.h"
 #include <cmath>
-#include <string>
 
 class calculator {
 private:

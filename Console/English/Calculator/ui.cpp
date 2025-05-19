@@ -1,7 +1,6 @@
 #include "ui.h"
 #include <iostream>
 #include <sstream>
-#include <string>
 #include <vector>
 
 ui::ui() : myCalculator(&myData) {}
