@@ -16,6 +16,7 @@ private:
   double getDoubleInput();
   int getIntInput();
   void calculate(int choice);
+  void calculateFormula();
 };
 
 #endif // UI_H
