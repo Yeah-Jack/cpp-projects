@@ -153,16 +153,14 @@ bool calculator::calculateFormula(const std::string &formula) {
     return false;
   }
 
-  double initialValue;
-  initialValue = std::stod(tokens[0]);
+  double initialValue = std::stod(tokens[0]);
   dataStorage->setResult(initialValue);
 
   for (size_t i = 1; i < tokens.size(); i += 2) {
     std::string op = tokens[i];
-    double nextNum;
-    nextNum = std::stod(tokens[i + 1]);
+    double nextNumber = std::stod(tokens[i + 1]);
     dataStorage->setOperandA(dataStorage->getResult());
-    dataStorage->setOperandB(nextNum);
+    dataStorage->setOperandB(nextNumber);
 
     bool success = false;
     if (op == "+") {
