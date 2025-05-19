@@ -20,7 +20,7 @@ void ui::main() {
     if (choice != 11) {
       calculate(choice);
     }
-  } while (choice != 10);
+  } while (choice != 11);
 }
 
 /**

@@ -140,25 +140,25 @@ bool calculator::binaryNand() {
 bool calculator::calculateFormula(const std::string &formula) {
   dataStorage->clearError();
   std::istringstream iss(formula);
-  std::vector<std::string> tokens;
-  std::string token;
-  while (iss >> token) {
-    tokens.push_back(token);
+  std::vector<std::string> formulaFormated;
+  std::string item;
+  while (iss >> item) {
+    formulaFormated.push_back(item);
   }
 
-  if (tokens.size() < 3 || (tokens.size() % 2 == 0)) {
+  if (formulaFormated.size() < 3 || (formulaFormated.size() % 2 == 0)) {
     dataStorage->setErrorMessage("Ungültige Formel. Gebe eine Formel mit "
                                  "Zahlen und Operatoren abwechselnd ein.");
     dataStorage->setError(true);
     return false;
   }
 
-  double initialValue = std::stod(tokens[0]);
+  double initialValue = std::stod(formulaFormated[0]);
   dataStorage->setResult(initialValue);
 
-  for (size_t i = 1; i < tokens.size(); i += 2) {
-    std::string op = tokens[i];
-    double nextNumber = std::stod(tokens[i + 1]);
+  for (size_t i = 1; i < formulaFormated.size(); i += 2) {
+    std::string op = formulaFormated[i];
+    double nextNumber = std::stod(formulaFormated[i + 1]);
     dataStorage->setOperandA(dataStorage->getResult());
     dataStorage->setOperandB(nextNumber);
 
