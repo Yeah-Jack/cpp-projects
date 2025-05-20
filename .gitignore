@@ -5,6 +5,8 @@
 build/
 build-*/
 outDebug
+Console/English/CalculatorWrapper/
+!Console/English/CalculatorWrapper/main.cpp
 
 # Prerequisites
 *.d

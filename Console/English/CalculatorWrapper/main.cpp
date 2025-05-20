@@ -15,10 +15,10 @@ int main() {
 
     if (choice == 'k' || choice == 'K') {
       std::cout << "Konsolen Version ausgewählt.\n";
-      system("console_calculator.exe");
+      system("calculatorconsole.exe");
     } else if (choice == 'g' || choice == 'G') {
       std::cout << "GUI Version ausgewählt.\n";
-      system("gui_calculator.exe");
+      system("calculatorgui.exe");
     } else {
       std::cout << "Ungültige Auswahl.\n";
       std::cin.clear();
