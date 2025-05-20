@@ -138,14 +138,15 @@ bool calculator::binaryNand() {
  */
 bool calculator::calculateFormula(const std::string &formula) {
   dataStorage->clearError();
-  std::istringstream iss(formula);
-  std::vector<std::string> formulaFormated;
+  std::istringstream newFormula(formula);
+  std::vector<std::string> items;
   std::string item;
-  while (iss >> item) {
-    formulaFormated.push_back(item);
+
+  while (newFormula >> item) {
+    items.push_back(item);
   }
 
-  if (formulaFormated.size() < 3 || (formulaFormated.size() % 2 == 0)) {
+  if (items.size() < 3 || (items.size() % 2 == 0)) {
     dataStorage->setErrorMessage(
         "Ungültige Formel. Gebe eine Formel mit Leerzeichen, Zahlen und "
         "Operatoren abwechselnd ein.");
@@ -153,26 +154,26 @@ bool calculator::calculateFormula(const std::string &formula) {
     return false;
   }
 
-  double initialValue = std::stod(formulaFormated[0]);
-  dataStorage->setResult(initialValue);
+  dataStorage->setResult(std::stod(items[0]));
 
-  for (size_t i = 1; i < formulaFormated.size(); i += 2) {
-    std::string op = formulaFormated[i];
-    double nextNumber = std::stod(formulaFormated[i + 1]);
+  for (size_t i = 1; i < items.size(); i += 2) {
+    std::string myOperator = items[i];
+    double nextNumber = std::stod(items[i + 1]);
+
     dataStorage->setOperandA(dataStorage->getResult());
     dataStorage->setOperandB(nextNumber);
 
     bool success = false;
-    if (op == "+") {
+    if (myOperator == "+") {
       success = add();
-    } else if (op == "-") {
+    } else if (myOperator == "-") {
       success = sub();
-    } else if (op == "*") {
+    } else if (myOperator == "*") {
       success = mul();
-    } else if (op == "/") {
+    } else if (myOperator == "/") {
       success = div();
     } else {
-      dataStorage->setErrorMessage("Unbekannter Operator: " + op);
+      dataStorage->setErrorMessage("Unbekannter Operator: " + myOperator);
       dataStorage->setError(true);
       return false;
     }
