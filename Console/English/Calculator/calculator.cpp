@@ -148,8 +148,8 @@ bool calculator::calculateFormula(const std::string &formula) {
 
   if (items.size() < 3 || (items.size() % 2 == 0)) {
     dataStorage->setErrorMessage(
-        "Ungültige Formel. Gebe eine Formel mit Leerzeichen, Zahlen und "
-        "Operatoren abwechselnd ein.");
+        "Ungültige Formel. Hast du die Leerzeichen vergessen? Gebe eine Formel "
+        "mit Zahlen und Operatoren abwechselnd ein.");
     dataStorage->setError(true);
     return false;
   }
