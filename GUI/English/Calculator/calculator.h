@@ -19,7 +19,6 @@ public:
   bool binaryAnd();
   bool binaryOr();
   bool binaryNand();
-  bool calculateFormula(const std::string &formula);
 };
 
 #endif // CALCULATOR_H

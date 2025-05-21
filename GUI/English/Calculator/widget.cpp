@@ -34,54 +34,47 @@ void Widget::handleOperation(const QString &op) {
 
 void Widget::performCalculation() {
   if (operandA_str.isEmpty() || operation.isEmpty() || currentInput.isEmpty()) {
-    if (operation != "sqrt" && operation != "pow" && operation != "formula") {
+    if (operation != "sqrt" && operation != "pow") {
       updateDisplay("Fehler: Unvollständige Eingabe");
       return;
     }
   }
 
   operandB_str = currentInput;
-  bool okA, okB;
-  double valueA = operandA_str.toDouble(&okA);
-  double valueB = operandB_str.toDouble(&okB);
+  bool successA;
+  bool successB;
 
-  int intValueA = operandA_str.toInt(&okA);
-  int intValueB = operandB_str.toInt(&okB);
+  double valueA = operandA_str.toDouble(&successA);
+  double valueB = operandB_str.toDouble(&successB);
+
+  int intValueA = operandA_str.toInt(&successA);
+  int intValueB = operandB_str.toInt(&successB);
 
   dataStorage.clearError();
 
   if (operation == "+") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setOperandA(valueA);
       dataStorage.setOperandB(valueB);
-      if (calc.add()) {
-        updateDisplay(QString::number(dataStorage.getResult()));
-      } else {
-        updateDisplay("Fehler: Addieren");
-      }
+      calc.add();
+      updateDisplay(QString::number(dataStorage.getResult()));
     }
   } else if (operation == "-") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setOperandA(valueA);
       dataStorage.setOperandB(valueB);
-      if (calc.sub()) {
-        updateDisplay(QString::number(dataStorage.getResult()));
-      } else {
-        updateDisplay("Fehler: Subtrahieren");
-      }
+      calc.sub();
+      updateDisplay(QString::number(dataStorage.getResult()));
     }
   } else if (operation == "*") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setOperandA(valueA);
       dataStorage.setOperandB(valueB);
-      if (calc.mul()) {
-        updateDisplay(QString::number(dataStorage.getResult()));
-      } else {
-        updateDisplay("Fehler: Multiplizieren");
-      }
+      calc.mul();
+      updateDisplay(QString::number(dataStorage.getResult()));
     }
   } else if (operation == "/") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setOperandA(valueA);
       dataStorage.setOperandB(valueB);
       if (calc.div()) {
@@ -91,7 +84,7 @@ void Widget::performCalculation() {
       }
     }
   } else if (operation == "pow") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setOperandA(valueA);
       dataStorage.setOperandB(valueB);
       if (calc.pow()) {
@@ -101,7 +94,7 @@ void Widget::performCalculation() {
       }
     }
   } else if (operation == "sqrt") {
-    if (okA) {
+    if (successA) {
       dataStorage.setOperandA(valueA);
       if (calc.sqrt()) {
         updateDisplay(QString::number(dataStorage.getResult()));
@@ -110,42 +103,25 @@ void Widget::performCalculation() {
       }
     }
   } else if (operation == "AND") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setIntOperandA(intValueA);
       dataStorage.setIntOperandB(intValueB);
-      if (calc.binaryAnd()) {
-        updateDisplay(QString::number(dataStorage.getIntResult()));
-      } else {
-        updateDisplay("Fehler: AND");
-      }
+      calc.binaryAnd();
+      updateDisplay(QString::number(dataStorage.getIntResult()));
     }
   } else if (operation == "OR") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setIntOperandA(intValueA);
       dataStorage.setIntOperandB(intValueB);
-      if (calc.binaryOr()) {
-        updateDisplay(QString::number(dataStorage.getIntResult()));
-      } else {
-        updateDisplay("Error: OR");
-      }
+      calc.binaryOr();
+      updateDisplay(QString::number(dataStorage.getIntResult()));
     }
   } else if (operation == "NAND") {
-    if (okA && okB) {
+    if (successA && successB) {
       dataStorage.setIntOperandA(intValueA);
       dataStorage.setIntOperandB(intValueB);
-      if (calc.binaryNand()) {
-        updateDisplay(QString::number(dataStorage.getIntResult()));
-      } else {
-        updateDisplay("Fehler: NAND");
-      }
-    }
-  } else if (operation == "formula") {
-    if (!currentInput.isEmpty()) {
-      if (calc.calculateFormula(currentInput.toStdString())) {
-        updateDisplay(QString::number(dataStorage.getResult()));
-      } else {
-        updateDisplay(QString::fromStdString(dataStorage.getErrorMessage()));
-      }
+      calc.binaryNand();
+      updateDisplay(QString::number(dataStorage.getIntResult()));
     }
   }
 
