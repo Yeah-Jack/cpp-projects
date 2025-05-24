@@ -77,7 +77,7 @@ double calculateSalesAverage(int products[5][4]) {
     average += products[i][3];
   }
 
-  return average / 2;
+  return average / 5;
 }
 
 void updateInventory(int (&products)[5][4]) {
