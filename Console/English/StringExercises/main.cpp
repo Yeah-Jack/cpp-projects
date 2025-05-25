@@ -90,7 +90,7 @@ void insertString() {
   std::cout << "Enter the second text: ";
   std::getline(std::cin, text2);
 
-  std::cout << "The second text has " << text1.size()
+  std::cout << "The first text has " << text1.size()
             << " characters.\nAt which character do you want to insert the "
                "second text? ";
   std::cin >> position;
