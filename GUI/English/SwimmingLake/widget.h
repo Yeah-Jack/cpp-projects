@@ -4,7 +4,6 @@
 #include "gui.h"
 #include <QWidget>
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Widget;
