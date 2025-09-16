@@ -11,4 +11,3 @@ unsigned short Lake::getCurrentWaterQuality() {
   currentWaterQuality = 2;
   return currentWaterQuality;
 }
-
