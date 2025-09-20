@@ -5,7 +5,9 @@
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class GUI; }
+namespace Ui {
+class GUI;
+}
 QT_END_NAMESPACE
 
 class GUI : public QWidget {

@@ -1,9 +1,7 @@
 #include "gui.h"
 #include "ui_gui.h"
 
-GUI::GUI(
-    QWidget *parent)
-    : QWidget(parent), ui(new Ui::GUI) {
+GUI::GUI(QWidget *parent) : QWidget(parent), ui(new Ui::GUI) {
   ui->setupUi(this);
   lake = new Lake;
   person = new Person;
