@@ -3,12 +3,18 @@
 Lake::Lake() {}
 
 double Lake::getCurrentWaterTemperature() {
-  currentWaterTemperature = 20;
+  std::random_device rd;
+  std::uniform_int_distribution<short> dist(-10, 30);
+
+  currentWaterTemperature = dist(rd);
   return currentWaterTemperature;
 }
 
 unsigned short Lake::getCurrentWaterQuality() {
-  currentWaterQuality = 2;
+  std::random_device rd;
+  std::uniform_int_distribution<short> dist(1, 5);
+
+  currentWaterQuality = dist(rd);
   return currentWaterQuality;
 }
 
