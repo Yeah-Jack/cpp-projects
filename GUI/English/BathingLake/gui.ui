@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Widget</class>
- <widget class="QWidget" name="Widget">
+ <class>GUI</class>
+ <widget class="QWidget" name="GUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,9 +11,9 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Widget</string>
+   <string>GUI</string>
   </property>
-  <widget class="QPushButton" name="currentWaterTemperatureBtn">
+	  <widget class="QPushButton" name="currentWaterTemperatureBtn">
    <property name="geometry">
     <rect>
      <x>50</x>
