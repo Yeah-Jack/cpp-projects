@@ -17,4 +17,3 @@ unsigned short Lake::getCurrentWaterQuality() {
   currentWaterQuality = dist(rd);
   return currentWaterQuality;
 }
-
