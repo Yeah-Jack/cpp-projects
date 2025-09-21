@@ -39,7 +39,6 @@ private:
   unsigned int nextLoungerId;
 
   std::random_device rd;
-  std::uniform_int_distribution<short> dist;
 };
 
 #endif // LAKE_H

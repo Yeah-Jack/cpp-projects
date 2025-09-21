@@ -16,8 +16,6 @@ class GUI : public QWidget {
 public:
   GUI(QWidget *parent = nullptr);
   ~GUI();
-  bool rentLounger();
-  int viewNumberOfVisitors();
 
 private slots:
   void on_waterTemperatureBtn_clicked();

@@ -15,16 +15,14 @@ double Lake::getWaterTemperature() {
   std::random_device rd;
   std::uniform_int_distribution<short> dist(-10, 30);
 
-  waterTemperature = dist(rd);
-  return waterTemperature;
+  return dist(rd);
 }
 
 unsigned short Lake::getWaterQuality() {
   std::random_device rd;
   std::uniform_int_distribution<short> dist(1, 5);
 
-  waterQuality = dist(rd);
-  return waterQuality;
+  return dist(rd);
 }
 
 Person *Lake::getPerson(int index) { return people[index]; }

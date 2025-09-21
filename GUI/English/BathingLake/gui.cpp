@@ -21,7 +21,7 @@ void GUI::on_waterTemperatureBtn_clicked() {
 }
 
 void GUI::on_waterQualityBtn_clicked() {
-  double waterQuality = lake->getWaterQuality();
+  unsigned short waterQuality = lake->getWaterQuality();
   ui->log->appendPlainText("The water quality is " +
                            QString::number(waterQuality) + '.');
 }
