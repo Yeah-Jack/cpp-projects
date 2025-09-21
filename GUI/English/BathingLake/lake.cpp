@@ -1,6 +1,6 @@
 #include "lake.h"
 
-Lake::Lake() {}
+Lake::Lake() : nextPersonId(1), nextLoungerId(1) {}
 
 Lake::~Lake() {
   for (auto p : people)
@@ -31,12 +31,12 @@ Person *Lake::getPerson(int index) { return people[index]; }
 
 void Lake::addLounger(Lounger *l) {
   lounger.push_back(l);
-  Lounger::nextnr++;
+  nextLoungerId++;
 }
 
-unsigned int Lake::getNextLoungerId() { return Lounger::nextnr; }
+unsigned int Lake::getNextLoungerId() { return nextLoungerId; }
 
-unsigned int Lake::getNextPersonId() { return Person::nextnr; }
+unsigned int Lake::getNextPersonId() { return nextPersonId; }
 
 unsigned int Lake::getPeopleCount() { return people.size(); }
 
@@ -50,7 +50,7 @@ std::vector<Booking *> Lake::getBookings() { return bookings; }
 
 void Lake::addPerson(Person *p) {
   people.push_back(p);
-  Person::nextnr++;
+  nextPersonId++;
 }
 
 bool Lake::canRentLounger() { return lounger.size() < 200; }

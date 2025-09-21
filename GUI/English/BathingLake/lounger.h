@@ -33,7 +33,6 @@ public:
   void setId(const unsigned int newId);
   static QString getTypeName(short type);
   static QString getConditionName(short condition);
-  static unsigned int nextnr;
 
 private:
   unsigned int id;

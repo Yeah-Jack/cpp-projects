@@ -1,7 +1,5 @@
 #include "lounger.h"
 
-unsigned int Lounger::nextnr = 1;
-
 Lounger::Lounger() {}
 
 unsigned int Lounger::getId() const { return id; }

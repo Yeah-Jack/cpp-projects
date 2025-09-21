@@ -35,6 +35,8 @@ private:
   std::vector<double> waterTemperatureHistory;
   double waterTemperature;
   unsigned short waterQuality;
+  unsigned int nextPersonId;
+  unsigned int nextLoungerId;
 
   std::random_device rd;
   std::uniform_int_distribution<short> dist;
