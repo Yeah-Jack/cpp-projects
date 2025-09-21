@@ -6,10 +6,10 @@
 class Person {
 public:
   Person();
-  QString getFirstName();
-  QString getLastName();
-  void setFirstName(const QString &first);
-  void setLastName(const QString &last);
+  QString getFirstName() const;
+  QString getLastName() const;
+  void setFirstName(const QString first);
+  void setLastName(const QString last);
 
 private:
   QString firstName;
