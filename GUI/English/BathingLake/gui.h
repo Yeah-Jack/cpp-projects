@@ -18,15 +18,17 @@ public:
   ~GUI();
   bool rentLounger();
   void parkBike();
-  double viewCurrentWaterTemperature();
-  unsigned short viewCurrentWaterQuality();
-  int viewCurrentNumberOfVisitors();
+  double viewWaterTemperature();
+  unsigned short viewWaterQuality();
+  int viewNumberOfVisitors();
 
 private slots:
-  void on_currentWaterTemperatureBtn_clicked();
-  void on_currentWaterQualityBtn_clicked();
+  void on_getWaterTemperatureBtn_clicked();
+  void on_getWaterQualityBtn_clicked();
   void on_getFirstNameBtn_clicked();
   void on_getLastNameBtn_clicked();
+  void on_setFirstNameBtn_clicked();
+  void on_setLastNameBtn_clicked();
 
 private:
   Ui::GUI *ui;

@@ -2,13 +2,7 @@
 
 Person::Person() {}
 
-QString Person::getFirstName() {
-  firstName = "Hans";
-  return firstName;
-}
-QString Person::getLastName() {
-  lastName = "Baumann";
-  return lastName;
-}
-// QString Person::setFirstName(QString &first) { firstName = first; }
-// QString Person::setLastName(QString &last) { lastName = last; }
+QString Person::getFirstName() { return firstName; }
+QString Person::getLastName() { return lastName; }
+void Person::setFirstName(const QString &first) { firstName = first; }
+void Person::setLastName(const QString &last) { lastName = last; }

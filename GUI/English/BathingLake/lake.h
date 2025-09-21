@@ -9,15 +9,15 @@
 class Lake {
 public:
   Lake();
-  double getCurrentWaterTemperature();
-  unsigned short getCurrentWaterQuality();
+  double getWaterTemperature();
+  unsigned short getWaterQuality();
 
 private:
   std::vector<Person *> people;
   std::vector<Lounger *> lounger;
   std::vector<double> waterTemperatureHistory;
-  double currentWaterTemperature;
-  unsigned short currentWaterQuality;
+  double waterTemperature;
+  unsigned short waterQuality;
 
   std::random_device rd;
   std::uniform_int_distribution<short> dist();

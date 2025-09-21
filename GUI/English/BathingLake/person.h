@@ -8,8 +8,8 @@ public:
   Person();
   QString getFirstName();
   QString getLastName();
-  //  QString setFirstName(QString &first);
-  //  QString setLastName(QString &last);
+  void setFirstName(const QString &first);
+  void setLastName(const QString &last);
 
 private:
   QString firstName;
