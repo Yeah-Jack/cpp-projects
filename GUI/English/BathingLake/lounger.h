@@ -3,6 +3,15 @@
 
 #include <QString>
 
+enum LoungerType {
+  typeSimple,
+  typeLuxury,
+  typeWithUmbrella,
+  typeWithService,
+  typeWithUmbrellaAndService,
+  typeUnknown = -1
+};
+
 enum Condition {
   conditionNew,
   conditionAsGoodAsNew,
@@ -11,15 +20,6 @@ enum Condition {
   conditionDefective,
   conditionDiscarded,
   conditionUnknown = -1
-};
-
-enum BeachLoungerType {
-  BeachLoungerTypeBeachLoungerSimple,
-  BeachLoungerTypeBeachLoungerLuxury,
-  BeachLoungerTypeBeachLoungerWithUmbrella,
-  BeachLoungerTypeBeachLoungerWithService,
-  BeachLoungerTypeBeachLoungerWithUmbrellaAndService,
-  BeachLoungerTypeUnknown = -1
 };
 
 class Lounger {

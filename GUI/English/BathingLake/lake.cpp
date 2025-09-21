@@ -35,17 +35,11 @@ void Lake::addLounger(Lounger *l) {
 }
 
 unsigned int Lake::getNextLoungerId() { return nextLoungerId; }
-
 unsigned int Lake::getNextPersonId() { return nextPersonId; }
-
 unsigned int Lake::getPeopleCount() { return people.size(); }
-
 unsigned int Lake::getLoungerCount() { return lounger.size(); }
-
 std::vector<Person *> Lake::getPeople() { return people; }
-
 std::vector<Lounger *> Lake::getLoungers() { return lounger; }
-
 std::vector<Booking *> Lake::getBookings() { return bookings; }
 
 void Lake::addPerson(Person *p) {

@@ -18,15 +18,15 @@ void Lounger::setId(const unsigned int newId) { id = newId; }
 
 QString Lounger::getTypeName(short type) {
   switch (type) {
-  case BeachLoungerTypeBeachLoungerSimple:
+  case typeSimple:
     return "Simple";
-  case BeachLoungerTypeBeachLoungerLuxury:
+  case typeLuxury:
     return "Luxury";
-  case BeachLoungerTypeBeachLoungerWithUmbrella:
+  case typeWithUmbrella:
     return "With Umbrella";
-  case BeachLoungerTypeBeachLoungerWithService:
+  case typeWithService:
     return "With Service";
-  case BeachLoungerTypeBeachLoungerWithUmbrellaAndService:
+  case typeWithUmbrellaAndService:
     return "With Umbrella and Service";
   default:
     return "Unknown";

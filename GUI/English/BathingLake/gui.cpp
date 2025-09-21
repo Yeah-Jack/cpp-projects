@@ -34,10 +34,10 @@ void GUI::on_rentLoungerBtn_clicked() {
   if (lake->canRentLounger()) {
     Lounger *newLounger = new Lounger();
     unsigned int id = lake->getNextLoungerId();
-    newLounger->setId(id);
     short type = ui->typeSelect->currentIndex();
-    newLounger->setType(type);
     short condition = ui->conditionSelect->currentIndex();
+    newLounger->setId(id);
+    newLounger->setType(type);
     newLounger->setCondition(condition);
     lake->addLounger(newLounger);
     updateLoungerList();
@@ -87,14 +87,14 @@ void GUI::on_addPersonBtn_clicked() {
   QString firstName = ui->firstNameEdit->text();
   QString lastName = ui->lastNameEdit->text();
   if (!firstName.isEmpty() && !lastName.isEmpty()) {
-    Person *p = new Person();
-    p->setFirstName(firstName);
-    p->setLastName(lastName);
-    p->setId(lake->getNextPersonId());
-    lake->addPerson(p);
+    Person *newPerson = new Person();
+    newPerson->setId(lake->getNextPersonId());
+    newPerson->setFirstName(firstName);
+    newPerson->setLastName(lastName);
+    lake->addPerson(newPerson);
     updatePeopleList();
     ui->log->appendPlainText(
-        "You added the person number " + QString::number(p->getId()) +
+        "You added the person number " + QString::number(newPerson->getId()) +
         " with the name of " + firstName + " " + lastName + '.');
   } else {
     ui->log->appendPlainText("Please enter both first and last name.");

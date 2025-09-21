@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="lakeTab">
     <attribute name="title">
@@ -71,8 +71,8 @@
     <widget class="QListWidget" name="waterTemperatureList">
      <property name="geometry">
       <rect>
-       <x>340</x>
-       <y>30</y>
+       <x>330</x>
+       <y>20</y>
        <width>250</width>
        <height>150</height>
       </rect>
