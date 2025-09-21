@@ -59,7 +59,8 @@ void GUI::on_viewVisitorsBtn_clicked() {
 void GUI::updatePeopleList() {
   ui->peopleList->clear();
   for (auto p : lake->getPeople()) {
-    ui->peopleList->addItem(p->getFirstName() + " " + p->getLastName());
+    ui->peopleList->addItem("ID: " + QString::number(p->getId()) + ", Name: " +
+                            p->getFirstName() + " " + p->getLastName());
   }
 }
 
@@ -87,9 +88,12 @@ void GUI::on_addPersonBtn_clicked() {
     Person *p = new Person();
     p->setFirstName(firstName);
     p->setLastName(lastName);
+    p->setId(lake->getNextPersonId());
     lake->addPerson(p);
     updatePeopleList();
-    ui->log->appendPlainText("You added: " + firstName + " " + lastName + '.');
+    ui->log->appendPlainText("You added person number " +
+                             QString::number(p->getId()) + ": " + firstName +
+                             " " + lastName + '.');
   } else {
     ui->log->appendPlainText("Please enter both first and last name.");
   }

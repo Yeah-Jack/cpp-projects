@@ -31,6 +31,8 @@ void Lake::addLounger(Lounger *l) { lounger.push_back(l); }
 
 unsigned int Lake::getNextLoungerId() { return lounger.size() + 1; }
 
+unsigned int Lake::getNextPersonId() { return people.size() + 1; }
+
 unsigned int Lake::getPeopleCount() { return people.size(); }
 
 unsigned int Lake::getLoungerCount() { return lounger.size(); }
@@ -44,14 +46,14 @@ void Lake::addPerson(Person *p) { people.push_back(p); }
 bool Lake::canRentLounger() { return lounger.size() < 200; }
 
 void Lake::removePerson(int index) {
-  if (index >= 0 && index < people.size()) {
+  if (index >= 0 && static_cast<size_t>(index) < people.size()) {
     delete people[index];
     people.erase(people.begin() + index);
   }
 }
 
 void Lake::removeLounger(int index) {
-  if (index >= 0 && index < lounger.size()) {
+  if (index >= 0 && static_cast<size_t>(index) < lounger.size()) {
     delete lounger[index];
     lounger.erase(lounger.begin() + index);
   }

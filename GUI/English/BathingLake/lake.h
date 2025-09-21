@@ -20,6 +20,7 @@ public:
   void addLounger(Lounger *l);
   void removeLounger(int index);
   unsigned int getNextLoungerId();
+  unsigned int getNextPersonId();
   unsigned int getPeopleCount();
   unsigned int getLoungerCount();
   bool canRentLounger();
