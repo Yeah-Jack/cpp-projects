@@ -3,6 +3,9 @@
 
 #include <QString>
 
+/**
+ * @brief Enumeration for different types of loungers available at the lake.
+ */
 enum LoungerType {
   typeSimple,
   typeLuxury,
@@ -12,6 +15,9 @@ enum LoungerType {
   typeUnknown = -1
 };
 
+/**
+ * @brief Enumeration for the condition states of loungers.
+ */
 enum Condition {
   conditionNew,
   conditionAsGoodAsNew,
@@ -22,6 +28,9 @@ enum Condition {
   conditionUnknown = -1
 };
 
+/**
+ * @brief Represents a lounger with an ID, type, and condition.
+ */
 class Lounger {
 public:
   Lounger();
@@ -31,7 +40,18 @@ public:
   void setType(const short newType);
   void setCondition(const short newCondition);
   void setId(const unsigned int newId);
+  /**
+   * @brief Returns the string name corresponding to the given lounger type.
+   * @param type The lounger type value.
+   * @return The name as a QString.
+   */
   static QString getTypeName(short type);
+
+  /**
+   * @brief Returns the string name corresponding to the given condition.
+   * @param condition The condition value.
+   * @return The name as a QString.
+   */
   static QString getConditionName(short condition);
 
 private:

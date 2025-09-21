@@ -11,6 +11,14 @@ Lake::~Lake() {
     delete b;
 }
 
+/**
+ * @brief Get the water temperature.
+ *
+ * This function generates a random water temperature between -10 and 30
+ * degrees Celsius.
+ *
+ * @return The water temperature in degrees Celsius.
+ */
 double Lake::getWaterTemperature() {
   std::random_device rd;
   std::uniform_int_distribution<short> dist(-10, 30);
@@ -18,6 +26,13 @@ double Lake::getWaterTemperature() {
   return dist(rd);
 }
 
+/**
+ * @brief Get the water quality.
+ *
+ * This function generates a random water quality rating between 1 and 5.
+ *
+ * @return The water quality rating.
+ */
 unsigned short Lake::getWaterQuality() {
   std::random_device rd;
   std::uniform_int_distribution<short> dist(1, 5);

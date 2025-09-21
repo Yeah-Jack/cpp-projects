@@ -16,6 +16,11 @@ void Lounger::setCondition(const short newCondition) {
 
 void Lounger::setId(const unsigned int newId) { id = newId; }
 
+/**
+ * @brief Lounger::getTypeName
+ * @param type
+ * @return
+ */
 QString Lounger::getTypeName(short type) {
   switch (type) {
   case typeSimple:
@@ -33,6 +38,11 @@ QString Lounger::getTypeName(short type) {
   }
 }
 
+/**
+ * @brief Lounger::getConditionName
+ * @param condition
+ * @return
+ */
 QString Lounger::getConditionName(short condition) {
   switch (condition) {
   case conditionNew:

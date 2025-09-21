@@ -65,6 +65,13 @@ void GUI::updatePeopleList() {
   }
 }
 
+/**
+ * @brief Updates the lounger list in the GUI.
+ *
+ * This function clears the existing items in the lounger list
+ * and populates it with the current loungers from the lake object.
+ * Each lounger is displayed with its ID, type, and condition.
+ */
 void GUI::updateLoungerList() {
   ui->loungerList->clear();
   for (auto l : lake->getLoungers()) {
@@ -75,6 +82,13 @@ void GUI::updateLoungerList() {
   }
 }
 
+/**
+ * @brief Updates the water temperature list in the GUI.
+ *
+ * This function clears the existing items in the water temperature list
+ * and populates it with the current water temperature from the lake object.
+ * The temperature is displayed in Celsius (°C).
+ */
 void GUI::updateWaterTemperatureList() {
   ui->waterTemperatureList->clear();
   for (int i = 0; i < 200; i++) {

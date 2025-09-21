@@ -3,6 +3,9 @@
 
 #include <QString>
 
+/**
+ * @brief Represents a person with a first name, last name, and unique ID.
+ */
 class Person {
 public:
   Person();
