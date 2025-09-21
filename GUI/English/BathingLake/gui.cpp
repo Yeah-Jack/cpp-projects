@@ -27,7 +27,7 @@ void GUI::on_getWaterQualityBtn_clicked() {
 
 void GUI::on_getFirstNameBtn_clicked() {
   QString firstName = person->getFirstName();
-  ui->log->appendPlainText("The first name " + firstName + '.');
+  ui->log->appendPlainText("The first name is " + firstName + '.');
 }
 
 void GUI::on_getLastNameBtn_clicked() {
@@ -45,4 +45,8 @@ void GUI::on_setLastNameBtn_clicked() {
   QString lastName = ui->setLastNameEdit->text();
   person->setLastName(lastName);
   ui->log->appendPlainText("The last name has been set to " + lastName + '.');
+}
+
+void GUI::on_parkBikeBtn_clicked() {
+  ui->log->appendPlainText("Your have parked your bike.");
 }

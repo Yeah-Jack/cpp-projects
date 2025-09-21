@@ -33,7 +33,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="lakeTab">
     <attribute name="title">
@@ -140,6 +140,19 @@
      </property>
      <property name="text">
       <string>Get last name</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="parkBikeBtn">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>20</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Park bike</string>
      </property>
     </widget>
    </widget>

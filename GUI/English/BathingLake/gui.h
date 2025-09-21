@@ -17,7 +17,6 @@ public:
   GUI(QWidget *parent = nullptr);
   ~GUI();
   bool rentLounger();
-  void parkBike();
   int viewNumberOfVisitors();
 
 private slots:
@@ -27,6 +26,7 @@ private slots:
   void on_getLastNameBtn_clicked();
   void on_setFirstNameBtn_clicked();
   void on_setLastNameBtn_clicked();
+  void on_parkBikeBtn_clicked();
 
 private:
   Ui::GUI *ui;
