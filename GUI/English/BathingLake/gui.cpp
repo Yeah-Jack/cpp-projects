@@ -47,8 +47,8 @@ void GUI::on_rentLoungerBtn_clicked() {
                              "\" with the condition \"" +
                              Lounger::getConditionName(condition) + "\".");
   } else {
-    ui->log
-        ->appendPlainText("Maximum number of loungers (200) already rented.");
+    ui->log->appendPlainText(
+        "Maximum number of loungers (200) already rented.");
   }
 }
 
@@ -60,9 +60,8 @@ void GUI::on_viewVisitorsBtn_clicked() {
 void GUI::updatePeopleList() {
   ui->peopleList->clear();
   for (auto p : lake->getPeople()) {
-    ui->peopleList
-        ->addItem("ID: " + QString::number(p->getId()) +
-                  ", Name: " + p->getFirstName() + " " + p->getLastName());
+    ui->peopleList->addItem("ID: " + QString::number(p->getId()) + ", Name: " +
+                            p->getFirstName() + " " + p->getLastName());
   }
 }
 
@@ -79,8 +78,8 @@ void GUI::updateLoungerList() {
 void GUI::updateWaterTemperatureList() {
   ui->waterTemperatureList->clear();
   for (int i = 0; i < 200; i++) {
-    ui->waterTemperatureList
-        ->addItem(QString::number(lake->getWaterTemperature()) + "°C");
+    ui->waterTemperatureList->addItem(
+        QString::number(lake->getWaterTemperature()) + "°C");
   }
 }
 
