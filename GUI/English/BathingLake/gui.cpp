@@ -4,15 +4,13 @@
 GUI::GUI(QWidget *parent) : QWidget(parent), ui(new Ui::GUI) {
   ui->setupUi(this);
   lake = new Lake;
-  person = new Person;
-  lounger = new Lounger;
+  updateLoungerList();
+  updatePeopleList();
 }
 
 GUI::~GUI() {
   delete ui;
   delete lake;
-  delete person;
-  delete lounger;
 }
 
 void GUI::on_getWaterTemperatureBtn_clicked() {
@@ -27,41 +25,85 @@ void GUI::on_getWaterQualityBtn_clicked() {
                            QString::number(waterQuality) + '.');
 }
 
-void GUI::on_getFirstNameBtn_clicked() {
-  QString firstName = person->getFirstName();
-  ui->log->appendPlainText("The first name is " + firstName + '.');
-}
-
-void GUI::on_getLastNameBtn_clicked() {
-  QString lastName = person->getLastName();
-  ui->log->appendPlainText("The last name is " + lastName + '.');
-}
-
-void GUI::on_setFirstNameBtn_clicked() {
-  QString firstName = ui->setFirstNameEdit->text();
-  person->setFirstName(firstName);
-  ui->log->appendPlainText("The first name has been set to " + firstName + '.');
-}
-
-void GUI::on_setLastNameBtn_clicked() {
-  QString lastName = ui->setLastNameEdit->text();
-  person->setLastName(lastName);
-  ui->log->appendPlainText("The last name has been set to " + lastName + '.');
-}
-
 void GUI::on_parkBikeBtn_clicked() {
-  ui->log->appendPlainText("Your have parked your bike.");
+  ui->log->appendPlainText("You have parked your bike.");
 }
 
 void GUI::on_rentLoungerBtn_clicked() {
-  unsigned int id = lounger->getId() + 1;
-  lounger->setId(id);
-  unsigned int type = ui->typeSelect->currentIndex() + 1;
-  lounger->setType(type);
-  unsigned int condition = ui->conditionSelect->currentIndex() + 1;
-  lounger->setCondition(condition);
-  ui->log->appendPlainText("You have rented the lounger number " +
-                           QString::number(id) + " of type " +
-                           QString::number(type) + " with condition " +
-                           QString::number(condition) + '.');
+  if (lake->canRentLounger()) {
+    Lounger *newLounger = new Lounger();
+    unsigned int id = lake->getNextLoungerId();
+    newLounger->setId(id);
+    unsigned int type = ui->typeSelect->currentIndex() + 1;
+    newLounger->setType(type);
+    unsigned int condition = ui->conditionSelect->currentIndex() + 1;
+    newLounger->setCondition(condition);
+    lake->addLounger(newLounger);
+    updateLoungerList();
+    ui->log->appendPlainText("You have rented the lounger number " +
+                             QString::number(id) + " of type " +
+                             QString::number(type) + " with condition " +
+                             QString::number(condition) + '.');
+  } else {
+    ui->log->appendPlainText(
+        "Maximum number of loungers (200) already rented.");
+  }
+}
+
+void GUI::on_viewVisitorsBtn_clicked() {
+  ui->log->appendPlainText(
+      "Number of visitors: " + QString::number(lake->getPeopleCount()) + '.');
+}
+
+void GUI::updateLoungerList() {
+  ui->loungerList->clear();
+  for (auto l : lake->getLoungers()) {
+    ui->loungerList->addItem("ID: " + QString::number(l->getId()) + ", Type: " +
+                             QString::number(l->getType()) + ", Condition: " +
+                             QString::number(l->getCondition()));
+  }
+}
+
+void GUI::updatePeopleList() {
+  ui->peopleList->clear();
+  for (auto p : lake->getPeople()) {
+    ui->peopleList->addItem(p->getFirstName() + " " + p->getLastName());
+  }
+}
+
+void GUI::on_addPersonBtn_clicked() {
+  QString firstName = ui->firstNameEdit->text();
+  QString lastName = ui->lastNameEdit->text();
+  if (!firstName.isEmpty() && !lastName.isEmpty()) {
+    Person *p = new Person();
+    p->setFirstName(firstName);
+    p->setLastName(lastName);
+    lake->addPerson(p);
+    updatePeopleList();
+    ui->log->appendPlainText("You added: " + firstName + " " + lastName + '.');
+  } else {
+    ui->log->appendPlainText("Please enter both first and last name.");
+  }
+}
+
+void GUI::on_removePersonBtn_clicked() {
+  int row = ui->peopleList->currentRow();
+  if (row >= 0) {
+    lake->removePerson(row);
+    updatePeopleList();
+    ui->log->appendPlainText("Removed person.");
+  } else {
+    ui->log->appendPlainText("Please select a person to remove.");
+  }
+}
+
+void GUI::on_removeLoungerBtn_clicked() {
+  int row = ui->loungerList->currentRow();
+  if (row >= 0) {
+    lake->removeLounger(row);
+    updateLoungerList();
+    ui->log->appendPlainText("Removed lounger.");
+  } else {
+    ui->log->appendPlainText("Please select a lounger to remove.");
+  }
 }

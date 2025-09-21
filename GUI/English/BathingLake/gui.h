@@ -22,18 +22,17 @@ public:
 private slots:
   void on_getWaterTemperatureBtn_clicked();
   void on_getWaterQualityBtn_clicked();
-  void on_getFirstNameBtn_clicked();
-  void on_getLastNameBtn_clicked();
-  void on_setFirstNameBtn_clicked();
-  void on_setLastNameBtn_clicked();
-  void on_parkBikeBtn_clicked();
-
+  void on_addPersonBtn_clicked();
+  void on_removePersonBtn_clicked();
   void on_rentLoungerBtn_clicked();
+  void on_removeLoungerBtn_clicked();
+  void on_viewVisitorsBtn_clicked();
+  void on_parkBikeBtn_clicked();
 
 private:
   Ui::GUI *ui;
   Lake *lake;
-  Person *person;
-  Lounger *lounger;
+  void updateLoungerList();
+  void updatePeopleList();
 };
 #endif // GUI_H

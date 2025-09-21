@@ -12,7 +12,7 @@ public:
   void setId(const unsigned short newId);
 
 private:
-  unsigned short id = 0;
+  unsigned short id;
   unsigned short type;
   unsigned short condition;
 };

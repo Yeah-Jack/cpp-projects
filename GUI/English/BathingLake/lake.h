@@ -9,8 +9,20 @@
 class Lake {
 public:
   Lake();
+  ~Lake();
   double getWaterTemperature();
   unsigned short getWaterQuality();
+  Person *getPerson(int index);
+  std::vector<Person *> getPeople();
+  std::vector<Lounger *> getLoungers();
+  void addPerson(Person *p);
+  void removePerson(int index);
+  void addLounger(Lounger *l);
+  void removeLounger(int index);
+  unsigned int getNextLoungerId();
+  unsigned int getPeopleCount();
+  unsigned int getLoungerCount();
+  bool canRentLounger();
 
 private:
   std::vector<Person *> people;
