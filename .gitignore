@@ -1,6 +1,6 @@
 # IDEs
 .vscode/
-*.pro
+# *.pro
 *.pro.user
 build/
 build-*/
