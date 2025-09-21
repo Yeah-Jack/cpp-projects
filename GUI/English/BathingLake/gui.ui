@@ -42,7 +42,7 @@
     <attribute name="title">
      <string>Lake</string>
     </attribute>
-    <widget class="QPushButton" name="getWaterTemperatureBtn">
+    <widget class="QPushButton" name="waterTemperatureBtn">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -55,7 +55,7 @@
       <string>Get water temperature</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="getWaterQualityBtn">
+    <widget class="QPushButton" name="waterQualityBtn">
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -66,6 +66,16 @@
      </property>
      <property name="text">
       <string>Get water quality</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="waterTemperatureList">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>30</y>
+       <width>250</width>
+       <height>150</height>
+      </rect>
      </property>
     </widget>
    </widget>

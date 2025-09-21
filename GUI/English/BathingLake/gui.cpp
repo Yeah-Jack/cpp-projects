@@ -4,8 +4,9 @@
 GUI::GUI(QWidget *parent) : QWidget(parent), ui(new Ui::GUI) {
   ui->setupUi(this);
   lake = new Lake;
-  updateLoungerList();
+  updateWaterTemperatureList();
   updatePeopleList();
+  updateLoungerList();
 }
 
 GUI::~GUI() {
@@ -13,13 +14,13 @@ GUI::~GUI() {
   delete lake;
 }
 
-void GUI::on_getWaterTemperatureBtn_clicked() {
+void GUI::on_waterTemperatureBtn_clicked() {
   double waterTemperature = lake->getWaterTemperature();
   ui->log->appendPlainText("The water temperature is " +
                            QString::number(waterTemperature) + "°C.");
 }
 
-void GUI::on_getWaterQualityBtn_clicked() {
+void GUI::on_waterQualityBtn_clicked() {
   double waterQuality = lake->getWaterQuality();
   ui->log->appendPlainText("The water quality is " +
                            QString::number(waterQuality) + '.');
@@ -55,6 +56,13 @@ void GUI::on_viewVisitorsBtn_clicked() {
       "Number of visitors: " + QString::number(lake->getPeopleCount()) + '.');
 }
 
+void GUI::updatePeopleList() {
+  ui->peopleList->clear();
+  for (auto p : lake->getPeople()) {
+    ui->peopleList->addItem(p->getFirstName() + " " + p->getLastName());
+  }
+}
+
 void GUI::updateLoungerList() {
   ui->loungerList->clear();
   for (auto l : lake->getLoungers()) {
@@ -64,10 +72,11 @@ void GUI::updateLoungerList() {
   }
 }
 
-void GUI::updatePeopleList() {
-  ui->peopleList->clear();
-  for (auto p : lake->getPeople()) {
-    ui->peopleList->addItem(p->getFirstName() + " " + p->getLastName());
+void GUI::updateWaterTemperatureList() {
+  ui->waterTemperatureList->clear();
+  for (int i = 0; i < 200; i++) {
+    ui->waterTemperatureList->addItem(
+        QString::number(lake->getWaterTemperature()) + "°C");
   }
 }
 

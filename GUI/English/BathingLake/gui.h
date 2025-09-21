@@ -20,8 +20,8 @@ public:
   int viewNumberOfVisitors();
 
 private slots:
-  void on_getWaterTemperatureBtn_clicked();
-  void on_getWaterQualityBtn_clicked();
+  void on_waterTemperatureBtn_clicked();
+  void on_waterQualityBtn_clicked();
   void on_addPersonBtn_clicked();
   void on_removePersonBtn_clicked();
   void on_rentLoungerBtn_clicked();
@@ -32,7 +32,8 @@ private slots:
 private:
   Ui::GUI *ui;
   Lake *lake;
-  void updateLoungerList();
+  void updateWaterTemperatureList();
   void updatePeopleList();
+  void updateLoungerList();
 };
 #endif // GUI_H
