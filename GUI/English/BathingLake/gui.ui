@@ -95,32 +95,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="setFirstNameLabel">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>80</y>
-     <width>100</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Set first name</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="setLastNameLabel">
-   <property name="geometry">
-    <rect>
-     <x>410</x>
-     <y>120</y>
-     <width>100</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Set last name</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="setLastNameBtn">
    <property name="geometry">
     <rect>

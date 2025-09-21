@@ -18,8 +18,6 @@ public:
   ~GUI();
   bool rentLounger();
   void parkBike();
-  double viewWaterTemperature();
-  unsigned short viewWaterQuality();
   int viewNumberOfVisitors();
 
 private slots:
