@@ -13,32 +13,6 @@
   <property name="windowTitle">
    <string>GUI</string>
   </property>
-  <widget class="QPushButton" name="getWaterTemperatureBtn">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>80</y>
-     <width>200</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Get water temperature</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="getWaterQualityBtn">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>120</y>
-     <width>200</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Get water quality</string>
-   </property>
-  </widget>
   <widget class="QPlainTextEdit" name="log">
    <property name="geometry">
     <rect>
@@ -49,77 +23,126 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="getFirstNameBtn">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>280</x>
-     <y>80</y>
-     <width>100</width>
-     <height>24</height>
+     <x>50</x>
+     <y>30</y>
+     <width>700</width>
+     <height>241</height>
     </rect>
    </property>
-   <property name="text">
-    <string>Get first name</string>
+   <property name="currentIndex">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QPushButton" name="getLastNameBtn">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>120</y>
-     <width>100</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Get last name</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="setFirstNameEdit">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>80</y>
-     <width>113</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="setLastNameEdit">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>120</y>
-     <width>113</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="setLastNameBtn">
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>120</y>
-     <width>100</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Set last name</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="setFirstNameBtn">
-   <property name="geometry">
-    <rect>
-     <x>660</x>
-     <y>80</y>
-     <width>100</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Set first name</string>
-   </property>
+   <widget class="QWidget" name="lakeTab">
+    <attribute name="title">
+     <string>Lake</string>
+    </attribute>
+    <widget class="QPushButton" name="getWaterTemperatureBtn">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>200</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Get water temperature</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="getWaterQualityBtn">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>70</y>
+       <width>200</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Get water quality</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="peopleTab">
+    <attribute name="title">
+     <string>People</string>
+    </attribute>
+    <widget class="QLineEdit" name="setFirstNameEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="setFirstNameBtn">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set first name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="setLastNameEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>113</width>
+       <height>24</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="setLastNameBtn">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>60</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Set last name</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="getFirstNameBtn">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Get first name</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="getLastNameBtn">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>130</y>
+       <width>100</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Get last name</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
