@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="lakeTab">
     <attribute name="title">
@@ -214,28 +214,36 @@
       <rect>
        <x>110</x>
        <y>20</y>
-       <width>65</width>
+       <width>180</width>
        <height>24</height>
       </rect>
      </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
      <item>
       <property name="text">
-       <string>1</string>
+       <string>Simple</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>2</string>
+       <string>Luxury</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>3</string>
+       <string>With Umbrella</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>4</string>
+       <string>With Service</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>With Umbrella and Service</string>
       </property>
      </item>
     </widget>
@@ -270,28 +278,41 @@
       <rect>
        <x>110</x>
        <y>60</y>
-       <width>65</width>
+       <width>180</width>
        <height>24</height>
       </rect>
      </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
      <item>
       <property name="text">
-       <string>1</string>
+       <string>New</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>2</string>
+       <string>As Good As New</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>3</string>
+       <string>Used</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>4</string>
+       <string>Worn</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Defective</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Discarded</string>
       </property>
      </item>
     </widget>

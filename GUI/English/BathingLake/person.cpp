@@ -1,5 +1,7 @@
 #include "person.h"
 
+unsigned int Person::nextnr = 1;
+
 Person::Person() {}
 
 QString Person::getFirstName() const { return firstName; }

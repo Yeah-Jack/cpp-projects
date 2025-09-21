@@ -12,6 +12,7 @@ public:
   void setFirstName(const QString first);
   void setLastName(const QString last);
   void setId(unsigned int newId);
+  static unsigned int nextnr;
 
 private:
   QString firstName;

@@ -1,17 +1,55 @@
 #include "lounger.h"
 
+unsigned int Lounger::nextnr = 1;
+
 Lounger::Lounger() {}
 
-unsigned short Lounger::getId() const { return id; }
+unsigned int Lounger::getId() const { return id; }
 
-unsigned short Lounger::getType() const { return type; }
+short Lounger::getType() const { return type; }
 
-unsigned short Lounger::getCondition() const { return condition; }
+short Lounger::getCondition() const { return condition; }
 
-void Lounger::setType(const unsigned short newType) { type = newType; }
+void Lounger::setType(const short newType) { type = newType; }
 
-void Lounger::setCondition(const unsigned short newCondition) {
+void Lounger::setCondition(const short newCondition) {
   condition = newCondition;
 }
 
-void Lounger::setId(const unsigned short newId) { id = newId; }
+void Lounger::setId(const unsigned int newId) { id = newId; }
+
+QString Lounger::getTypeName(short type) {
+  switch (type) {
+  case BeachLoungerTypeBeachLoungerSimple:
+    return "Simple";
+  case BeachLoungerTypeBeachLoungerLuxury:
+    return "Luxury";
+  case BeachLoungerTypeBeachLoungerWithUmbrella:
+    return "With Umbrella";
+  case BeachLoungerTypeBeachLoungerWithService:
+    return "With Service";
+  case BeachLoungerTypeBeachLoungerWithUmbrellaAndService:
+    return "With Umbrella and Service";
+  default:
+    return "Unknown";
+  }
+}
+
+QString Lounger::getConditionName(short condition) {
+  switch (condition) {
+  case conditionNew:
+    return "New";
+  case conditionAsGoodAsNew:
+    return "As Good As New";
+  case conditionUsed:
+    return "Used";
+  case conditionWorn:
+    return "Worn";
+  case conditionDefective:
+    return "Defective";
+  case conditionDiscarded:
+    return "Discarded";
+  default:
+    return "Unknown";
+  }
+}

@@ -7,6 +7,8 @@ Lake::~Lake() {
     delete p;
   for (auto l : lounger)
     delete l;
+  for (auto b : bookings)
+    delete b;
 }
 
 double Lake::getWaterTemperature() {
@@ -27,11 +29,14 @@ unsigned short Lake::getWaterQuality() {
 
 Person *Lake::getPerson(int index) { return people[index]; }
 
-void Lake::addLounger(Lounger *l) { lounger.push_back(l); }
+void Lake::addLounger(Lounger *l) {
+  lounger.push_back(l);
+  Lounger::nextnr++;
+}
 
-unsigned int Lake::getNextLoungerId() { return lounger.size() + 1; }
+unsigned int Lake::getNextLoungerId() { return Lounger::nextnr; }
 
-unsigned int Lake::getNextPersonId() { return people.size() + 1; }
+unsigned int Lake::getNextPersonId() { return Person::nextnr; }
 
 unsigned int Lake::getPeopleCount() { return people.size(); }
 
@@ -41,7 +46,12 @@ std::vector<Person *> Lake::getPeople() { return people; }
 
 std::vector<Lounger *> Lake::getLoungers() { return lounger; }
 
-void Lake::addPerson(Person *p) { people.push_back(p); }
+std::vector<Booking *> Lake::getBookings() { return bookings; }
+
+void Lake::addPerson(Person *p) {
+  people.push_back(p);
+  Person::nextnr++;
+}
 
 bool Lake::canRentLounger() { return lounger.size() < 200; }
 
@@ -58,3 +68,5 @@ void Lake::removeLounger(int index) {
     lounger.erase(lounger.begin() + index);
   }
 }
+
+void Lake::addBooking(Booking *b) { bookings.push_back(b); }

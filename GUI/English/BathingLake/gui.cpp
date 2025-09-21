@@ -35,19 +35,20 @@ void GUI::on_rentLoungerBtn_clicked() {
     Lounger *newLounger = new Lounger();
     unsigned int id = lake->getNextLoungerId();
     newLounger->setId(id);
-    unsigned int type = ui->typeSelect->currentIndex() + 1;
+    short type = ui->typeSelect->currentIndex();
     newLounger->setType(type);
-    unsigned int condition = ui->conditionSelect->currentIndex() + 1;
+    short condition = ui->conditionSelect->currentIndex();
     newLounger->setCondition(condition);
     lake->addLounger(newLounger);
     updateLoungerList();
     ui->log->appendPlainText("You have rented the lounger number " +
-                             QString::number(id) + " of type " +
-                             QString::number(type) + " with condition " +
-                             QString::number(condition) + '.');
+                             QString::number(id) + " of the type \"" +
+                             Lounger::getTypeName(type) +
+                             "\" with the condition \"" +
+                             Lounger::getConditionName(condition) + "\".");
   } else {
-    ui->log->appendPlainText(
-        "Maximum number of loungers (200) already rented.");
+    ui->log
+        ->appendPlainText("Maximum number of loungers (200) already rented.");
   }
 }
 
@@ -59,25 +60,27 @@ void GUI::on_viewVisitorsBtn_clicked() {
 void GUI::updatePeopleList() {
   ui->peopleList->clear();
   for (auto p : lake->getPeople()) {
-    ui->peopleList->addItem("ID: " + QString::number(p->getId()) + ", Name: " +
-                            p->getFirstName() + " " + p->getLastName());
+    ui->peopleList
+        ->addItem("ID: " + QString::number(p->getId()) +
+                  ", Name: " + p->getFirstName() + " " + p->getLastName());
   }
 }
 
 void GUI::updateLoungerList() {
   ui->loungerList->clear();
   for (auto l : lake->getLoungers()) {
-    ui->loungerList->addItem("ID: " + QString::number(l->getId()) + ", Type: " +
-                             QString::number(l->getType()) + ", Condition: " +
-                             QString::number(l->getCondition()));
+    ui->loungerList->addItem(
+        "ID: " + QString::number(l->getId()) +
+        ", Type: " + Lounger::getTypeName(l->getType()) +
+        ", Condition: " + Lounger::getConditionName(l->getCondition()));
   }
 }
 
 void GUI::updateWaterTemperatureList() {
   ui->waterTemperatureList->clear();
   for (int i = 0; i < 200; i++) {
-    ui->waterTemperatureList->addItem(
-        QString::number(lake->getWaterTemperature()) + "°C");
+    ui->waterTemperatureList
+        ->addItem(QString::number(lake->getWaterTemperature()) + "°C");
   }
 }
 
@@ -91,9 +94,9 @@ void GUI::on_addPersonBtn_clicked() {
     p->setId(lake->getNextPersonId());
     lake->addPerson(p);
     updatePeopleList();
-    ui->log->appendPlainText("You added person number " +
-                             QString::number(p->getId()) + ": " + firstName +
-                             " " + lastName + '.');
+    ui->log->appendPlainText(
+        "You added the person number " + QString::number(p->getId()) +
+        " with the name of " + firstName + " " + lastName + '.');
   } else {
     ui->log->appendPlainText("Please enter both first and last name.");
   }
