@@ -28,9 +28,12 @@ private slots:
   void on_setLastNameBtn_clicked();
   void on_parkBikeBtn_clicked();
 
+  void on_rentLoungerBtn_clicked();
+
 private:
   Ui::GUI *ui;
   Lake *lake;
   Person *person;
+  Lounger *lounger;
 };
 #endif // GUI_H

@@ -5,12 +5,14 @@ GUI::GUI(QWidget *parent) : QWidget(parent), ui(new Ui::GUI) {
   ui->setupUi(this);
   lake = new Lake;
   person = new Person;
+  lounger = new Lounger;
 }
 
 GUI::~GUI() {
   delete ui;
   delete lake;
   delete person;
+  delete lounger;
 }
 
 void GUI::on_getWaterTemperatureBtn_clicked() {
@@ -49,4 +51,17 @@ void GUI::on_setLastNameBtn_clicked() {
 
 void GUI::on_parkBikeBtn_clicked() {
   ui->log->appendPlainText("Your have parked your bike.");
+}
+
+void GUI::on_rentLoungerBtn_clicked() {
+  unsigned int id = lounger->getId() + 1;
+  lounger->setId(id);
+  unsigned int type = ui->typeSelect->currentIndex() + 1;
+  lounger->setType(type);
+  unsigned int condition = ui->conditionSelect->currentIndex() + 1;
+  lounger->setCondition(condition);
+  ui->log->appendPlainText("You have rented the lounger number " +
+                           QString::number(id) + " of type " +
+                           QString::number(type) + " with condition " +
+                           QString::number(condition) + '.');
 }
