@@ -72,10 +72,23 @@
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>20</y>
+       <y>60</y>
        <width>250</width>
        <height>150</height>
       </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="waterTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>150</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Water Temperature History</string>
      </property>
     </widget>
    </widget>
