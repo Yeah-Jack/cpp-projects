@@ -5,8 +5,7 @@
 build/
 build-*/
 outDebug
-Console/English/CalculatorWrapper/
-!Console/English/CalculatorWrapper/main.cpp
+Console/English/FileExercises/config.toml
 
 # Prerequisites
 *.d
