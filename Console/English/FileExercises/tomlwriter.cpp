@@ -1,8 +1,6 @@
 #include "tomlwriter.h"
 #include <iostream>
 
-std::string TomlWriter::outputFilename = "config.toml";
-
 TomlWriter::TomlWriter() {}
 
 TomlWriter::~TomlWriter() {}
@@ -13,6 +11,7 @@ void TomlWriter::addValue(const std::string &section, const std::string &key,
 }
 
 bool TomlWriter::writeFile() {
+  const std::string outputFilename = "config.toml";
   std::ofstream tomlFile(outputFilename);
 
   if (!tomlFile.is_open()) {

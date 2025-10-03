@@ -48,9 +48,6 @@ private:
    * The inner map contains the key-value pairs of the section.
    */
   std::map<std::string, std::map<std::string, std::string>> data;
-
-  /** @brief The filename for the output TOML file. */
-  static std::string outputFilename;
 };
 
 #endif // TOML_WRITER_H
