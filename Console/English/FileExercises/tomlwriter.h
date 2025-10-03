@@ -50,7 +50,7 @@ private:
   std::map<std::string, std::map<std::string, std::string>> data;
 
   /** @brief The filename for the output TOML file. */
-  const std::string outputFilename = "config.toml";
+  static std::string outputFilename;
 };
 
 #endif // TOML_WRITER_H

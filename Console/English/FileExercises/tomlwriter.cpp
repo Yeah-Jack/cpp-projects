@@ -1,6 +1,8 @@
 #include "tomlwriter.h"
 #include <iostream>
 
+std::string TomlWriter::outputFilename = "config.toml";
+
 TomlWriter::TomlWriter() {}
 
 TomlWriter::~TomlWriter() {}
