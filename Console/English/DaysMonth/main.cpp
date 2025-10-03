@@ -30,7 +30,6 @@ int main() {
     } else {
       std::cout << "The month has 31 days.\n";
     }
-
   } while (month < 1 || month > 12);
 
   return 0;
