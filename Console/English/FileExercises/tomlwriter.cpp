@@ -14,8 +14,8 @@ bool TomlWriter::writeFile() {
   std::ofstream tomlFile(outputFilename);
 
   if (!tomlFile.is_open()) {
-    std::cerr << "Error: File '" << outputFilename
-              << "' could not be opened for writing.\n";
+    std::cout << "Error: File '" << outputFilename
+              << "' could not be opened.\n";
     return false;
   }
 
@@ -27,7 +27,7 @@ bool TomlWriter::writeFile() {
                << "\"\n";
     }
 
-    tomlFile << "\n";
+    tomlFile << '\n';
   }
 
   tomlFile.close();
