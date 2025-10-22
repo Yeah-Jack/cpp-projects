@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="btnCreateOneLouncherStandard">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>161</width>
+     <x>30</x>
+     <y>40</y>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
@@ -29,9 +29,9 @@
   <widget class="QPlainTextEdit" name="edtListLoungers">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>210</x>
      <y>40</y>
-     <width>531</width>
+     <width>561</width>
      <height>341</height>
     </rect>
    </property>
@@ -39,9 +39,9 @@
   <widget class="QPushButton" name="btnShowListLoungers">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>150</y>
-     <width>161</width>
+     <x>30</x>
+     <y>140</y>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
@@ -52,10 +52,10 @@
   <widget class="QPushButton" name="btnClearLog">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>360</y>
-     <width>80</width>
-     <height>22</height>
+     <x>30</x>
+     <y>350</y>
+     <width>151</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -65,9 +65,9 @@
   <widget class="QPushButton" name="btnCreateOneLouncherLuxurious">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>100</y>
-     <width>161</width>
+     <x>30</x>
+     <y>90</y>
+     <width>151</width>
      <height>31</height>
     </rect>
    </property>
@@ -78,8 +78,8 @@
   <widget class="QLabel" name="labelDays">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>200</y>
+     <x>30</x>
+     <y>190</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -88,11 +88,11 @@
     <string>Days:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="sbDays">
+  <widget class="QSpinBox" name="standardDays">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>200</y>
+     <x>110</x>
+     <y>190</y>
      <width>71</width>
      <height>22</height>
     </rect>
@@ -101,8 +101,8 @@
   <widget class="QLabel" name="labelHours">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>230</y>
+     <x>30</x>
+     <y>220</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -111,11 +111,11 @@
     <string>Hours:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="sbHours">
+  <widget class="QSpinBox" name="luxuriousHours">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>230</y>
+     <x>110</x>
+     <y>220</y>
      <width>71</width>
      <height>22</height>
     </rect>
@@ -124,8 +124,8 @@
   <widget class="QLabel" name="labelPillows">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>260</y>
+     <x>30</x>
+     <y>250</y>
      <width>47</width>
      <height>13</height>
     </rect>
@@ -134,11 +134,11 @@
     <string>Pillows:</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="sbPillows">
+  <widget class="QSpinBox" name="luxuriousPillows">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>260</y>
+     <x>110</x>
+     <y>250</y>
      <width>71</width>
      <height>22</height>
     </rect>
@@ -147,8 +147,8 @@
   <widget class="QLabel" name="labelCoverColor">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>290</y>
+     <x>30</x>
+     <y>280</y>
      <width>71</width>
      <height>16</height>
     </rect>
@@ -157,12 +157,12 @@
     <string>Cover Color:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="leCoverColor">
+  <widget class="QLineEdit" name="luxuriousCoverColor">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>290</y>
-     <width>81</width>
+     <x>110</x>
+     <y>280</y>
+     <width>71</width>
      <height>20</height>
     </rect>
    </property>
@@ -170,8 +170,8 @@
   <widget class="QLabel" name="labelFrameColor">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>320</y>
+     <x>30</x>
+     <y>310</y>
      <width>71</width>
      <height>16</height>
     </rect>
@@ -180,12 +180,12 @@
     <string>Frame Color:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="leFrameColor">
+  <widget class="QLineEdit" name="luxuriousFrameColor">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>320</y>
-     <width>81</width>
+     <x>110</x>
+     <y>310</y>
+     <width>71</width>
      <height>20</height>
     </rect>
    </property>

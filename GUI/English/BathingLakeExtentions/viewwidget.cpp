@@ -19,15 +19,15 @@ ViewWidget::~ViewWidget() {
 }
 
 void ViewWidget::createLoungerTypeStandard() {
-  unsigned short days = ui->sbDays->value();
+  unsigned short days = ui->standardDays->value();
   myLake->createLoungerStandardType(days);
 }
 
 void ViewWidget::createLoungerTypeLuxurious() {
-  unsigned short hours = ui->sbHours->value();
-  int pillows = ui->sbPillows->value();
-  QString coverColor = ui->leCoverColor->text();
-  QString frameColor = ui->leFrameColor->text();
+  unsigned short hours = ui->luxuriousHours->value();
+  int pillows = ui->luxuriousPillows->value();
+  QString coverColor = ui->luxuriousCoverColor->text();
+  QString frameColor = ui->luxuriousFrameColor->text();
   myLake->createLoungerLuxury(hours, pillows, coverColor, frameColor);
 }
 
