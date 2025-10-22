@@ -9,15 +9,16 @@
  */
 class LoungerLuxury : public LoungerStandardType {
 public:
-  LoungerLuxury(unsigned long newInventoryNr, int pillows, QString coverColor, QString frameColor);
+  LoungerLuxury(unsigned long newInventoryNr, int pillows, QString coverColor,
+                QString frameColor);
 
   int getNumPillows() const;
   QString getCoverColor() const;
   QString getFrameColor() const;
 
   void setNumPillows(int pillows);
-  void setCoverColor(const QString& color);
-  void setFrameColor(const QString& color);
+  void setCoverColor(const QString &color);
+  void setFrameColor(const QString &color);
 
   QString serialize();
 
