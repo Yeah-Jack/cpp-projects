@@ -10,12 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     controllerlake.cpp \
+    loungerluxury.cpp \
     loungerstandardtype.cpp \
     main.cpp \
     viewwidget.cpp
 
 HEADERS += \
     controllerlake.h \
+    loungerluxury.h \
     loungerstandardtype.h \
     viewwidget.h
 

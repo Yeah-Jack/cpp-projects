@@ -23,6 +23,7 @@ private:
 
 private slots:
   void createLoungerTypeStandard();
+  void createLoungerTypeLuxurious();
   void showListLoungers();
   void clearLog();
 };

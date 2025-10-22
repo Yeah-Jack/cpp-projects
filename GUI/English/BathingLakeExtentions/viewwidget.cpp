@@ -6,8 +6,8 @@ ViewWidget::ViewWidget(QWidget *parent)
   ui->setupUi(this);
   connect(ui->btnCreateOneLouncherStandard, &QPushButton::clicked, this,
           &ViewWidget::createLoungerTypeStandard);
-  // connect(ui->btnCreateOneLouncherLuxurious, &QPushButton::clicked, this,
-  // &ViewWidget::createLoungerTypeLuxuious);
+  connect(ui->btnCreateOneLouncherLuxurious, &QPushButton::clicked, this,
+          &ViewWidget::createLoungerTypeLuxurious);
   connect(ui->btnShowListLoungers, &QPushButton::clicked, this,
           &ViewWidget::showListLoungers);
   connect(ui->btnClearLog, &QPushButton::clicked, this, &ViewWidget::clearLog);
@@ -19,7 +19,16 @@ ViewWidget::~ViewWidget() {
 }
 
 void ViewWidget::createLoungerTypeStandard() {
-  myLake->createLoungerStandardType();
+  unsigned short days = ui->sbDays->value();
+  myLake->createLoungerStandardType(days);
+}
+
+void ViewWidget::createLoungerTypeLuxurious() {
+  unsigned short hours = ui->sbHours->value();
+  int pillows = ui->sbPillows->value();
+  QString coverColor = ui->leCoverColor->text();
+  QString frameColor = ui->leFrameColor->text();
+  myLake->createLoungerLuxury(hours, pillows, coverColor, frameColor);
 }
 
 void ViewWidget::showListLoungers() {

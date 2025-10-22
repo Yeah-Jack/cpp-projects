@@ -11,7 +11,9 @@ public:
   LoungerStandardType(unsigned long newInventoryNr);
 
   unsigned long getInventoryNr();
-  QString serialize();
+  unsigned short getLeaseTime();
+  void setLeaseTime(unsigned short time);
+  virtual QString serialize();
 
 private:
   unsigned long inventoryNr;

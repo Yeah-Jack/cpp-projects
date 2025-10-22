@@ -29,10 +29,10 @@
   <widget class="QPlainTextEdit" name="edtListLoungers">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>230</x>
      <y>40</y>
-     <width>341</width>
-     <height>311</height>
+     <width>531</width>
+     <height>341</height>
     </rect>
    </property>
   </widget>
@@ -46,14 +46,14 @@
     </rect>
    </property>
    <property name="text">
-    <string>show list loungers</string>
+    <string>show lounger list</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnClearLog">
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>310</y>
+     <y>360</y>
      <width>80</width>
      <height>22</height>
     </rect>
@@ -73,6 +73,121 @@
    </property>
    <property name="text">
     <string>create lounger luxurious</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelDays">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>200</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Days:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sbDays">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>200</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelHours">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>230</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hours:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sbHours">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>230</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPillows">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>260</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pillows:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="sbPillows">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>260</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelCoverColor">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>290</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Cover Color:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leCoverColor">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>290</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelFrameColor">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>320</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Frame Color:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leFrameColor">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>320</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
    </property>
   </widget>
  </widget>
