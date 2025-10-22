@@ -2,7 +2,7 @@
 #include "ui_viewwidget.h"
 
 ViewWidget::ViewWidget(QWidget *parent)
-    : QWidget(parent), ui(new Ui::ViewWidget), myLake1(new ControllerLake) {
+    : QWidget(parent), ui(new Ui::ViewWidget), myLake(new ControllerLake) {
   ui->setupUi(this);
   connect(ui->btnCreateOneLouncherStandard, &QPushButton::clicked, this,
           &ViewWidget::createLoungerTypeStandard);
@@ -15,17 +15,17 @@ ViewWidget::ViewWidget(QWidget *parent)
 
 ViewWidget::~ViewWidget() {
   delete ui;
-  delete myLake1;
+  delete myLake;
 }
 
 void ViewWidget::createLoungerTypeStandard() {
-  myLake1->createLoungerStandardType();
+  myLake->createLoungerStandardType();
 }
 
 void ViewWidget::showListLoungers() {
   QStringList loungerStrings;
 
-  loungerStrings = myLake1->getListLoungers();
+  loungerStrings = myLake->getListLoungers();
   if (loungerStrings.size() > 0) {
     ui->edtListLoungers->clear();
     for (QString i : loungerStrings) {

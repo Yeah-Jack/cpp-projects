@@ -19,7 +19,7 @@ public:
 
 private:
   Ui::ViewWidget *ui;
-  ControllerLake *myLake1;
+  ControllerLake *myLake;
 
 private slots:
   void createLoungerTypeStandard();
