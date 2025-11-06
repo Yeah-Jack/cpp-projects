@@ -29,16 +29,14 @@ const std::vector<LiegePremium *> &Data::premiumLiegen() const {
   return listeLiegenPremium;
 }
 
-bool Data::bucheLiege(
-    LiegeTyp typ) {
+bool Data::bucheLiege(LiegeTyp typ) {
   if (typ == LiegeTyp::Standard) {
     for (LiegeStandard *liege : listeLiegenStandard) {
       if (!liege->istBelegt()) {
         return liege->buchen();
       }
     }
-  }
-  else {
+  } else {
     for (LiegePremium *liege : listeLiegenPremium) {
       if (!liege->istBelegt()) {
         return liege->buchen();
@@ -48,16 +46,14 @@ bool Data::bucheLiege(
   return false;
 }
 
-bool Data::storniereLiege(
-    LiegeTyp typ) {
+bool Data::storniereLiege(LiegeTyp typ) {
   if (typ == LiegeTyp::Standard) {
     for (LiegeStandard *liege : listeLiegenStandard) {
       if (liege->istBelegt()) {
         return liege->stornieren();
       }
     }
-  }
-  else {
+  } else {
     for (LiegePremium *liege : listeLiegenPremium) {
       if (liege->istBelegt()) {
         return liege->stornieren();

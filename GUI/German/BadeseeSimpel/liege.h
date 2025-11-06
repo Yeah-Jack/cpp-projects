@@ -1,10 +1,7 @@
 #ifndef LIEGE_H
 #define LIEGE_H
 
-enum class LiegeTyp {
-  Standard = 0,
-  Premium = 1
-};
+enum class LiegeTyp { Standard = 0, Premium = 1 };
 
 class LiegeStandard {
 public:

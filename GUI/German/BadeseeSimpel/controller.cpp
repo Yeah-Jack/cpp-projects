@@ -1,19 +1,12 @@
 #include "controller.h"
 
-Controller::Controller() {
-}
+Controller::Controller() {}
 
-QString Controller::listeAbrufen() const {
-  return listeStringGenerieren();
-}
+QString Controller::listeAbrufen() const { return listeStringGenerieren(); }
 
-bool Controller::liegeBuchen(
-    LiegeTyp typ) {
-  return data.bucheLiege(typ);
-}
+bool Controller::liegeBuchen(LiegeTyp typ) { return data.bucheLiege(typ); }
 
-bool Controller::buchungStornieren(
-    LiegeTyp typ) {
+bool Controller::buchungStornieren(LiegeTyp typ) {
   return data.storniereLiege(typ);
 }
 
