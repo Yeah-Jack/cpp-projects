@@ -7,8 +7,7 @@
 #include "ui_ui.h"
 
 namespace {
-QString liegeTypAlsText(
-    LiegeTyp typ) {
+QString liegeTypAlsText(LiegeTyp typ) {
   if (typ == LiegeTyp::Standard) {
     return QString("Standard-Liege");
   }
@@ -16,13 +15,9 @@ QString liegeTypAlsText(
 }
 } // namespace
 
-UI::UI(
-    QWidget *parent)
-    : QMainWindow(parent),
-      ui(new Ui::UI),
-      listeLabel(nullptr),
-      statusLabel(nullptr),
-      typAuswahl(nullptr) {
+UI::UI(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::UI), listeLabel(nullptr),
+      statusLabel(nullptr), typAuswahl(nullptr) {
   ui->setupUi(this);
 
   typAuswahl = ui->comboBoxTyp;
@@ -31,7 +26,8 @@ UI::UI(
 
   connect(ui->buttonListe, &QPushButton::clicked, this, &UI::listeAnzeigen);
   connect(ui->buttonBuchen, &QPushButton::clicked, this, &UI::liegeBuchen);
-  connect(ui->buttonStornieren, &QPushButton::clicked, this, &UI::buchungStornieren);
+  connect(ui->buttonStornieren, &QPushButton::clicked, this,
+          &UI::buchungStornieren);
 
   setWindowTitle(QString("Badesee Liegenverwaltung"));
 
@@ -39,9 +35,7 @@ UI::UI(
   zeigeStatus(QString("Willkommen! Wählen Sie eine Aktion."));
 }
 
-UI::~UI() {
-  delete ui;
-}
+UI::~UI() { delete ui; }
 
 void UI::listeAnzeigen() {
   const QString liste = controller.listeAbrufen();
@@ -66,7 +60,8 @@ void UI::buchungStornieren() {
   if (erfolg) {
     zeigeStatus(liegeTypAlsText(typ) + QString(" wurde freigegeben."));
   } else {
-    zeigeStatus(QString("Keine gebuchte ") + liegeTypAlsText(typ) + QString(" vorhanden."));
+    zeigeStatus(QString("Keine gebuchte ") + liegeTypAlsText(typ) +
+                QString(" vorhanden."));
   }
 }
 
@@ -78,7 +73,4 @@ LiegeTyp UI::ausgewaehlterTyp() const {
   return LiegeTyp::Premium;
 }
 
-void UI::zeigeStatus(
-    const QString &text) {
-  statusLabel->setText(text);
-}
+void UI::zeigeStatus(const QString &text) { statusLabel->setText(text); }

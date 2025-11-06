@@ -10,7 +10,9 @@ class QLabel;
 class QComboBox;
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class UI; }
+namespace Ui {
+class UI;
+}
 QT_END_NAMESPACE
 
 class UI : public QMainWindow {
