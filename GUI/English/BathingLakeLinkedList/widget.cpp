@@ -26,8 +26,8 @@ void Widget::updateCurrentOrderView() {
     return;
   }
 
-  ui->labelCurrentNumber
-      ->setText(tr("Current order number: %1").arg(current->number()));
+  ui->labelCurrentNumber->setText(
+      tr("Current order number: %1").arg(current->number()));
   ui->lineEditCurrentText->setText(current->text());
   ui->btnNext->setEnabled(true);
   ui->btnPrevious->setEnabled(true);
