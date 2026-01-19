@@ -1,0 +1,13 @@
+[database]
+ports = "8001, 8002, 8003"
+server = "192.168.1.1"
+username = "admin"
+
+[owner]
+address = "415 Oaklands, South Ariane, South Dakota"
+company = "Acme Widgets Inc."
+email = "john.doe@example.com"
+name = "John Doe"
+phone = "+1-800-555-0199"
+title = "Engineer"
+
