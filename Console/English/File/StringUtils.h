@@ -1,3 +1,8 @@
+/**
+ * @file StringUtils.h
+ * @brief Declares string utility functions.
+ */
+
 #ifndef STRINGUTILS_H
 #define STRINGUTILS_H
 
@@ -6,7 +11,7 @@
 
 class StringUtils {
 public:
-    static std::vector<std::string> split(const std::string& str, char delimiter);
+  static std::vector<std::string> split(const std::string &str, char delimiter);
 };
 
 #endif // STRINGUTILS_H

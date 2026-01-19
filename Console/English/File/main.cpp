@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Program entry point for file/CSV utilities.
+ */
+
 #include "CSVReader.h"
 #include "FileReader.h"
 #include <iostream>

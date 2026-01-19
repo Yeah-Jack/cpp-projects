@@ -1,3 +1,8 @@
+/**
+ * @file CSVReader.cpp
+ * @brief Defines CSV reader utilities.
+ */
+
 #include "CSVReader.h"
 #include "StringUtils.h"
 #include <fstream>
