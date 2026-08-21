@@ -10,13 +10,24 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    widget.cpp
+    widget.cpp \
+    konto.cpp \
+    girokonto.cpp \
+    sparkonto.cpp \
+    data.cpp \
+    controller.cpp
 
 HEADERS += \
-    widget.h
+    widget.h \
+    konto.h \
+    girokonto.h \
+    sparkonto.h \
+    data.h \
+    controller.h
 
-FORMS += \
-    widget.ui
+# Es wird keine widget.ui verwendet: die Oberfläche (View) wird bewusst im
+# Code aufgebaut (siehe widget.cpp), um sie unabhängig vom Qt Designer
+# nachvollziehbar und versionierbar zu halten.
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
