@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>780</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bankhaus - Kontenverwaltung</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayoutHaupt" stretch="0,0,1,0">
+   <item>
+    <widget class="QGroupBox" name="gruppeAnlegen">
+     <property name="title">
+      <string>Neues Konto anlegen</string>
+     </property>
+     <layout class="QFormLayout" name="formLayoutAnlegen">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelKontoart">
+        <property name="text">
+         <string>Kontoart:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboKontoart">
+        <item>
+         <property name="text">
+          <string>Girokonto</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sparkonto</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelStartwert">
+        <property name="text">
+         <string>Dispokredit (EUR):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="spinStartwert">
+        <property name="decimals">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <double>1000000.000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QPushButton" name="buttonKontoAnlegen">
+        <property name="text">
+         <string>Konto anlegen</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gruppeAktionen">
+     <property name="title">
+      <string>Ein-/Auszahlung und Dispokredit</string>
+     </property>
+     <layout class="QFormLayout" name="formLayoutAktionen">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelKontonummer">
+        <property name="text">
+         <string>Kontonummer:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="editKontoNr">
+        <property name="placeholderText">
+         <string>z.B. 1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelBetrag">
+        <property name="text">
+         <string>Betrag (EUR):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="spinBetrag">
+        <property name="decimals">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <double>1000000.000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayoutEinAus">
+        <item>
+         <widget class="QPushButton" name="buttonEinzahlen">
+          <property name="text">
+           <string>Einzahlen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonAbheben">
+          <property name="text">
+           <string>Abheben</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="labelNeuerDispo">
+        <property name="text">
+         <string>Neuer Dispokredit:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayoutDispo">
+        <item>
+         <widget class="QDoubleSpinBox" name="spinNeuerDispo">
+          <property name="decimals">
+           <number>2</number>
+          </property>
+          <property name="maximum">
+           <double>1000000.000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonDispoAendern">
+          <property name="text">
+           <string>Dispokredit ändern (nur Girokonto)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QPushButton" name="buttonKontoSuchen">
+        <property name="text">
+         <string>Konto anzeigen</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="labelKontoInfoUeberschrift">
+        <property name="text">
+         <string>Kontoinfo:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="labelKontoInfo">
+        <property name="text">
+         <string>Noch kein Konto ausgewählt.</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gruppeUebersicht">
+     <property name="title">
+      <string>Testkonten &amp;&amp; Übersicht (Anforderung: min. 50.000 Konten)</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayoutUebersicht">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutTest">
+        <item>
+         <widget class="QLabel" name="labelAnzahlBeschriftung">
+          <property name="text">
+           <string>Anzahl:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinTestkontenAnzahl">
+          <property name="maximum">
+           <number>1000000</number>
+          </property>
+          <property name="value">
+           <number>50000</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="buttonTestkontenErzeugen">
+          <property name="text">
+           <string>Testkonten erzeugen</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacerTest">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelAnzahlKonten">
+        <property name="text">
+         <string>Aktuell verwaltete Konten insgesamt: 0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelHinweisAnzeige">
+        <property name="text">
+         <string>Anzeige der ersten 500 Konten (aus Performance-Gründen; intern werden alle Konten verwaltet):</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listeKonten"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelStatus">
+     <property name="text">
+      <string>Bereit.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

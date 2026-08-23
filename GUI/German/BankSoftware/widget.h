@@ -4,22 +4,24 @@
 #include <QWidget>
 #include <cstddef>
 
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class Widget;
+}
+QT_END_NAMESPACE
+
 class Controller;
-class QComboBox;
-class QLineEdit;
-class QDoubleSpinBox;
-class QSpinBox;
-class QPushButton;
-class QListWidget;
-class QLabel;
 
 /*
  * Widget (View)
  * -------------
- * Übernimmt ausschließlich die Kommunikation mit dem Anwender (Eingabe
- * entgegennehmen, Ergebnisse anzeigen). Enthält bewusst KEINE fachliche
- * Logik: jede Benutzeraktion wird 1:1 an den Controller weitergereicht,
- * die Antwort des Controllers wird lediglich angezeigt.
+ * Übernimmt ausschließlich die Kommunikation mit dem Anwender. Das eigentliche
+ * Layout/Aussehen stammt vollständig aus widget.ui (Qt Designer) und wird
+ * über die generierte Klasse Ui::Widget bereitgestellt (ui->...).
+ *
+ * Die Klasse enthält bewusst KEINE fachliche Logik: jede Benutzeraktion wird
+ * 1:1 an den Controller weitergereicht, dessen Antwort lediglich angezeigt
+ * wird.
  *
  * Der Zugriff auf den Controller erfolgt über einen klassischen Pointer;
  * die View besitzt den Controller nicht (kein Lifetime-Management hier).
@@ -30,7 +32,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(Controller* controller, QWidget* parent = nullptr);
-    ~Widget() override = default;
+    ~Widget() override;
 
 private slots:
     void onKontoartGeaendert(int index);
@@ -42,43 +44,15 @@ private slots:
     void onTestkontenErzeugenGeklickt();
 
 private:
-    void baueOberflaeche();
+    void verbindeSignaleUndSlots();
     void zeigeStatus(const QString& text, bool istFehler);
     void zeigeKontoInfo(const QString& text);
     void aktualisiereKontenliste();
     void aktualisiereAnzahlAnzeige();
     bool leseKontoNrEingabe(unsigned int& ergebnis);
 
-    Controller* controller; // klassischer Pointer, keine Besitzverhältnisse
-
-    // -- Bereich: Konto anlegen --
-    QComboBox* comboKontoart;
-    QLabel* labelStartwert;
-    QDoubleSpinBox* spinStartwert;
-    QPushButton* buttonKontoAnlegen;
-
-    // -- Bereich: Ein-/Auszahlung --
-    QLineEdit* editKontoNr;
-    QDoubleSpinBox* spinBetrag;
-    QPushButton* buttonEinzahlen;
-    QPushButton* buttonAbheben;
-
-    // -- Bereich: Dispokredit ändern --
-    QDoubleSpinBox* spinNeuerDispo;
-    QPushButton* buttonDispoAendern;
-
-    // -- Bereich: Konto suchen / Info --
-    QPushButton* buttonKontoSuchen;
-    QLabel* labelKontoInfo;
-
-    // -- Bereich: Testkonten erzeugen --
-    QSpinBox* spinTestkontenAnzahl;
-    QPushButton* buttonTestkontenErzeugen;
-    QLabel* labelAnzahlKonten;
-
-    // -- Bereich: Kontenliste + Status --
-    QListWidget* listeKonten;
-    QLabel* labelStatus;
+    Ui::Widget* ui;          // von Qt Designer generierte Oberfläche (widget.ui)
+    Controller* controller;  // klassischer Pointer, keine Besitzverhältnisse
 
     static const std::size_t MAX_ANGEZEIGTE_KONTEN = 500;
 };

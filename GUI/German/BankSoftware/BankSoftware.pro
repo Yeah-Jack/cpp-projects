@@ -25,9 +25,8 @@ HEADERS += \
     data.h \
     controller.h
 
-# Es wird keine widget.ui verwendet: die Oberfläche (View) wird bewusst im
-# Code aufgebaut (siehe widget.cpp), um sie unabhängig vom Qt Designer
-# nachvollziehbar und versionierbar zu halten.
+FORMS += \
+    widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
