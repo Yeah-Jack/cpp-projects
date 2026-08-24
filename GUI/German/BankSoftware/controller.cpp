@@ -3,7 +3,6 @@
 #include "sparkonto.h"
 #include <random>
 #include <sstream>
-#include <iomanip>
 
 Controller::Controller()
     : model(std::make_unique<Data>()), view(nullptr)
@@ -114,8 +113,8 @@ std::string Controller::kontoInfo(unsigned int kontoNr) const
     if (auto* girokonto = dynamic_cast<Girokonto*>(konto))
     {
         std::ostringstream dispoText;
-        dispoText << " | Dispokredit: " << std::fixed << std::setprecision(2)
-                   << girokonto->getDispokredit() << " EUR";
+        dispoText << " | Dispokredit: " << girokonto->getDispokredit()
+                  << " EUR";
         info += dispoText.str();
     }
     return info;
@@ -145,7 +144,6 @@ void Controller::erzeugeTestkonten(std::size_t anzahl)
 {
     model->reservieren(model->getAnzahl() + anzahl);
 
-    // Feste Seed für reproduzierbare Testdaten.
     std::mt19937 zufallsgenerator(42);
     std::uniform_int_distribution<int> kontoartVerteilung(0, 1);
     std::uniform_real_distribution<double> betragVerteilung(0.0, 500.0);

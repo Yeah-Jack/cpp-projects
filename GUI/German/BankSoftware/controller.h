@@ -7,30 +7,21 @@
 #include <cstddef>
 #include "data.h"
 
-class Widget; // Vorwärtsdeklaration der View (siehe widget.h)
+class Widget;
 
 /*
  * Controller
  * ----------
- * Enthält die gesamte Ablauf- und Anwendungslogik des Programms und bildet
- * das Bindeglied zwischen Model (Data) und View (Widget):
- * - nimmt Benutzeraktionen von der View entgegen (z.B. "Konto anlegen"),
- * - prüft Eingaben / wendet fachliche Regeln an bzw. delegiert diese an die
- *   Konto-Objekte selbst (einzahlen()/abheben()),
- * - liest/schreibt Daten über das Model (Data),
- * - bereitet Ergebnisse für die Anzeige in der View auf.
- *
- * Die View kennt den Controller nur über einen klassischen Pointer und ruft
- * ausschließlich dessen öffentliche Methoden auf - sie enthält selbst keine
- * fachliche Logik.
+ * Enthält die gesamte Anwendungslogik des Programms.
+ * Die View kennt den Controller über einen Pointer und ruft
+ * ausschließlich dessen öffentliche Methoden auf.
  */
 class Controller
 {
 public:
     Controller();
 
-    // Verknüpft den Controller mit der aktiven View (klassischer Pointer,
-    // der Controller übernimmt hier bewusst kein Eigentum an der View).
+    // Verknüpft den Controller mit der aktiven View.
     void setView(Widget* view);
 
     // --- Konten anlegen -----------------------------------------------
@@ -49,13 +40,11 @@ public:
     std::vector<std::string> kontenAlsText(std::size_t maxAnzahl) const;
     std::size_t getAnzahlKonten() const;
 
-    // Erzeugt "anzahl" zufällige Testkonten (Anforderung: mind. 50.000 Konten
-    // müssen verwaltbar sein).
     void erzeugeTestkonten(std::size_t anzahl);
 
 private:
-    std::unique_ptr<Data> model; // Controller besitzt und verwaltet das Model
-    Widget* view;                // klassischer Pointer, kein Besitz
+  std::unique_ptr<Data> model;
+  Widget *view;
 };
 
 #endif // CONTROLLER_H

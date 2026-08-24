@@ -15,16 +15,7 @@ class Controller;
 /*
  * Widget (View)
  * -------------
- * Übernimmt ausschließlich die Kommunikation mit dem Anwender. Das eigentliche
- * Layout/Aussehen stammt vollständig aus widget.ui (Qt Designer) und wird
- * über die generierte Klasse Ui::Widget bereitgestellt (ui->...).
- *
- * Die Klasse enthält bewusst KEINE fachliche Logik: jede Benutzeraktion wird
- * 1:1 an den Controller weitergereicht, dessen Antwort lediglich angezeigt
- * wird.
- *
- * Der Zugriff auf den Controller erfolgt über einen klassischen Pointer;
- * die View besitzt den Controller nicht (kein Lifetime-Management hier).
+ * Übernimmt die Kommunikation mit dem Anwender.
  */
 class Widget : public QWidget
 {
@@ -51,8 +42,8 @@ private:
     void aktualisiereAnzahlAnzeige();
     bool leseKontoNrEingabe(unsigned int& ergebnis);
 
-    Ui::Widget* ui;          // von Qt Designer generierte Oberfläche (widget.ui)
-    Controller* controller;  // klassischer Pointer, keine Besitzverhältnisse
+    Ui::Widget *ui;
+    Controller *controller;
 
     static const std::size_t MAX_ANGEZEIGTE_KONTEN = 500;
 };

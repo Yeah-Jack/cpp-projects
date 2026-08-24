@@ -3,8 +3,6 @@
 Girokonto::Girokonto(double dispokredit)
     : Konto(), dispokredit(dispokredit >= 0.0 ? dispokredit : 0.0)
 {
-    // Kontostand ist durch die Basisklasse bereits 0.0 - ein Girokonto
-    // bekommt kein Willkommensgeschenk.
 }
 
 double Girokonto::getDispokredit() const

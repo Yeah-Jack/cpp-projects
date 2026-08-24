@@ -2,8 +2,6 @@
 #include "ui_widget.h"
 #include "controller.h"
 
-#include <QElapsedTimer>
-#include <QIntValidator>
 #include <string>
 #include <vector>
 
@@ -12,12 +10,10 @@ Widget::Widget(Controller* controller, QWidget* parent)
 {
     ui->setupUi(this);
 
-    // Eingabevalidierung für die Kontonummer (rein GUI-seitig, keine Logik)
     ui->editKontoNr->setValidator(new QIntValidator(0, 2000000000, ui->editKontoNr));
 
     ui->labelHinweisAnzeige->setText(
-        QString("Anzeige der ersten %1 Konten (aus Performance-Gründen; "
-                "intern werden alle Konten verwaltet):")
+        QString("Anzeige der ersten %1 Konten:")
             .arg(MAX_ANGEZEIGTE_KONTEN));
 
     verbindeSignaleUndSlots();
@@ -182,15 +178,10 @@ void Widget::onKontoSuchenGeklickt()
 
 void Widget::onTestkontenErzeugenGeklickt()
 {
-    QElapsedTimer timer;
-    timer.start();
-
     std::size_t anzahl = static_cast<std::size_t>(ui->spinTestkontenAnzahl->value());
     controller->erzeugeTestkonten(anzahl);
 
-    qint64 dauerMs = timer.elapsed();
-
-    zeigeStatus(QString("%1 Testkonten erzeugt in %2 ms.").arg(anzahl).arg(dauerMs), false);
+    zeigeStatus(QString("%1 Testkonten erzeugt.").arg(anzahl), false);
     aktualisiereKontenliste();
     aktualisiereAnzahlAnzeige();
 }
@@ -208,8 +199,6 @@ void Widget::zeigeKontoInfo(const QString& text)
 
 void Widget::aktualisiereKontenliste()
 {
-    // Aus Performance-Gründen wird nur ein begrenzter Ausschnitt angezeigt;
-    // intern verwaltet der Controller/das Model beliebig viele Konten.
     ui->listeKonten->setUpdatesEnabled(false);
     ui->listeKonten->clear();
 

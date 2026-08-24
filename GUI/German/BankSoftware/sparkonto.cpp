@@ -5,8 +5,6 @@ Sparkonto::Sparkonto(double willkommensgeschenk)
 {
     if (willkommensgeschenk > 0.0)
     {
-        // Direktes Setzen des Startwerts - keine "richtige" Einzahlung,
-        // sondern ein einmaliges Geschenk der Bank bei Kontoeröffnung.
         setKontostandIntern(willkommensgeschenk);
     }
 }

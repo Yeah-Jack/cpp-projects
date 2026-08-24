@@ -6,10 +6,8 @@
 /*
  * Girokonto
  * ---------
- * - Startet wie jedes Konto bei 0 EUR (kein Willkommensgeschenk).
- * - Besitzt zusätzlich einen Dispokredit (get-/set-Methode vorhanden,
- *   da es sich um ein "normales" Attribut handelt).
- * - Darf bis zur Höhe des Dispokredits überzogen werden.
+ * Startet wie jedes Konto bei 0 EUR (kein Willkommensgeschenk).
+ * Besitzt zusätzlich einen Dispokredit.
  */
 class Girokonto : public Konto
 {

@@ -54,7 +54,7 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <double>1000000.000000000</double>
+         <double>1000000.000000000000000</double>
         </property>
        </widget>
       </item>
@@ -101,7 +101,7 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <double>1000000.000000000</double>
+         <double>1000000.000000000000000</double>
         </property>
        </widget>
       </item>
@@ -138,7 +138,7 @@
            <number>2</number>
           </property>
           <property name="maximum">
-           <double>1000000.000000000</double>
+           <double>1000000.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -210,19 +210,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <spacer name="horizontalSpacerTest">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
       </item>
       <item>
@@ -235,7 +222,7 @@
       <item>
        <widget class="QLabel" name="labelHinweisAnzeige">
         <property name="text">
-         <string>Anzeige der ersten 500 Konten (aus Performance-Gründen; intern werden alle Konten verwaltet):</string>
+         <string>Anzeige der ersten 500 Konten:</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
