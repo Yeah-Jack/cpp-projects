@@ -4,13 +4,21 @@
 #include <random>
 #include <sstream>
 
+/*
+ * Controller
+ * Enthält die gesamte Anwendungslogik des Programms.
+ * Die View kennt den Controller über einen Pointer und ruft
+ * ausschließlich dessen öffentliche Methoden auf.
+ */
 Controller::Controller() : model(std::make_unique<Data>()), view(nullptr) { }
 
+// Verknüpft den Controller mit der aktiven View.
 void Controller::setView(Widget* v)
 {
     view = v;
 }
 
+// Erzeugt ein neues Girokonto mit dem gewünschten Dispokredit und merkt es im Modell an.
 unsigned int Controller::neuesGirokonto(double dispokredit)
 {
     auto neuesKonto = std::make_unique<Girokonto>(dispokredit);
@@ -19,6 +27,7 @@ unsigned int Controller::neuesGirokonto(double dispokredit)
     return nummer;
 }
 
+// Legt ein neues Sparkonto an.
 unsigned int Controller::neuesSparkonto(double willkommensgeschenk)
 {
     auto neuesKonto = std::make_unique<Sparkonto>(willkommensgeschenk);
@@ -27,6 +36,7 @@ unsigned int Controller::neuesSparkonto(double willkommensgeschenk)
     return nummer;
 }
 
+// Geben bei Erfolg true zurück, sonst false + Fehlermeldung in fehlermeldung.
 bool Controller::einzahlen(unsigned int kontoNr, double betrag, std::string& fehlermeldung)
 {
     Konto* konto = model->getKontoMitNummer(kontoNr);
@@ -45,6 +55,7 @@ bool Controller::einzahlen(unsigned int kontoNr, double betrag, std::string& feh
     return true;
 }
 
+// Geben bei Erfolg true zurück, sonst false + Fehlermeldung in fehlermeldung.
 bool Controller::abheben(unsigned int kontoNr, double betrag, std::string& fehlermeldung)
 {
     Konto* konto = model->getKontoMitNummer(kontoNr);
@@ -67,6 +78,7 @@ bool Controller::abheben(unsigned int kontoNr, double betrag, std::string& fehle
     return true;
 }
 
+// Geben bei Erfolg true zurück, sonst false + Fehlermeldung in fehlermeldung.
 bool Controller::dispokreditAendern(unsigned int kontoNr, double neuerDispokredit, std::string& fehlermeldung)
 {
     Konto* konto = model->getKontoMitNummer(kontoNr);
@@ -92,11 +104,13 @@ bool Controller::dispokreditAendern(unsigned int kontoNr, double neuerDispokredi
     return true;
 }
 
+// Prüft, ob ein Konto mit der angegebenen Nummer in der Verwaltung vorhanden ist.
 bool Controller::kontoVorhanden(unsigned int kontoNr) const
 {
     return model->getKontoMitNummer(kontoNr) != nullptr;
 }
 
+// Erstellt eine lesbare String-Übersicht für ein bestimmtes Konto inklusive Zusatzinformationen.
 std::string Controller::kontoInfo(unsigned int kontoNr) const
 {
     Konto* konto = model->getKontoMitNummer(kontoNr);
@@ -117,6 +131,7 @@ std::string Controller::kontoInfo(unsigned int kontoNr) const
     return info;
 }
 
+// Liefert bis zu einer bestimmten Anzahl Konten als Textdarstellung für die GUI.
 std::vector<std::string> Controller::kontenAlsText(std::size_t maxAnzahl) const
 {
     std::vector<std::string> ergebnis;
@@ -132,11 +147,13 @@ std::vector<std::string> Controller::kontenAlsText(std::size_t maxAnzahl) const
     return ergebnis;
 }
 
+// Gibt die Gesamtzahl der verwalteten Konten zurück.
 std::size_t Controller::getAnzahlKonten() const
 {
     return model->getAnzahl();
 }
 
+// Füllt das System mit einer festen Anzahl zufälliger Testkonten zur Demonstration oder zum Testen.
 void Controller::erzeugeTestkonten(std::size_t anzahl)
 {
     model->reservieren(model->getAnzahl() + anzahl);

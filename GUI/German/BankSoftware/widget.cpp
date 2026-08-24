@@ -2,6 +2,10 @@
 #include "ui_widget.h"
 #include "controller.h"
 
+/*
+ * Widget (View)
+ * Übernimmt die Kommunikation mit dem Anwender.
+ */
 Widget::Widget(Controller* controller, QWidget* parent)
     : QWidget(parent), ui(new Ui::Widget), controller(controller)
 {

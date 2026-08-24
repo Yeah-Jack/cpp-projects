@@ -3,12 +3,6 @@
 
 #include "konto.h"
 
-/*
- * Girokonto
- * ---------
- * Startet wie jedes Konto bei 0 EUR (kein Willkommensgeschenk).
- * Besitzt zusätzlich einen Dispokredit.
- */
 class Girokonto : public Konto
 {
 public:

@@ -11,11 +11,6 @@ QT_END_NAMESPACE
 
 class Controller;
 
-/*
- * Widget (View)
- * -------------
- * Übernimmt die Kommunikation mit dem Anwender.
- */
 class Widget : public QWidget
 {
     Q_OBJECT

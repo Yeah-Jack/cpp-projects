@@ -3,15 +3,6 @@
 
 #include "konto.h"
 
-/*
- * Sparkonto
- * ---------
- * - Die Bank kann beim Anlegen optional ein Willkommensgeschenk als
- *   Startwert für den Kontostand vergeben. Das Geschenk ist kein
- *   dauerhaftes Attribut des Kontos, sondern legt lediglich den
- *   Anfangswert des Kontostands fest.
- * - Darf nicht überzogen werden.
- */
 class Sparkonto : public Konto
 {
 public:
