@@ -1,10 +1,10 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include <vector>
+#include "konto.h"
 #include <memory>
 #include <unordered_map>
-#include "konto.h"
+#include <vector>
 
 /*
  * Data (Model)

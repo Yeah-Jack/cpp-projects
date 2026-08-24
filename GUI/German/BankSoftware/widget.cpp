@@ -2,9 +2,6 @@
 #include "ui_widget.h"
 #include "controller.h"
 
-#include <string>
-#include <vector>
-
 Widget::Widget(Controller* controller, QWidget* parent)
     : QWidget(parent), ui(new Ui::Widget), controller(controller)
 {

@@ -1,10 +1,6 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-#include <memory>
-#include <string>
-#include <vector>
-#include <cstddef>
 #include "data.h"
 
 class Widget;

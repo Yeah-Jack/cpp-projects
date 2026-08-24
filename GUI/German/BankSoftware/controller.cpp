@@ -4,10 +4,7 @@
 #include <random>
 #include <sstream>
 
-Controller::Controller()
-    : model(std::make_unique<Data>()), view(nullptr)
-{
-}
+Controller::Controller() : model(std::make_unique<Data>()), view(nullptr) { }
 
 void Controller::setView(Widget* v)
 {
