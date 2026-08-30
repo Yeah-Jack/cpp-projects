@@ -17,13 +17,14 @@ public:
   ~Widget();
 
 private slots:
-  void newConnection();
-  void readMessage();
-  void on_pushButton_clicked();
+  void on_btnConnectClient_clicked();
+  void on_btnSendText_clicked();
 
 private:
   Ui::Widget *ui;
   QTcpServer *myServerSocket;
   QTcpSocket *myClientSocket;
+  void newConnection();
+  void readText();
 };
 #endif // WIDGET_H

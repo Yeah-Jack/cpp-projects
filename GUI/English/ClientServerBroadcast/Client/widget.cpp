@@ -12,7 +12,7 @@ Widget::~Widget() { delete ui; }
 
 void Widget::on_btnConnectServer_clicked() {
   mySocket->connectToHost("localhost", 4711);
-  QObject::connect(mySocket, &QTcpSocket::readyRead, this, &Widget::readData);
+  QObject::connect(mySocket, &QTcpSocket::readyRead, this, &Widget::readText);
 }
 
 void Widget::on_btnSendText_clicked() {
@@ -24,7 +24,7 @@ void Widget::on_btnSendText_clicked() {
   qDebug() << sendText;
 }
 
-void Widget::readData() {
+void Widget::readText() {
   QString receivedText;
 
   receivedText = mySocket->readLine();

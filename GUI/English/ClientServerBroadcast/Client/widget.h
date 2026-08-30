@@ -23,6 +23,6 @@ private slots:
 private:
   Ui::Widget *ui;
   QTcpSocket *mySocket;
-  void readData();
+  void readText();
 };
 #endif // WIDGET_H
