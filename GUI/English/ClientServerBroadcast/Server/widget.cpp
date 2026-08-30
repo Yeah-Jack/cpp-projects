@@ -29,15 +29,15 @@ void Widget::on_btnConnectClient_clicked() {
 void Widget::on_btnSendText_clicked() {
   QString sendText;
 
-  sendText = ui->edtSendText->text();
+  sendText = ui->edtSendText->text() + "\n";
 
   myClientSocket->write(sendText.toLatin1());
   qDebug() << sendText;
 }
 
 void Widget::readText() {
-  QString receivedText;
-
-  receivedText = myClientSocket->readLine();
-  ui->edtReceiveText->appendPlainText(receivedText);
+  while (clientSocket->canReadLine()) {
+    QString receivedText = clientSocket->readLine();
+    ui->edtReceiveText->appendPlainText(receivedText);
+  }
 }
