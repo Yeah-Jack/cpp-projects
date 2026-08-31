@@ -17,10 +17,7 @@ void Widget::on_btnConnectServer_clicked() {
 }
 
 void Widget::on_btnSendText_clicked() {
-  QString sendText;
-
-  sendText = ui->edtSendText->text() + '\n';
-
+  QString sendText = ui->edtSendText->text() + '\n';
   mySocket->write(sendText.toLatin1());
   qDebug() << sendText;
 }
