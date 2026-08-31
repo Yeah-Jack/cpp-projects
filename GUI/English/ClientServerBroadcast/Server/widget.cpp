@@ -18,26 +18,29 @@ Widget::~Widget() { delete ui; }
 void Widget::newConnection() {
   myClientSocket = myServerSocket->nextPendingConnection();
   connect(myClientSocket, &QTcpSocket::readyRead, this, &Widget::readText);
+  qDebug() << "Established new connection" << myClientSocket;
 }
 
 void Widget::on_btnConnectClient_clicked() {
   if (!myServerSocket->isListening()) {
-    myServerSocket->listen(QHostAddress::Any, 4711);
+    if (myServerSocket->listen(QHostAddress::Any, 4711)) {
+      qDebug() << "Is listening";
+    }
   }
 }
 
 void Widget::on_btnSendText_clicked() {
   QString sendText;
 
-  sendText = ui->edtSendText->text() + "\n";
+  sendText = ui->edtSendText->text() + '\n';
 
   myClientSocket->write(sendText.toLatin1());
   qDebug() << sendText;
 }
 
 void Widget::readText() {
-  while (clientSocket->canReadLine()) {
-    QString receivedText = clientSocket->readLine();
+  while (myClientSocket->canReadLine()) {
+    QString receivedText = myClientSocket->readLine();
     ui->edtReceiveText->appendPlainText(receivedText);
   }
 }

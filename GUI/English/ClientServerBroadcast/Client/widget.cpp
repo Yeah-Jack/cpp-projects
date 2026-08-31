@@ -13,12 +13,13 @@ Widget::~Widget() { delete ui; }
 void Widget::on_btnConnectServer_clicked() {
   mySocket->connectToHost("localhost", 4711);
   QObject::connect(mySocket, &QTcpSocket::readyRead, this, &Widget::readText);
+  qDebug() << "Connecting to host";
 }
 
 void Widget::on_btnSendText_clicked() {
   QString sendText;
 
-  sendText = ui->edtSendText->text() + "\n";
+  sendText = ui->edtSendText->text() + '\n';
 
   mySocket->write(sendText.toLatin1());
   qDebug() << sendText;
