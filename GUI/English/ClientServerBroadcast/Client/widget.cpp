@@ -24,7 +24,7 @@ void Widget::on_btnSendText_clicked() {
 
 void Widget::readText() {
   while (mySocket->canReadLine()) {
-    QString receivedText = mySocket->readLine();
+    QString receivedText = mySocket->readLine().trimmed();
     ui->edtReceiveText->appendPlainText(receivedText);
   }
 }
