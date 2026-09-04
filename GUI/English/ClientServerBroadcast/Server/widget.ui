@@ -52,19 +52,6 @@
     <string>Server</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelSendText">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Server to Client</string>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="edtSendText">
    <property name="geometry">
     <rect>
@@ -98,7 +85,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Client to Server</string>
+    <string>Message Log</string>
    </property>
   </widget>
  </widget>

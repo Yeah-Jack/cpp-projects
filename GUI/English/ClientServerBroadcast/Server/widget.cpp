@@ -39,8 +39,8 @@ void Widget::on_btnConnectClient_clicked() {
 void Widget::on_btnSendText_clicked() {
   QString sendText = ui->edtSendText->text() + '\n';
 
-  for (QTcpSocket *clientSocket : myClientSockets) {
-    clientSocket->write(sendText.toLatin1());
+  for (QTcpSocket *iterator : myClientSockets) {
+    iterator->write(sendText.toLatin1());
   }
 
   qDebug() << sendText;
@@ -49,13 +49,18 @@ void Widget::on_btnSendText_clicked() {
 
 void Widget::readText() {
   QTcpSocket *clientSocket = qobject_cast<QTcpSocket *>(sender());
-  if (!clientSocket)
-    return;
 
   while (clientSocket->canReadLine()) {
     QString receivedText = clientSocket->readLine().trimmed();
     ui->edtReceiveText->appendPlainText(
         QString(clientLabel(clientSocket) + ": " + receivedText));
+
+    QString sendText = receivedText + '\n';
+    for (QTcpSocket *iterator : myClientSockets) {
+      if (iterator != clientSocket) {
+        iterator->write(sendText.toLatin1());
+      }
+    }
   }
 }
 
