@@ -4,6 +4,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QWidget>
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -23,8 +24,10 @@ private slots:
 private:
   Ui::Widget *ui;
   QTcpServer *myServerSocket;
-  QTcpSocket *myClientSocket;
+  std::vector<QTcpSocket *> myClientSockets;
+
   void newConnection();
   void readText();
+  QString clientLabel(QTcpSocket *socket) const;
 };
 #endif // WIDGET_H

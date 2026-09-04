@@ -1,9 +1,9 @@
 # IDEs
 .vscode/
-# *.pro
 *.pro.user
 build/
 build-*/
+*.tmp
 outDebug
 Console/English/FileExercises/config.toml
 
