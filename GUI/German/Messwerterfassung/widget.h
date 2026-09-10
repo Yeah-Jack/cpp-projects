@@ -1,8 +1,10 @@
 #ifndef WIDGET_H
 #define WIDGET_H
+#include <QChartView>
 #include <QLineSeries>
 #include <QWidget>
 #include <QtCharts>
+#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -20,8 +22,10 @@ private slots:
 
 private:
   Ui::Widget *ui;
+  std::vector<int> messwerte;
+  QLineSeries *series;
+  QChartView *chartView;
   void addMesswert();
   void createChart();
-  void addDatatoChart();
 };
 #endif // WIDGET_H
