@@ -1,6 +1,5 @@
 #include "widget.h"
 #include "ui_widget.h"
-#include <QPainter>
 
 Widget::Widget(
     QWidget *parent)
@@ -11,7 +10,7 @@ Widget::Widget(
 
 Widget::~Widget() { delete ui; }
 
-void Widget::addMesswert() {
+void Widget::addMesswerte() {
   messwerte = {18, 19, 21, 21, 21, 22, 22, 26, 23, 27, 27, 24, 25, 25, 27,
                27, 30, 31, 27, 31, 29, 32, 31, 29, 31, 32, 30, 28, 29, 31,
                30, 29, 28, 28, 28, 26, 26, 28, 25, 26, 26, 27, 25, 22, 25,
@@ -39,7 +38,7 @@ void Widget::addMesswert() {
 
 void Widget::on_btnGetData_clicked() {
   ui->edtMesswerte->clear();
-  addMesswert();
+  addMesswerte();
 }
 
 void Widget::createChart() {

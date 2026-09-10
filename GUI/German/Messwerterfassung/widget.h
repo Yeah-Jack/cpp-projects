@@ -2,6 +2,7 @@
 #define WIDGET_H
 #include <QChartView>
 #include <QLineSeries>
+#include <QPainter>
 #include <QWidget>
 #include <QtCharts>
 #include <vector>
@@ -25,7 +26,7 @@ private:
   std::vector<int> messwerte;
   QLineSeries *series;
   QChartView *chartView;
-  void addMesswert();
+  void addMesswerte();
   void createChart();
 };
 #endif // WIDGET_H
