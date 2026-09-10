@@ -1,7 +1,8 @@
 #ifndef WIDGET_H
 #define WIDGET_H
-// #include <QLineSeries>
+#include <QLineSeries>
 #include <QWidget>
+#include <QtCharts>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
