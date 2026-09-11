@@ -28,9 +28,10 @@ void ChartWidget::setData(const std::vector<int> &values) {
 void ChartWidget::paintEvent(QPaintEvent *) {
   QPainter painter(this);
   painter.setRenderHint(QPainter::Antialiasing);
+  int anzahlWerte = (int)messwerte.size();
 
   // Abstaende zwischen Widget-Rand und eigentlicher Zeichenflaeche,
-  // damit Platz fuer Titel und Achsenbeschriftung bleibt.
+  // damit Platz fuer die Achsenbeschriftung bleibt.
   int randLinks = 45;
   int randRechts = 15;
   int randOben = 35;
@@ -40,31 +41,20 @@ void ChartWidget::paintEvent(QPaintEvent *) {
                         width() - randLinks - randRechts,
                         height() - randOben - randUnten);
 
-  // Titel oben in der Mitte zeichnen
-  if (!m_title.isEmpty()) {
-    QFont titelSchrift = painter.font();
-    titelSchrift.setBold(true);
-    titelSchrift.setPointSize(titelSchrift.pointSize() + 2);
-    painter.setFont(titelSchrift);
-    painter.drawText(QRect(0, 5, width(), randOben - 10),
-                      Qt::AlignHCenter | Qt::AlignVCenter, m_title);
-    painter.setFont(QFont());
-  }
-
   // Rahmen um die Zeichenflaeche
   painter.setPen(QPen(Qt::black, 1));
   painter.drawRect(zeichenbereich);
 
   // Wenn keine Messwerte vorhanden sind, nur einen Hinweis anzeigen
-  if (messwerte.size() == 0) {
+  if (anzahlWerte == 0) {
     painter.drawText(zeichenbereich, Qt::AlignCenter, tr("Keine Daten"));
     return;
   }
 
-  // Kleinsten und groessten Messwert von Hand suchen
+  // Kleinsten und groessten Messwert suchen
   int minWert = messwerte[0];
   int maxWert = messwerte[0];
-  for (size_t i = 1; i < messwerte.size(); i++) {
+  for (int i = 1; i < anzahlWerte; i++) {
     if (messwerte[i] < minWert) {
       minWert = messwerte[i];
     }
@@ -78,7 +68,6 @@ void ChartWidget::paintEvent(QPaintEvent *) {
     wertBereich = 1; // Division durch 0 vermeiden, falls alle Werte gleich sind
   }
 
-  int anzahlWerte = (int)messwerte.size();
   int nenner = anzahlWerte - 1;
   if (nenner == 0) {
     nenner = 1; // Division durch 0 vermeiden, falls es nur einen Wert gibt
@@ -98,8 +87,7 @@ void ChartWidget::paintEvent(QPaintEvent *) {
                      Qt::AlignRight | Qt::AlignVCenter, QString::number(wert));
   }
 
-  // X-Achse beschriften (Index der Werte), aber maximal 10 Beschriftungen,
-  // damit sich die Zahlen nicht ueberlappen
+  // X-Achse beschriften
   int anzahlBeschriftungen = anzahlWerte - 1;
   if (anzahlBeschriftungen > 10) {
     anzahlBeschriftungen = 10;
@@ -117,11 +105,11 @@ void ChartWidget::paintEvent(QPaintEvent *) {
 
   // Messwerte als Linie zeichnen: jeden Punkt mit dem naechsten verbinden
   painter.setPen(QPen(QColor(30, 110, 200), 2));
-  for (size_t i = 0; i + 1 < messwerte.size(); i++) {
-    QPointF punkt1 = berechnePunkt((int)i, messwerte[i], minWert, wertBereich,
-                                    nenner, zeichenbereich);
-    QPointF punkt2 = berechnePunkt((int)i + 1, messwerte[i + 1], minWert,
-                                    wertBereich, nenner, zeichenbereich);
+  for (int i = 0; i + 1 < anzahlWerte; i++) {
+    QPointF punkt1 = berechnePunkt(i, messwerte[i], minWert, wertBereich,
+                                   nenner, zeichenbereich);
+    QPointF punkt2 = berechnePunkt(i + 1, messwerte[i + 1], minWert,
+                                   wertBereich, nenner, zeichenbereich);
     painter.drawLine(punkt1, punkt2);
   }
 }
