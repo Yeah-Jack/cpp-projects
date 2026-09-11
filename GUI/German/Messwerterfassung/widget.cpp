@@ -1,9 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
 
-Widget::Widget(
-    QWidget *parent)
-    : QWidget(parent), ui(new Ui::Widget) {
+Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) {
   ui->setupUi(this);
   createChart();
 }
@@ -19,21 +17,11 @@ void Widget::addMesswerte() {
                9,  9,  11, 11, 10, 12, 10, 11, 9,  11, 10, 12, 14, 13, 12,
                13, 17, 15, 15, 17, 18, 19, 17, 19, 18};
 
-  series->clear();
   for (size_t i = 0; i < messwerte.size(); i++) {
     ui->edtMesswerte->appendPlainText(QString::number(messwerte[i]));
-    series->append(i, messwerte[i]);
   }
 
-  auto chart = chartView->chart();
-  if (chart->axes().isEmpty()) {
-    chart->createDefaultAxes();
-  }
-  chart->axes(Qt::Horizontal).first()->setRange(0, int(messwerte.size()));
-  chart->axes(Qt::Vertical)
-      .first()
-      ->setRange(*std::min_element(messwerte.begin(), messwerte.end()),
-                 *std::max_element(messwerte.begin(), messwerte.end()));
+  chartView->setData(messwerte);
 }
 
 void Widget::on_btnGetData_clicked() {
@@ -42,14 +30,6 @@ void Widget::on_btnGetData_clicked() {
 }
 
 void Widget::createChart() {
-  series = new QLineSeries;
-
-  auto chart = new QChart;
-  chart->legend()->hide();
-  chart->addSeries(series);
-  chart->setTitle("Messwerte");
-
-  chartView = new QChartView(chart, this);
-  chartView->setRenderHint(QPainter::Antialiasing);
+  chartView = new ChartWidget(this);
   chartView->setGeometry(350, 20, 400, 450);
 }
