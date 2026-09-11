@@ -17,12 +17,7 @@ protected:
 
 private:
   QString m_title;
-  std::vector<int> m_values;
-
-  static constexpr int kMarginLeft = 45;
-  static constexpr int kMarginRight = 15;
-  static constexpr int kMarginTop = 35;
-  static constexpr int kMarginBottom = 30;
+  std::vector<int> messwerte;
 };
 
 #endif // CHARTWIDGET_H

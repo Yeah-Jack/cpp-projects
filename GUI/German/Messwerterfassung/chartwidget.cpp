@@ -1,6 +1,17 @@
 #include "chartwidget.h"
 #include <QPainter>
-#include <QPainterPath>
+
+// Rechnet einen Messwert an einer bestimmten Stelle (index) in einen
+// Punkt auf dem Bildschirm um. "nenner" ist die Anzahl der Werte minus 1
+// (mindestens 1), damit man nicht durch 0 teilt.
+static QPointF berechnePunkt(int index, int wert, int minWert, int wertBereich,
+                             int nenner, const QRect &zeichenbereich) {
+  double x =
+      zeichenbereich.left() + (double)index / nenner * zeichenbereich.width();
+  double y = zeichenbereich.bottom() -
+             (double)(wert - minWert) / wertBereich * zeichenbereich.height();
+  return QPointF(x, y);
+}
 
 ChartWidget::ChartWidget(QWidget *parent) : QWidget(parent) {
   setAutoFillBackground(true);
@@ -10,7 +21,7 @@ ChartWidget::ChartWidget(QWidget *parent) : QWidget(parent) {
 }
 
 void ChartWidget::setData(const std::vector<int> &values) {
-  m_values = values;
+  messwerte = values;
   update();
 }
 
@@ -18,68 +29,99 @@ void ChartWidget::paintEvent(QPaintEvent *) {
   QPainter painter(this);
   painter.setRenderHint(QPainter::Antialiasing);
 
-  const QRect plotArea(kMarginLeft, kMarginTop,
-                        width() - kMarginLeft - kMarginRight,
-                        height() - kMarginTop - kMarginBottom);
+  // Abstaende zwischen Widget-Rand und eigentlicher Zeichenflaeche,
+  // damit Platz fuer Titel und Achsenbeschriftung bleibt.
+  int randLinks = 45;
+  int randRechts = 15;
+  int randOben = 35;
+  int randUnten = 30;
 
+  QRect zeichenbereich(randLinks, randOben,
+                        width() - randLinks - randRechts,
+                        height() - randOben - randUnten);
+
+  // Titel oben in der Mitte zeichnen
+  if (!m_title.isEmpty()) {
+    QFont titelSchrift = painter.font();
+    titelSchrift.setBold(true);
+    titelSchrift.setPointSize(titelSchrift.pointSize() + 2);
+    painter.setFont(titelSchrift);
+    painter.drawText(QRect(0, 5, width(), randOben - 10),
+                      Qt::AlignHCenter | Qt::AlignVCenter, m_title);
+    painter.setFont(QFont());
+  }
+
+  // Rahmen um die Zeichenflaeche
   painter.setPen(QPen(Qt::black, 1));
-  painter.drawRect(plotArea);
+  painter.drawRect(zeichenbereich);
 
-  if (m_values.empty()) {
-    painter.drawText(plotArea, Qt::AlignCenter, tr("Keine Daten"));
+  // Wenn keine Messwerte vorhanden sind, nur einen Hinweis anzeigen
+  if (messwerte.size() == 0) {
+    painter.drawText(zeichenbereich, Qt::AlignCenter, tr("Keine Daten"));
     return;
   }
 
-  const int minVal = *std::min_element(m_values.begin(), m_values.end());
-  const int maxVal = *std::max_element(m_values.begin(), m_values.end());
-  const int valueRange = std::max(1, maxVal - minVal);
-  const size_t countMinus1 = std::max<size_t>(1, m_values.size() - 1);
-
-  auto toPoint = [&](size_t index, int value) -> QPointF {
-    const double x =
-        plotArea.left() + (double(index) / countMinus1) * plotArea.width();
-    const double y = plotArea.bottom() -
-                      (double(value - minVal) / valueRange) * plotArea.height();
-    return QPointF(x, y);
-  };
-
-  const QFontMetrics fm(painter.font());
-
-  // Horizontale Gitterlinien + Y-Achsenbeschriftung
-  const int ySteps = 5;
-  for (int i = 0; i <= ySteps; ++i) {
-    const int value = minVal + valueRange * i / ySteps;
-    const double y = plotArea.bottom() -
-                      (double(value - minVal) / valueRange) * plotArea.height();
-
-    painter.setPen(QPen(QColor(220, 220, 220), 1, Qt::DashLine));
-    painter.drawLine(QPointF(plotArea.left(), y), QPointF(plotArea.right(), y));
-
-    painter.setPen(QPen(Qt::black, 1));
-    painter.drawText(QRect(0, int(y) - fm.height() / 2, kMarginLeft - 5,
-                            fm.height()),
-                      Qt::AlignRight | Qt::AlignVCenter,
-                      QString::number(value));
-  }
-
-  // X-Achsenbeschriftung (Index), maximal 10 Beschriftungen
-  const int xTicks = std::min<int>(10, int(m_values.size()) - 1);
-  if (xTicks > 0) {
-    for (int i = 0; i <= xTicks; ++i) {
-      const size_t index = size_t(std::round(double(i) / xTicks * countMinus1));
-      const QPointF p = toPoint(index, m_values[index]);
-      painter.drawText(
-          QRect(int(p.x()) - 15, plotArea.bottom() + 4, 30, kMarginBottom - 4),
-          Qt::AlignHCenter | Qt::AlignTop, QString::number(index));
+  // Kleinsten und groessten Messwert von Hand suchen
+  int minWert = messwerte[0];
+  int maxWert = messwerte[0];
+  for (size_t i = 1; i < messwerte.size(); i++) {
+    if (messwerte[i] < minWert) {
+      minWert = messwerte[i];
+    }
+    if (messwerte[i] > maxWert) {
+      maxWert = messwerte[i];
     }
   }
 
-  // Linienzug der Messwerte
-  QPainterPath path;
-  path.moveTo(toPoint(0, m_values[0]));
-  for (size_t i = 1; i < m_values.size(); ++i) {
-    path.lineTo(toPoint(i, m_values[i]));
+  int wertBereich = maxWert - minWert;
+  if (wertBereich == 0) {
+    wertBereich = 1; // Division durch 0 vermeiden, falls alle Werte gleich sind
   }
+
+  int anzahlWerte = (int)messwerte.size();
+  int nenner = anzahlWerte - 1;
+  if (nenner == 0) {
+    nenner = 1; // Division durch 0 vermeiden, falls es nur einen Wert gibt
+  }
+
+  QFontMetrics schriftMasse(painter.font());
+
+  // Y-Achse beschriften
+  int anzahlSchritte = 5;
+  for (int i = 0; i <= anzahlSchritte; i++) {
+    int wert = minWert + wertBereich * i / anzahlSchritte;
+    double y = zeichenbereich.bottom() -
+               (double)(wert - minWert) / wertBereich * zeichenbereich.height();
+
+    painter.drawText(QRect(0, (int)y - schriftMasse.height() / 2, randLinks - 5,
+                           schriftMasse.height()),
+                     Qt::AlignRight | Qt::AlignVCenter, QString::number(wert));
+  }
+
+  // X-Achse beschriften (Index der Werte), aber maximal 10 Beschriftungen,
+  // damit sich die Zahlen nicht ueberlappen
+  int anzahlBeschriftungen = anzahlWerte - 1;
+  if (anzahlBeschriftungen > 10) {
+    anzahlBeschriftungen = 10;
+  }
+  if (anzahlBeschriftungen > 0) {
+    for (int i = 0; i <= anzahlBeschriftungen; i++) {
+      int index = i * (anzahlWerte - 1) / anzahlBeschriftungen;
+      QPointF punkt = berechnePunkt(index, messwerte[index], minWert,
+                                     wertBereich, nenner, zeichenbereich);
+      painter.drawText(QRect((int)punkt.x() - 15, zeichenbereich.bottom() + 4,
+                              30, randUnten - 4),
+                        Qt::AlignHCenter | Qt::AlignTop, QString::number(index));
+    }
+  }
+
+  // Messwerte als Linie zeichnen: jeden Punkt mit dem naechsten verbinden
   painter.setPen(QPen(QColor(30, 110, 200), 2));
-  painter.drawPath(path);
+  for (size_t i = 0; i + 1 < messwerte.size(); i++) {
+    QPointF punkt1 = berechnePunkt((int)i, messwerte[i], minWert, wertBereich,
+                                    nenner, zeichenbereich);
+    QPointF punkt2 = berechnePunkt((int)i + 1, messwerte[i + 1], minWert,
+                                    wertBereich, nenner, zeichenbereich);
+    painter.drawLine(punkt1, punkt2);
+  }
 }
