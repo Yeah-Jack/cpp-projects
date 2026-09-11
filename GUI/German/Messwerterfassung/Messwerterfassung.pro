@@ -11,11 +11,15 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     widget.cpp \
-    chartwidget.cpp
+    chartwidget.cpp \
+    messwertmodel.cpp \
+    messwertcontroller.cpp
 
 HEADERS += \
     widget.h \
-    chartwidget.h
+    chartwidget.h \
+    messwertmodel.h \
+    messwertcontroller.h
 
 FORMS += \
     widget.ui
