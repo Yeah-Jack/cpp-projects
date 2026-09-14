@@ -8,7 +8,7 @@ class ChartWidget : public QWidget {
   Q_OBJECT
 
 public:
-  explicit ChartWidget(QWidget *parent = nullptr);
+  ChartWidget(QWidget *parent = nullptr);
 
   void setData(const std::vector<int> &values);
 
@@ -16,7 +16,6 @@ protected:
   void paintEvent(QPaintEvent *event) override;
 
 private:
-  QString m_title;
   std::vector<int> messwerte;
 };
 
