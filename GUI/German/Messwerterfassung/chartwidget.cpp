@@ -97,9 +97,9 @@ void ChartWidget::paintEvent(QPaintEvent *) {
       int index = i * (anzahlWerte - 1) / anzahlBeschriftungen;
       QPointF punkt = berechnePunkt(index, messwerte[index], minWert,
                                      wertBereich, nenner, zeichenbereich);
-      painter.drawText(QRect((int)punkt.x() - 15, zeichenbereich.bottom() + 4,
-                              30, randUnten - 4),
-                        Qt::AlignHCenter | Qt::AlignTop, QString::number(index));
+      painter.drawText(
+          QRect((int)punkt.x() - 15, zeichenbereich.bottom(), 30, randUnten),
+          Qt::AlignHCenter | Qt::AlignTop, QString::number(index));
     }
   }
 
