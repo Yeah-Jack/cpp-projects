@@ -19,7 +19,7 @@ public:
   ~Widget();
 
   void setController(MesswertController *controller);
-  void zeigeMesswerte(const std::vector<int> &werte);
+  void zeigeMesswerte(const std::vector<int> werte);
   void leereAnzeige();
 
 private slots:

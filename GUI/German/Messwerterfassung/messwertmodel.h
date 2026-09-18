@@ -6,8 +6,8 @@
 class MesswertModel {
 public:
   MesswertModel();
-  const std::vector<int> &getMesswerte() const;
   void addMesswerte();
+  std::vector<int> getMesswerte();
 
 private:
   std::vector<int> messwerte;

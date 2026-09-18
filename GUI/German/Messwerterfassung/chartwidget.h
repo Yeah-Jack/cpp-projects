@@ -10,10 +10,8 @@ class ChartWidget : public QWidget {
 public:
   ChartWidget(QWidget *parent = nullptr);
 
-  void setData(const std::vector<int> &values);
-
-protected:
-  void paintEvent(QPaintEvent *event) override;
+  void setData(const std::vector<int> values);
+  void paintEvent(QPaintEvent *event);
 
 private:
   std::vector<int> messwerte;

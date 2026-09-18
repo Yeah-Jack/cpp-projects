@@ -5,7 +5,7 @@
 // Punkt auf dem Bildschirm um. "nenner" ist die Anzahl der Werte minus 1
 // (mindestens 1), damit man nicht durch 0 teilt.
 static QPointF berechnePunkt(int index, int wert, int minWert, int wertBereich,
-                             int nenner, const QRect &zeichenbereich) {
+                             int nenner, const QRect zeichenbereich) {
   double x =
       zeichenbereich.left() + (double)index / nenner * zeichenbereich.width();
   double y = zeichenbereich.bottom() -
@@ -20,7 +20,7 @@ ChartWidget::ChartWidget(QWidget *parent) : QWidget(parent) {
   setPalette(pal);
 }
 
-void ChartWidget::setData(const std::vector<int> &values) {
+void ChartWidget::setData(const std::vector<int> values) {
   messwerte = values;
   update();
 }

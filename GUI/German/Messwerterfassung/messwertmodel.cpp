@@ -2,9 +2,7 @@
 
 MesswertModel::MesswertModel() {}
 
-const std::vector<int> &MesswertModel::getMesswerte() const {
-  return messwerte;
-}
+std::vector<int> MesswertModel::getMesswerte() { return messwerte; }
 
 void MesswertModel::addMesswerte() {
   messwerte = {18, 19, 21, 21, 21, 22, 22, 26, 23, 27, 27, 24, 25, 25, 27,

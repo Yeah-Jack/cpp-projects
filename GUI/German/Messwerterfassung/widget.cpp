@@ -20,7 +20,7 @@ void Widget::setController(MesswertController *controller) {
 }
 
 // Zeigt die uebergebenen Messwerte in der Liste und im Chart an.
-void Widget::zeigeMesswerte(const std::vector<int> &werte) {
+void Widget::zeigeMesswerte(const std::vector<int> werte) {
   for (size_t i = 0; i < werte.size(); i++) {
     ui->edtMesswerte->appendPlainText(QString::number(werte[i]));
   }
