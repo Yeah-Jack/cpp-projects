@@ -18,20 +18,19 @@ public:
 
 private slots:
   void on_listPorts_clicked();
-
   void on_openPort_clicked();
-
   void on_setLedOn_clicked();
-
   void on_setLedOff_clicked();
+  void on_readData_clicked();
+  void on_clearData_clicked();
+  void on_clearLog_clicked();
 
 private:
   Ui::Widget *ui;
 
   QSerialPort serial;
   QList<QSerialPortInfo> portList;
-  QByteArray byteArray;
 
-  void btnToggleLed();
+  void onSerialReadyRead();
 };
 #endif // WIDGET_H
