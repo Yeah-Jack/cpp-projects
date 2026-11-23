@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>View</class>
+ <widget class="QWidget" name="View">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>View</string>
+  </property>
+  <widget class="QFrame" name="livingRoomFrame">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>250</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="roomSelection">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>70</y>
+     <width>181</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>0     Lighting Control Center</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>1     Living Room</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>2     Bedroom</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>3     Children's Room 1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>4     Children's Room 2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>5     Kitchen</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>6     Hallway</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>7     Bathroom</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="lightOn">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>100</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Light On</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lightOff">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>100</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Light Off</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="livingRoomLabel">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>230</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Living Room</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BedroomLabel">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>230</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bedroom</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="BedroomFrame">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>250</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ChildrensRoom1Label">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>230</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Children's Room 1</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="ChildrensRoom1Frame">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>250</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ChildrensRoom2Label">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>230</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Children's Room 2</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="ChildrensRoom2Frame">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>250</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="HallwayLabel">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>370</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Hallway</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="BathroomFrame">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>390</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="KitchenFrame">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>390</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="HallwayFrame">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>390</y>
+     <width>120</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="KitchenLabel">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>370</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Kitchen</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BathroomLabel">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>370</y>
+     <width>121</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Bathroom</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
