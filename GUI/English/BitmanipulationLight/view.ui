@@ -34,7 +34,7 @@
     <rect>
      <x>70</x>
      <y>70</y>
-     <width>181</width>
+     <width>191</width>
      <height>24</height>
     </rect>
    </property>
@@ -95,7 +95,7 @@
   <widget class="QPushButton" name="lightOff">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>100</y>
      <width>80</width>
      <height>24</height>
@@ -121,7 +121,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="BedroomLabel">
+  <widget class="QLabel" name="bedroomLabel">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -137,7 +137,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QFrame" name="BedroomFrame">
+  <widget class="QFrame" name="bedroomFrame">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -153,7 +153,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="ChildrensRoom1Label">
+  <widget class="QLabel" name="childrensRoom1Label">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -169,7 +169,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QFrame" name="ChildrensRoom1Frame">
+  <widget class="QFrame" name="childrensRoom1Frame">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -185,7 +185,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="ChildrensRoom2Label">
+  <widget class="QLabel" name="childrensRoom2Label">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -201,7 +201,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QFrame" name="ChildrensRoom2Frame">
+  <widget class="QFrame" name="childrensRoom2Frame">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -217,7 +217,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="HallwayLabel">
+  <widget class="QLabel" name="hallwayLabel">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -233,7 +233,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QFrame" name="BathroomFrame">
+  <widget class="QFrame" name="bathroomFrame">
    <property name="geometry">
     <rect>
      <x>370</x>
@@ -249,7 +249,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QFrame" name="KitchenFrame">
+  <widget class="QFrame" name="kitchenFrame">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -265,7 +265,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QFrame" name="HallwayFrame">
+  <widget class="QFrame" name="hallwayFrame">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -281,7 +281,7 @@
     <enum>QFrame::Shadow::Raised</enum>
    </property>
   </widget>
-  <widget class="QLabel" name="KitchenLabel">
+  <widget class="QLabel" name="kitchenLabel">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -297,7 +297,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="BathroomLabel">
+  <widget class="QLabel" name="bathroomLabel">
    <property name="geometry">
     <rect>
      <x>370</x>

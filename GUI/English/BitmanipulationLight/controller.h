@@ -1,14 +1,14 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 
-class View;
+#include <QtTypes>
 
 class Controller {
 public:
   Controller();
 
 private:
-  View *view;
+  quint8 currentState = 0;
 };
 
 #endif // CONTROLLER_H
