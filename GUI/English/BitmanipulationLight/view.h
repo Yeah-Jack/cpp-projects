@@ -15,8 +15,12 @@ public:
   View(QWidget *parent = nullptr);
   ~View();
 
+private slots:
+  void on_lightOn_clicked();
+  void on_lightOff_clicked();
+
 private:
   Ui::View *ui;
-  Controller *myController;
+  Controller myController;
 };
 #endif // VIEW_H
