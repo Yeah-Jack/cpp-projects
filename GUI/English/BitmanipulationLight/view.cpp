@@ -1,6 +1,5 @@
 #include "view.h"
 #include "ui_view.h"
-
 #include <QDebug>
 
 View::View(
