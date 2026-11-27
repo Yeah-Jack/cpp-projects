@@ -19,6 +19,8 @@ private slots:
   void on_lightOn_clicked();
   void on_lightOff_clicked();
 
+  void on_check_clicked();
+
 private:
   Ui::View *ui;
   Controller myController;

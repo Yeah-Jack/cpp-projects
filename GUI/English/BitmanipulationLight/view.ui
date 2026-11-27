@@ -40,7 +40,7 @@
    </property>
    <item>
     <property name="text">
-     <string>0     Lighting Control Center</string>
+     <string>0     Lighting Control Central</string>
     </property>
    </item>
    <item>
@@ -311,6 +311,19 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="check">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>100</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Check</string>
    </property>
   </widget>
  </widget>
