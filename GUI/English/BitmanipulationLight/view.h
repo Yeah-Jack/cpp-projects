@@ -2,6 +2,7 @@
 #define VIEW_H
 
 #include "controller.h"
+#include <QFrame>
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,10 +20,11 @@ private slots:
   void on_lightOn_clicked();
   void on_lightOff_clicked();
 
-  void on_check_clicked();
-
 private:
   Ui::View *ui;
   Controller myController;
+
+  void updateDisplay();
+  void colorFrame(QFrame *frame, bool lightOn);
 };
 #endif // VIEW_H

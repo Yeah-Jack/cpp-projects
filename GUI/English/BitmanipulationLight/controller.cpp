@@ -1,5 +1,4 @@
 #include "controller.h"
-#include <QDebug>
 
 Controller::Controller() {}
 
@@ -12,7 +11,7 @@ void Controller::setBit(
 
 void Controller::clearBit(int bit) {
   lights = lights & ~(1 << bit);
-  qDebug() << "Lights state after deleting bit" << bit
+  qDebug() << "Lights state after clearing bit" << bit
            << QString::number(lights, 2).rightJustified(8, '0');
 }
 

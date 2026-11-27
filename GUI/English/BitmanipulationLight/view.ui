@@ -313,19 +313,6 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="check">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>100</y>
-     <width>80</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Check</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>
